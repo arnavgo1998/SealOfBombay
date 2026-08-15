@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { PixelButton } from '../components/Chrome';
 import { DAYS, ENDINGS } from '../game/script';
 import { isTypingTarget } from '../lib/utils';
-import { AUTHOR_NAME, TWITTER_HANDLE, TWITTER_URL } from '../game/credits';
+import { AUTHOR_NAME, TWITTER_HANDLE, TWITTER_URL, DISCLAIMER } from '../game/credits';
 import {
   DEBUG_DAYS,
   DEBUG_ENDINGS,
@@ -104,6 +104,9 @@ export function Title({ hasSave, onBegin, onContinue, debugStart }: TitleProps) 
           </div>
 
           <CreditsLine />
+          <p className="mx-auto mt-3 max-w-md font-vt text-sm leading-snug text-[#6E7278] italic">
+            {DISCLAIMER}
+          </p>
         </div>
       </div>
 

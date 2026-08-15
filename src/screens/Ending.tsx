@@ -1,7 +1,7 @@
 import { PixelButton } from '../components/Chrome';
 import type { GameState } from '../game/engine';
 import { ENDINGS } from '../game/script';
-import { AUTHOR_NAME, TWITTER_HANDLE, TWITTER_URL } from '../game/credits';
+import { AUTHOR_NAME, TWITTER_HANDLE, TWITTER_URL, DISCLAIMER } from '../game/credits';
 
 interface EndingProps {
   run: GameState;
@@ -112,6 +112,9 @@ export function Ending({ run, onAgain }: EndingProps) {
               {TWITTER_HANDLE}
             </a>
           </span>
+          <p className="mx-auto mt-3 max-w-md font-vt text-sm leading-snug text-[#6E7278] italic">
+            {DISCLAIMER}
+          </p>
         </div>
       </div>
     </div>
