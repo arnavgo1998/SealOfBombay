@@ -530,6 +530,39 @@ export function DeskShift({ game, run }: DeskShiftProps) {
     setShowRules(false);
   };
 
+  // The four stamp actions, shared between the mobile bottom bar and the
+  // desktop sidebar slot under the rulebook.
+  const stampGrid = (cols: string) => (
+    <div className={`grid items-stretch gap-3 ${cols}`}>
+      <PixelButton pixel color="red" disabled={busy} onClick={() => doStamp('approve')} className="flex min-h-14 flex-col items-center justify-center gap-1 px-2 text-center">
+        <img src="/stamp_approved.png" alt="" className="pixel-img h-8 w-8" />
+        <span>APPROVE<KeyHint k="A" /></span>
+      </PixelButton>
+      <PixelButton pixel color="red" disabled={busy} onClick={() => doStamp('deny')} className="flex min-h-14 flex-col items-center justify-center gap-1 px-2 text-center">
+        <img src="/stamp_denied.png" alt="" className="pixel-img h-8 w-8" />
+        <span>DENY<KeyHint k="D" /></span>
+      </PixelButton>
+      <PixelButton pixel color="indigo" disabled={busy} onClick={() => doStamp('detain')} className="flex min-h-14 flex-col items-center justify-center gap-1 px-2 text-center">
+        <img src="/icon_stamp.png" alt="" className="pixel-img h-8 w-8" />
+        <span>DETAIN<KeyHint k="T" /></span>
+      </PixelButton>
+      {bribeAvailable ? (
+        <PixelButton pixel color="brass" disabled={busy} onClick={() => doStamp('bribe')} className="bribe-glow flex min-h-14 flex-col items-center justify-center gap-1 px-2 text-center whitespace-nowrap">
+          <span className="hard-sm flex h-8 w-8 items-center justify-center bg-[#D8C7A1] font-vt text-xl leading-none text-[#1a2430]">₹</span>
+          <span>
+            BRIBE <span className="font-vt text-base leading-none">₹{c.bribe!.amount}</span>
+            <KeyHint k="B" />
+          </span>
+        </PixelButton>
+      ) : (
+        <div className="hard flex min-h-14 items-center justify-center bg-[#2B3A4A]/60 px-2 py-2">
+          <span className="font-vt text-lg text-[#6E7278] italic">no offer on the file</span>
+        </div>
+      )}
+    </div>
+  );
+
+
   // The verdict stamp slams onto the document currently on top of the stack,
   // overhanging the top edge (top-left on identity booklets, whose top-right
   // corner carries the photograph) so it stays visible under the outcome card.
@@ -590,6 +623,22 @@ export function DeskShift({ game, run }: DeskShiftProps) {
               meters={run.meters}
               rupees={run.rupees + (run.stats.bribeRupees - run.dayStart.stats.bribeRupees)}
             />
+            {/* the bribe lives under the ledger on wide screens — out of the
+                document's way, always fully visible */}
+            {bribeAvailable && c.bribeOffer && stage === 'idle' && (
+              <div
+                key={`bribe-ledger-${caseKey}`}
+                className="bribe-in hard-sm mt-3 hidden items-center gap-3 border-l-8 border-[#8C2F2B] bg-[#9C7A3C] px-4 py-3 lg:flex"
+              >
+                <BribePouch amount={c.bribe!.amount} />
+                <div className="min-w-0">
+                  <div className="font-pixel text-[7px] tracking-widest text-[#1a2430]/80 uppercase">
+                    An offer rides with the file
+                  </div>
+                  <p className="font-vt text-2xl leading-snug text-[#1a2430]">{c.bribeOffer}</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -656,12 +705,13 @@ export function DeskShift({ game, run }: DeskShiftProps) {
             )}
           </div>
 
-          {/* the bribe — a brass card BELOW the speech, always fully visible,
-              never inside the scroll region */}
+          {/* the bribe — mobile only: below the speech, always fully visible.
+              On lg it lives in the right column under the ledger instead, so
+              it never steals height from the document */}
           {bribeAvailable && c.bribeOffer && stage === 'idle' && (
             <div
               key={`bribe-${caseKey}`}
-              className="bribe-in hard-sm mb-3 flex shrink-0 items-center gap-3 border-l-8 border-[#8C2F2B] bg-[#9C7A3C] px-4 py-3 lg:mb-2"
+              className="bribe-in hard-sm mb-3 flex shrink-0 items-center gap-3 border-l-8 border-[#8C2F2B] bg-[#9C7A3C] px-4 py-3 lg:hidden"
             >
               <BribePouch amount={c.bribe!.amount} />
               <div className="min-w-0">
@@ -772,38 +822,13 @@ export function DeskShift({ game, run }: DeskShiftProps) {
             </div>
           </div>
 
-          {/* actions — pinned to the bottom of the desk on lg; sticky bar on mobile */}
+          {/* actions — sticky bottom bar on mobile only; on desktop the same
+              buttons live under the rulebook in the left sidebar */}
           <div
-            className="sticky bottom-0 z-40 mt-3 shrink-0 border-4 border-[#1a2430] bg-[#10161d] p-2 shadow-[4px_4px_0_#1a2430] lg:static lg:z-auto lg:mt-4 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none"
+            className="sticky bottom-0 z-40 mt-3 shrink-0 border-4 border-[#1a2430] bg-[#10161d] p-2 shadow-[4px_4px_0_#1a2430] lg:hidden"
             data-tut="stamp-bar"
           >
-            <div className="grid grid-cols-2 items-stretch gap-3 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
-              <PixelButton pixel color="red" disabled={busy} onClick={() => doStamp('approve')} className="flex min-h-14 flex-col items-center justify-center gap-1 px-2 text-center">
-                <img src="/stamp_approved.png" alt="" className="pixel-img h-8 w-8" />
-                <span>APPROVE<KeyHint k="A" /></span>
-              </PixelButton>
-              <PixelButton pixel color="red" disabled={busy} onClick={() => doStamp('deny')} className="flex min-h-14 flex-col items-center justify-center gap-1 px-2 text-center">
-                <img src="/stamp_denied.png" alt="" className="pixel-img h-8 w-8" />
-                <span>DENY<KeyHint k="D" /></span>
-              </PixelButton>
-              <PixelButton pixel color="indigo" disabled={busy} onClick={() => doStamp('detain')} className="flex min-h-14 flex-col items-center justify-center gap-1 px-2 text-center">
-                <img src="/icon_stamp.png" alt="" className="pixel-img h-8 w-8" />
-                <span>DETAIN<KeyHint k="T" /></span>
-              </PixelButton>
-              {bribeAvailable ? (
-                <PixelButton pixel color="brass" disabled={busy} onClick={() => doStamp('bribe')} className="bribe-glow flex min-h-14 flex-col items-center justify-center gap-1 px-2 text-center whitespace-nowrap">
-                  <span className="hard-sm flex h-8 w-8 items-center justify-center bg-[#D8C7A1] font-vt text-xl leading-none text-[#1a2430]">₹</span>
-                  <span>
-                    BRIBE <span className="font-vt text-base leading-none">₹{c.bribe!.amount}</span>
-                    <KeyHint k="B" />
-                  </span>
-                </PixelButton>
-              ) : (
-                <div className="hard flex min-h-14 items-center justify-center bg-[#2B3A4A]/60 px-2 py-2">
-                  <span className="font-vt text-lg text-[#6E7278] italic">no offer on the file</span>
-                </div>
-              )}
-            </div>
+            {stampGrid('grid-cols-2 md:grid-cols-4')}
           </div>
         </div>
 
@@ -828,6 +853,11 @@ export function DeskShift({ game, run }: DeskShiftProps) {
               />
             </div>
           )}
+          {/* desktop stamp actions — under the rulebook so the rulebook no
+              longer takes the full column height */}
+          <div className="hidden lg:block lg:shrink-0 lg:pt-3" data-tut="stamp-bar">
+            {stampGrid('grid-cols-2')}
+          </div>
         </div>
       </div>
 

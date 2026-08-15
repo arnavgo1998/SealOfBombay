@@ -28,27 +28,39 @@ export function TutorialOverlay({ step, def, onAdvance }: TutorialOverlayProps) 
   const [vh, setVh] = useState(() => window.innerHeight);
 
   const measure = useCallback(() => {
-    const el = document.querySelector(`[data-tut="${def.target}"]`);
-    setRect(el ? el.getBoundingClientRect() : null);
+    // pick the first VISIBLE match — the stamp bar renders twice (mobile
+    // bottom bar + desktop sidebar), one always display:none
+    const els = document.querySelectorAll(`[data-tut="${def.target}"]`);
+    let el: Element | null = null;
+    els.forEach((cand) => {
+      if (!el && (cand as HTMLElement).offsetParent !== null) el = cand;
+    });
+    setRect(el ? (el as HTMLElement).getBoundingClientRect() : null);
     setVw(window.innerWidth);
     setVh(window.innerHeight);
   }, [def.target]);
 
   useEffect(() => {
-    // first measure happens in a rAF callback, not the effect body — the
-    // target may still be sliding into place on mount
+    // bring the target into view once per step (it may sit inside a
+    // scrollable document), then KEEP re-measuring: the speech card's
+    // typewriter and paper animations shift layout for seconds, and a stale
+    // rect is what throws the spotlight onto the wrong element
+    const els = document.querySelectorAll(`[data-tut="${def.target}"]`);
+    els.forEach((cand) => {
+      if ((cand as HTMLElement).offsetParent !== null)
+        (cand as HTMLElement).scrollIntoView({ block: 'nearest' });
+    });
     const raf = requestAnimationFrame(measure);
-    // catch post-animation layout (entrant slide-in, paper swap)
-    const t = window.setTimeout(measure, 420);
+    const poll = window.setInterval(measure, 200);
     window.addEventListener('resize', measure);
     window.addEventListener('scroll', measure, true);
     return () => {
       cancelAnimationFrame(raf);
-      window.clearTimeout(t);
+      window.clearInterval(poll);
       window.removeEventListener('resize', measure);
       window.removeEventListener('scroll', measure, true);
     };
-  }, [measure]);
+  }, [measure, def.target]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
