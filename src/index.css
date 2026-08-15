@@ -1,0 +1,383 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* The Seal of Bombay palette */
+    --khaki: #b9a576;
+    --sepia: #d8c7a1;
+    --indigo: #2b3a4a;
+    --stamp: #8c2f2b;
+    --brass: #9c7a3c;
+    --grey: #6e7278;
+    --ink: #1a2430;
+
+    /* shadcn tokens kept for template components */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 4.8% 95.9%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 4.8% 95.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0px;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5% 64.9%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  html {
+    background-color: var(--ink);
+  }
+
+  body {
+    background-color: var(--ink);
+    color: var(--sepia);
+    font-family: 'VT323', 'Courier New', monospace;
+    font-size: 22px;
+    line-height: 1.35;
+  }
+
+  img {
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+  }
+
+  * {
+    border-radius: 0 !important;
+  }
+}
+
+@layer components {
+  /* Explicit crisp-pixel class for busts/plates (global img rule already covers
+     all images; this marks the showcase portraits intent). */
+  .pixel-img {
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+  }
+
+  /* Hard 4px chrome with offset shadow */
+  .hard {
+    border: 4px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  .hard-sm {
+    border: 3px solid var(--ink);
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+
+  .btn-press {
+    transition: transform 60ms steps(2, end), box-shadow 60ms steps(2, end);
+  }
+  .btn-press:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+  .btn-press:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+  .btn-press:disabled:active {
+    transform: none;
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  /* Vignette overlay (the scanlines layer was removed — read as dirt) */
+  .vignette {
+    position: fixed;
+    inset: 0;
+    z-index: 79;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 52%,
+      rgba(8, 12, 18, 0.55) 100%
+    );
+  }
+
+  /* Dithered meter fills (2-color checkerboard) */
+  .dither-khaki {
+    background-image: repeating-conic-gradient(#b9a576 0% 25%, #8f8055 0% 50%);
+    background-size: 4px 4px;
+  }
+  .dither-brass {
+    background-image: repeating-conic-gradient(#9c7a3c 0% 25%, #6f5726 0% 50%);
+    background-size: 4px 4px;
+  }
+  .dither-red {
+    background-image: repeating-conic-gradient(#8c2f2b 0% 25%, #5f201d 0% 50%);
+    background-size: 4px 4px;
+  }
+  .dither-green {
+    background-image: repeating-conic-gradient(#5d7351 0% 25%, #42543a 0% 50%);
+    background-size: 4px 4px;
+  }
+
+  /* Checkerboard dithered panel edge strip */
+  .checker-strip {
+    height: 8px;
+    background-image: repeating-conic-gradient(var(--ink) 0% 25%, transparent 0% 50%);
+    background-size: 8px 8px;
+  }
+
+  /* Torn paper zigzag edges for the rulebook */
+  .torn-top {
+    height: 12px;
+    background:
+      linear-gradient(-45deg, var(--sepia) 6px, transparent 0) 0 6px,
+      linear-gradient(45deg, var(--sepia) 6px, transparent 0) 6px 6px;
+    background-size: 12px 12px;
+    background-repeat: repeat-x;
+  }
+  .torn-bottom {
+    height: 12px;
+    transform: scaleY(-1);
+    background:
+      linear-gradient(-45deg, var(--sepia) 6px, transparent 0) 0 6px,
+      linear-gradient(45deg, var(--sepia) 6px, transparent 0) 6px 6px;
+    background-size: 12px 12px;
+    background-repeat: repeat-x;
+  }
+
+  .flicker {
+    animation: crt-flicker 6s steps(12, end) infinite;
+  }
+
+  .stamp-slam {
+    animation: stamp-slam 320ms steps(6, end) both;
+  }
+
+  .screen-shake {
+    animation: screen-shake 150ms steps(4, end) both;
+  }
+
+  .slide-up {
+    animation: slide-up 260ms steps(8, end) both;
+  }
+
+  .blink {
+    animation: caret-blink 1s steps(2, end) infinite;
+  }
+
+  .fade-in {
+    animation: fade-in 400ms steps(10, end) both;
+  }
+
+  /* Entrant slides into the grille window from the right */
+  .entrant-in {
+    animation: entrant-in 340ms steps(8, end) both;
+  }
+
+  /* Entrant slides out of the grille window after stamping */
+  .entrant-out {
+    animation: entrant-out 300ms steps(7, end) both;
+  }
+
+  /* Document slides in from under the grille */
+  .paper-in {
+    animation: paper-in 280ms steps(7, end) both;
+  }
+
+  /* Barred ticket-window overlay: a top lintel plus ONE bar at each edge.
+     Bars sit at ~8% and ~88% of the window width so the entrant's face,
+     centered in the window, is never crossed. */
+  .grille-bars {
+    background:
+      /* top lintel */
+      linear-gradient(rgba(16, 22, 29, 0.94), rgba(16, 22, 29, 0.94)) 0 0 / 100% 8% no-repeat,
+      /* left edge bar */
+      linear-gradient(rgba(16, 22, 29, 0.94), rgba(16, 22, 29, 0.94)) 8% 0 / 4% 100% no-repeat,
+      /* right edge bar */
+      linear-gradient(rgba(16, 22, 29, 0.94), rgba(16, 22, 29, 0.94)) 88% 0 / 4% 100% no-repeat;
+  }
+
+  /* Slow pulsing brass glow for the TAKE BRIBE button */
+  .bribe-glow {
+    animation: brass-pulse 1.8s steps(6, end) infinite;
+  }
+
+  /* Even slower brass pulse-glow for the TO WORK call-to-action */
+  .cta-glow {
+    animation: brass-pulse 2.4s steps(8, end) infinite;
+  }
+
+  /* One gentle rise for the document scroll chip when a tall paper arrives */
+  .chip-nudge {
+    animation: chip-nudge 700ms steps(9, end) both;
+  }
+
+  /* DETAINED: CSS rubber stamp, slammed like the ink stamps */
+  .detain-slam {
+    animation: detain-slam 320ms steps(6, end) both;
+  }
+
+  /* Brass coin chip sliding in beside the stamp */
+  .coin-in {
+    animation: coin-in 320ms steps(7, end) both;
+  }
+
+  /* Document slides sideways when a stack tab brings it to the front */
+  .paper-swap {
+    animation: paper-swap 240ms steps(6, end) both;
+  }
+
+  /* Scene portrait rises into frame when the speaker changes */
+  .rise-in {
+    animation: rise-in 420ms steps(9, end) both;
+  }
+
+  /* Entrant's spoken line slides in under the grille */
+  .speech-in {
+    animation: slide-up 300ms steps(7, end) both;
+  }
+
+  /* The bribe card arrives a beat after the entrant's own line */
+  .bribe-in {
+    animation: slide-up 300ms steps(7, end) both;
+    animation-delay: 520ms;
+  }
+
+  /* WATCHED docket chip: slow pulse once the file on you thickens */
+  .watched-pulse {
+    animation: watched-pulse 2.6s steps(6, end) infinite;
+  }
+
+  /* Brass pulsing outline drawing the eye to the rulebook during a briefing */
+  .briefing-pointer {
+    animation: briefing-pointer 1.6s steps(5, end) infinite;
+  }
+
+  /* Brass pulsing frame around the tutorial spotlight target */
+  .tut-spot {
+    animation: tut-spot 1.4s steps(5, end) infinite;
+  }
+
+  /* Keshav's portrait under strain — pixel-art safe filters, no blur */
+  .keshav-gaunt {
+    filter: saturate(0.7) brightness(0.85);
+  }
+  .keshav-shadowed {
+    filter: brightness(0.75) contrast(1.1);
+  }
+  .keshav-gaunt.keshav-shadowed {
+    filter: saturate(0.7) brightness(0.64) contrast(1.1);
+  }
+}
+
+@keyframes watched-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@keyframes briefing-pointer {
+  0%, 100% { outline: 4px solid rgba(156, 122, 60, 0.25); outline-offset: 3px; }
+  50% { outline: 4px solid rgba(201, 162, 84, 0.95); outline-offset: 3px; }
+}
+
+@keyframes tut-spot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 162, 84, 0); border-color: rgba(156, 122, 60, 0.6); }
+  50% { box-shadow: 0 0 18px 5px rgba(201, 162, 84, 0.55); border-color: rgba(201, 162, 84, 1); }
+}
+
+@keyframes crt-flicker {
+  0%, 88%, 100% { opacity: 1; }
+  90% { opacity: 0.88; }
+  92% { opacity: 0.97; }
+  95% { opacity: 0.9; }
+  97% { opacity: 1; }
+}
+
+@keyframes stamp-slam {
+  0% { transform: scale(2.6) rotate(-16deg); opacity: 0; }
+  55% { transform: scale(0.94) rotate(-8deg); opacity: 1; }
+  100% { transform: scale(1) rotate(-8deg); opacity: 1; }
+}
+
+@keyframes screen-shake {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-6px, 3px); }
+  50% { transform: translate(5px, -3px); }
+  75% { transform: translate(-3px, -2px); }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(28px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes caret-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes entrant-in {
+  from { transform: translateX(90px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes entrant-out {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(-110px); opacity: 0; }
+}
+
+@keyframes paper-in {
+  from { transform: translateY(46px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes paper-swap {
+  from { transform: translateX(34px) rotate(0.8deg); opacity: 0; }
+  to { transform: translateX(0) rotate(0); opacity: 1; }
+}
+
+@keyframes rise-in {
+  from { transform: translateY(60px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes detain-slam {
+  0% { transform: scale(2.6) rotate(-14deg); opacity: 0; }
+  55% { transform: scale(0.94) rotate(-6deg); opacity: 1; }
+  100% { transform: scale(1) rotate(-6deg); opacity: 1; }
+}
+
+@keyframes coin-in {
+  0% { transform: translateX(-26px) scale(1.4); opacity: 0; }
+  60% { transform: translateX(3px) scale(0.96); opacity: 1; }
+  100% { transform: translateX(0) scale(1); opacity: 1; }
+}
+
+@keyframes brass-pulse {
+  0%, 100% { box-shadow: 4px 4px 0 var(--ink), 0 0 0 0 rgba(156, 122, 60, 0); }
+  50% { box-shadow: 4px 4px 0 var(--ink), 0 0 16px 4px rgba(201, 162, 84, 0.9); }
+}
+
+@keyframes chip-nudge {
+  0% { transform: translateY(10px); opacity: 0; }
+  45% { transform: translateY(-3px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
