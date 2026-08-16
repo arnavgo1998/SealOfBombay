@@ -103,6 +103,10 @@ export function Title({ hasSave, onBegin, onContinue, debugStart }: TitleProps) 
             <img src="/icon_permit.png" alt="" className="h-6 w-6" />
           </div>
 
+          <p className="mt-3 font-vt text-lg text-[#9C7A3C]">
+            Best played on desktop — this ledger likes a keyboard.
+          </p>
+
           <CreditsLine />
           <p className="mx-auto mt-3 max-w-md font-vt text-sm leading-snug text-[#6E7278] italic">
             {DISCLAIMER}
