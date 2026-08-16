@@ -62,6 +62,11 @@ export function Title({ hasSave, onBegin, onContinue, debugStart }: TitleProps) 
 
   return (
     <div className="relative min-h-[100dvh] overflow-hidden">
+      {/* mobile-only heads-up — this ledger wants a keyboard */}
+      <div className="fixed inset-x-0 top-0 z-50 border-b-4 border-[#1a2430] bg-[#8C2F2B] px-3 py-2 text-center font-vt text-base text-[#F5E6C8] shadow-[0_4px_0_#1a2430] md:hidden">
+        Best played on desktop — this ledger likes a keyboard.
+      </div>
+
       <img
         src="/title_screen.png"
         alt="Bombay harbour at dusk, pixel art"
@@ -69,7 +74,7 @@ export function Title({ hasSave, onBegin, onContinue, debugStart }: TitleProps) 
       />
       <div className="absolute inset-0 bg-[#1a2430]/45" />
 
-      <div className="relative z-10 mx-auto flex min-h-[100dvh] max-w-4xl flex-col items-center justify-center px-4 py-8 md:px-6 md:py-16 text-center">
+      <div className="relative z-10 mx-auto flex min-h-[100dvh] max-w-4xl flex-col items-center justify-center px-4 pt-14 pb-8 md:px-6 md:py-16 text-center">
         <div className="hard fade-in bg-[#2B3A4A]/95 px-4 py-6 md:px-12 md:py-8">
           <div className="checker-strip mb-6 w-full" />
           <h1 className="font-pixel text-2xl leading-relaxed text-[#D8C7A1] md:text-4xl md:leading-relaxed">
@@ -102,10 +107,6 @@ export function Title({ hasSave, onBegin, onContinue, debugStart }: TitleProps) 
             <span>{`${DAYS.length} days. Seven years. ${ENDINGS.length} endings.`}</span>
             <img src="/icon_permit.png" alt="" className="h-6 w-6" />
           </div>
-
-          <p className="mt-3 font-vt text-lg text-[#9C7A3C]">
-            Best played on desktop — this ledger likes a keyboard.
-          </p>
 
           <CreditsLine />
           <p className="mx-auto mt-3 max-w-md font-vt text-sm leading-snug text-[#6E7278] italic">
