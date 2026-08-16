@@ -1,73 +1,56 @@
-# React + TypeScript + Vite
+# The Seal of Bombay
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**A permit examiner's ledger, 1941–1947.**
 
-Currently, two official plugins are available:
+Play it: **[seal-of-bombay.vercel.app](https://seal-of-bombay.vercel.app)** — best on desktop, keyboard shortcuts included.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![The Seal of Bombay — title card](public/og-image.png)
 
-## React Compiler
+## Why this exists
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Replayed *Papers, Please* recently and couldn't stop thinking about how much weight one small stamp can carry — choice after choice, consequence after consequence. Wondered how that would feel dropped into 1940s India. So it got built.
 
-## Expanding the ESLint configuration
+You're Keshav Damle, Permit Examiner Grade III, at a checkpost desk in Bombay. A stool, a stamp, and a rulebook. Check the seal. Check the date. Check the face. Every stamp is a choice, and the ledger never forgets — across 12 pivotal days spanning seven years (1941–1947), toward one of **6 endings** shaped entirely by what you chose to approve, deny, detain, or let slide for a price.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Mostly this was built to see what people actually do when the stamp is theirs.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## How it plays
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Stamp actions**: Approve, Deny, Detain, or (when one's on the table) take the Bribe — each with a keyboard shortcut (`A` / `D` / `T` / `B`).
+- **Five meters** track the fallout of every decision: Household, Crown, Movement, Conscience, Suspicion. Let Suspicion run out and the ledger closes on you instead.
+- **Consequences carry forward.** Entrants, colleagues, and choices from earlier days resurface later — nothing you stamp is really forgotten.
+- There's more tucked into this build than the surface shows. If you go looking, you might find it.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Tech stack
+
+- [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) + [Vite 7](https://vite.dev/)
+- [Tailwind CSS](https://tailwindcss.com/) with a hand-rolled pixel/brass UI kit (`PixelButton`, `KeyHint`, the `.hard` panel style)
+- [react-router](https://reactrouter.com/) for screen flow, [Radix UI](https://www.radix-ui.com/) primitives under the shadcn-style component set
+- [Vercel Web Analytics](https://vercel.com/docs/analytics) for pageviews
+- Deployed on [Vercel](https://vercel.com/), auto-deploying from `main`
+
+## Running it locally
+
+```bash
+npm install
+npm run dev      # dev server
+npm run build    # production build → dist/
+npm run lint     # eslint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Project layout
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+  game/       game data — script.ts (days/scenes), engine.ts (state machine),
+              credits.ts (author info + disclaimer), godmode.ts (debug tooling)
+  screens/    Title, DeskShift, DaySummary, Ending, ScenePlayer
+  components/ shared UI — Chrome (PixelButton etc.), TutorialOverlay
+public/       pixel art — backgrounds, entrant portraits, stamps, seals
+```
+
+## Credits
+
+A game by **Arnav** — [@arnavgoel_](https://x.com/arnavgoel_)
+
+This is a work of fiction, made for entertainment and satire. See `src/game/credits.ts` for the in-game disclaimer.
