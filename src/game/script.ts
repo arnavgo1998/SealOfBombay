@@ -443,7 +443,7 @@ export const DAYS: GameDay[] = [
             ],
           },
         ],
-        entrantLine: '"It is my whole living in a wooden case, sahib. The ward office wanted a renewal fee I did not have, so the man there said the gate might be kinder." The machine rides her shoulder like a child that has stopped crying.',
+        entrantLine: '"The ward office wanted a renewal fee — I did not have it. The man there said try the gate."',
         bribeOffer: 'She sets down three rupees, coins wrapped in the end of her sari. "The bangle money, sahib. There is no more after this."',
         ruleIds: ['r1_expiry', 'r1_seal'],
         correct: 'deny',
@@ -452,12 +452,12 @@ export const DAYS: GameDay[] = [
           approve: {
             suspicion: 6,
             conscience: 3,
-            text: 'A month dead on the pass; you stamp it. She shifts the machine to her other shoulder and is gone before you can change your mind. Somewhere a ward-office window keeps its renewal fee, and a seamstress keeps her living, and the ledger shows only that one rule bent and one woman did not.',
+            text: 'A month dead on the pass; you stamp it. She shifts the machine to her other shoulder and is gone before you can change your mind.',
           },
           deny: {
             crown: 3,
             conscience: -5,
-            text: '"The pass expired in February. Two annas at the ward office and it lives again — the window is open till four." She does not argue about the fee she does not have. She lifts the machine and goes to find eleven rupees\' worth of work without the machine she bought to do it with.',
+            text: '"The pass expired in February. Two annas at the ward office and it lives again — the window is open till four." She lifts the machine and goes to find eleven rupees\' worth of work without the machine she bought to do it with.',
           },
           detain: {
             crown: -3,
@@ -499,7 +499,7 @@ export const DAYS: GameDay[] = [
             sealState: 'valid',
           },
         ],
-        entrantLine: '"He is two days with the fever, sahib, and the gang pays by the day worked. I can carry a hod as well as he can. The pass is his; the hands are mine; the rent does not care which." She holds it out with both hands, like something holy.',
+        entrantLine: '"Raghu is down with fever. I do the same work, same rate. The pass is his." She puts both papers on the counter.',
         ruleIds: ['r1_photo', 'r1_seal'],
         correct: 'deny',
         photoMismatch: true,
@@ -512,7 +512,7 @@ export const DAYS: GameDay[] = [
           deny: {
             crown: 3,
             conscience: -8,
-            text: '"The face must match the photograph. He can renew it himself when the fever breaks." She folds the pass into her blouse. Three days of wages, gone to a rule about faces.',
+            text: '"The face must match the photograph. He can renew it himself when the fever breaks." She folds the pass into her blouse.',
           },
           detain: {
             crown: -3,
@@ -546,7 +546,7 @@ export const DAYS: GameDay[] = [
             sealState: 'valid',
           },
         ],
-        entrantLine: '"The loom does not wait for renewals, sahib. I have come straight from the shift."',
+        entrantLine: '"Pass expired, sahib. Came straight from the shift."',
         ruleIds: ['r1_expiry', 'r1_seal', 'r1_photo'],
         correct: 'deny',
         outcomes: {
@@ -558,7 +558,7 @@ export const DAYS: GameDay[] = [
           deny: {
             crown: 3,
             conscience: -3,
-            text: '"Renew it at the ward office and come back tomorrow," you tell him. He looks at you the way men look at locked doors. The rule is the rule. You did not write it. You only read it aloud.',
+            text: '"Renew it at the ward office and come back tomorrow," you tell him. He looks at you the way men look at locked doors.',
           },
           detain: {
             crown: -3,
@@ -592,7 +592,7 @@ export const DAYS: GameDay[] = [
             ],
           },
         ],
-        entrantLine: '"The Fort dairies pay double, sahib. Milk does not care for wards, and I have a family that does."',
+        entrantLine: '"Fort dairies pay double, sahib. Work is here, pass says Byculla."',
         bribeOffer: 'Two cans of milk sweating in the sun. "The Fort dairies pay double today, sahib. Eight rupees for a quick stamp." He slides the notes under the pass.',
         ruleIds: ['r1_ward', 'r1_seal', 'r1_expiry'],
         correct: 'deny',
@@ -601,11 +601,11 @@ export const DAYS: GameDay[] = [
           approve: {
             suspicion: 6,
             conscience: 3,
-            text: 'Wrong ward, waved through. He will sell his milk and somebody\'s children will drink it. Somewhere a rule sits unsatisfied, but rules do not drink milk.',
+            text: 'Wrong ward, waved through. He lifts his cans and is into the Fort before the next file arrives.',
           },
           deny: {
             crown: 3,
-            text: '"Byculla pass, Byculla streets." He gathers his cans without argument. Vendors learn the map of refusals faster than they learn the map of roads.',
+            text: '"Byculla pass, Byculla streets." He gathers his cans without argument.',
           },
           detain: {
             crown: -3,
@@ -616,7 +616,7 @@ export const DAYS: GameDay[] = [
             household: 8,
             conscience: -5,
             note: 'Eight rupees. Not flagrant — a survival bribe, the smallest denomination of corruption.',
-            text: 'Eight rupees disappear into your tunic. The milk goes through. At home it will become rice, and rice has no memory of where it came from.',
+            text: 'Eight rupees disappear into your tunic. The milk goes through.',
           },
         },
       },
@@ -729,7 +729,7 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Narrator',
         text:
-          'The chawl settles. Somewhere below, Domnic Menezes is arguing with the water tap. Radha banks the stove. You lie in the dark and count the stamps you made today like a man counting stitches in a wound. Forty-one papers. Forty-one small judgments. The Empire pays by the month; it collects by the day.',
+          'The chawl settles. Somewhere below, Domnic Menezes is arguing with the water tap. Radha banks the stove and the room goes dark except for the landing light under the door.',
         next: undefined,
       },
     ],
@@ -850,12 +850,12 @@ export const DAYS: GameDay[] = [
         outcomes: {
           approve: {
             crown: 3,
-            text: 'In order. He bows to the stamp as much as to you, collects his pass with both hands, and goes. A frictionless transaction — the desk\'s idea of a good morning.',
+            text: 'In order. He bows to the stamp as much as to you, collects his pass with both hands, and goes.',
           },
           deny: {
             crown: -3,
             conscience: -3,
-            text: 'You deny him on nothing you can name. He asks, quite reasonably, what is wrong with his papers, and you discover that the only answer is the set of your own face.',
+            text: 'You deny him on nothing. He asks what is wrong. There is no answer.',
           },
           detain: {
             crown: -5,
@@ -891,7 +891,7 @@ export const DAYS: GameDay[] = [
             sealState: 'valid',
           },
         ],
-        entrantLine: 'He holds the pass the way men hold borrowed things. "It was my cousin\'s," he says at last, unprompted. "He went back to the district. The mill does not care whose face, only whose hands."',
+        entrantLine: 'He holds the pass the way men hold borrowed things. "My cousin\'s," he says at last. "He went back to the district. Mill only needs the hands."',
         ruleIds: ['rn2_photo', 'rn2_seal', 'rn2_expiry'],
         correct: 'deny',
         photoMismatch: true,
@@ -899,7 +899,7 @@ export const DAYS: GameDay[] = [
           approve: {
             suspicion: 8,
             conscience: 3,
-            text: 'The face is not the photograph and you stamp it anyway. He exhales like a man surfacing. Somewhere in Girangaon a loom gets a pair of hands, and the Empire\'s ledger of faces quietly loses one.',
+            text: 'The face is not the photograph and you stamp it anyway. He exhales like a man surfacing.',
           },
           deny: {
             crown: 3,
@@ -909,7 +909,7 @@ export const DAYS: GameDay[] = [
           detain: {
             crown: -3,
             conscience: -5,
-            text: 'Detained for carrying his cousin\'s honest pass. The pass itself is real; only the face is wrong. The warder logs it under "impersonation," a word too large for the man it just swallowed.',
+            text: 'Detained for carrying his cousin\'s honest pass. The warder logs it under "impersonation" — the pass is real; only the face is wrong.',
           },
         },
       },
@@ -951,19 +951,19 @@ export const DAYS: GameDay[] = [
             sealState: 'valid',
           },
         ],
-        entrantLine: '"Eight months standing, sahib, and the court has spoken. I do not enjoy it. Nobody enjoys it. The harmonium, they tell me, belongs to the daughter\'s wedding." His papers are perfect. That is the whole problem he is carrying.',
+        entrantLine: '"Distraint warrant, sahib. Eight months standing." He sets the file on the counter.',
         ruleIds: ['rn2_seal', 'rn2_expiry', 'rn2_ward', 'rn2_fee', 'rn2_names', 'rn2_permitno'],
         correct: 'approve',
         outcomes: {
           approve: {
             crown: 3,
             conscience: -5,
-            text: 'In order in every particular. You stamp him through, and somewhere in Bhendi Bazaar a sewing table, some brass pots, and a wedding harmonium begin their legal journey out of a widow\'s room. Everything you did today was correct. That is not the defence you thought it would be.',
+            text: 'In order. You stamp him through. He collects the file and goes.',
           },
           deny: {
             crown: -3,
             conscience: 3,
-            text: 'You find no fault and deny him anyway. He has served warrants long enough to know a moral refusal when he sees one. "The bailiff will send me again tomorrow, sahib," he says, not unkindly. "Tomorrow it may not be you." He is right, and the harmonium knows it.',
+            text: 'You find no fault and deny him anyway. He nods like a man who has learned this answer before. "The bailiff will send me again tomorrow, sahib."',
           },
           detain: {
             crown: -5,
@@ -1008,12 +1008,12 @@ export const DAYS: GameDay[] = [
           approve: {
             suspicion: 6,
             conscience: 3,
-            text: 'A booklet expired by a month; through anyway. She sells her marigolds under your stamp. The rule will be there tomorrow, refreshed and unbothered. Her flowers would not have been.',
+            text: 'A booklet expired by a month; through anyway. She lifts the basket onto her head and goes to sell her marigolds under your stamp.',
           },
           deny: {
             crown: 3,
             conscience: -3,
-            text: '"The booklet expired in March. Renew it at the ward office." She gathers the rupees back into the sari corner without bitterness — bitterness costs energy, and she has flowers to sell somewhere else, to someone else\'s rules.',
+            text: '"The booklet expired in March. Renew it at the ward office." She gathers the rupees back into the sari corner and lifts the basket onto her head.',
           },
           detain: {
             crown: -3,
@@ -1024,7 +1024,7 @@ export const DAYS: GameDay[] = [
             household: 3,
             conscience: -4,
             note: 'Three rupees, wrapped in a marigold petal. The smallest door in the world, and you opened it.',
-            text: 'Three rupees — the price of her whole basket twice over. The pass is stamped. She leaves the marigolds on the counter "for your wife," and you cannot decide whether that makes it better or infinitely worse.',
+            text: 'Three rupees in your pocket. The pass is stamped. She leaves the marigolds on the counter and goes.',
           },
         },
       },
@@ -1060,12 +1060,12 @@ export const DAYS: GameDay[] = [
           approve: {
             suspicion: 6,
             conscience: 3,
-            text: 'Byculla pass, Fort gate, waved through. Sixty lunches arrive warm. The ward line on the map goes on not caring, which is all it has ever done.',
+            text: 'Byculla pass, Fort gate, waved through. Sixty lunches arrive warm.',
           },
           deny: {
             crown: 3,
             conscience: -3,
-            text: '"Byculla pass, Byculla streets." He tilts the tray onto one shoulder and trots off toward the long way round. Sixty tiffins of somebody\'s lunch take the scenic route through the rulebook.',
+            text: '"Byculla pass, Byculla streets." He tilts the tray onto one shoulder and trots off toward the long way round.',
           },
           detain: {
             crown: -3,
@@ -1097,7 +1097,7 @@ export const DAYS: GameDay[] = [
         outcomes: {
           approve: {
             crown: 3,
-            text: 'In order. He folds the stamped pass away with a watchmaker\'s exactness, thanks you with a tradesman\'s nod, and goes off to make the Fort\'s watches honest again. You are, for one file, exactly what the rulebook promised you would be: sufficient.',
+            text: 'In order. He folds the stamped pass away with a watchmaker\'s exactness, thanks you with a tradesman\'s nod, and goes.',
           },
           deny: {
             crown: -3,
@@ -1280,7 +1280,7 @@ export const DAYS: GameDay[] = [
             sealState: 'missing',
           },
         ],
-        entrantLine: '"Three hundred sheets, examiner. You may read one — they all say the same thing." He does not beg. He stands like a man who has already been arrested in his imagination and found it survivable.',
+        entrantLine: '"Three hundred sheets, examiner. You may read one — they all say the same thing." He has already set the satchel on the counter.',
         ruleIds: ['r2_ban', 'r2_press', 'r2_seal'],
         correct: 'detain',
         outcomes: {
@@ -1288,20 +1288,20 @@ export const DAYS: GameDay[] = [
             movement: 8,
             suspicion: 12,
             conscience: 5,
-            text: 'You stamp the trade permit and slide the satchel back under the grille. Three hundred handbills walk into the Fort ward on your signature. Bhosle says nothing. His eyes say it for him.',
+            text: 'You stamp the trade permit and slide the satchel back under the grille. Three hundred handbills walk into the Fort ward on your signature. Bhosle takes the satchel and goes.',
           },
           deny: {
             crown: 2,
             movement: -3,
             conscience: -5,
-            text: 'You deny the permit and let him keep the satchel — a half-measure, the coward\'s arithmetic. He goes. Somewhere a warder will find the handbills anyway.',
+            text: 'You deny the permit and let him keep the satchel. He goes.',
           },
           detain: {
             crown: 5,
             movement: -8,
             conscience: -10,
             flag: 'detained_printer',
-            text: 'The warder takes him. Bhosle does not resist; he looks back once, not at you but at the stamp in your hand, as if memorizing the instrument. Pandurang notes the interception. The name Bhosle goes into a file. Files are how the Empire remembers.',
+            text: 'The warder takes him. Bhosle does not resist; he looks back once, not at you but at the stamp in your hand. Pandurang notes the interception.',
           },
         },
       },
@@ -1339,7 +1339,7 @@ export const DAYS: GameDay[] = [
             ],
           },
         ],
-        entrantLine: '"The fever ward is short two nurses, examiner. The sick do not care about wards — and tonight, God forgive me, neither do I."',
+        entrantLine: '"Fever ward, short two nurses. My pass says Byculla but the Fort gate saves twenty minutes."',
         ruleIds: ['r2_curfew', 'r2_seal', 'r2_names'],
         correct: 'deny',
         outcomes: {
@@ -1347,7 +1347,7 @@ export const DAYS: GameDay[] = [
             suspicion: 6,
             movement: 3,
             conscience: 5,
-            text: 'Wrong ward. You pass her anyway. She does not thank you; she is already running. Twenty minutes saved for a fever ward. The rulebook will survive the insult.',
+            text: 'Wrong ward. You pass her anyway. She does not thank you; she is already running.',
           },
           deny: {
             crown: 3,
@@ -1388,7 +1388,7 @@ export const DAYS: GameDay[] = [
             sealState: 'missing',
           },
         ],
-        entrantLine: 'He unwraps it in front of you, puzzled as a man solving a riddle aloud. "The boy wrapped my channa in it, sahib. I was going to read it after eating. It says someone should quit someone\'s service. At my age, sahib, everyone has already left everyone\'s." He offers you a peanut.',
+        entrantLine: 'He unwraps it in front of you. "The boy wrapped my channa in it, sahib. I was going to read it after eating." He offers you a peanut.',
         ruleIds: ['r2_ban', 'r2_seal', 'r2_names'],
         correct: 'detain',
         outcomes: {
@@ -1396,19 +1396,19 @@ export const DAYS: GameDay[] = [
             movement: 5,
             suspicion: 8,
             conscience: 5,
-            text: 'You fold the handbill small and hand it back inside the channa twist, the way it came. "Eat first. Read nothing." He goes. It is technically a seditious publication passing your desk in a snack. The Empire\'s intelligence reports will never contain the phrase "peanut," which is their loss.',
+            text: 'You fold the handbill small and hand it back inside the channa twist, the way it came. "Eat first. Read nothing." He goes. The Empire\'s intelligence reports will never contain the phrase "peanut."',
           },
           deny: {
             crown: 2,
             conscience: -3,
             movement: -3,
-            text: 'You confiscate the handbill and send him home with the channa. A half-measure, the coward\'s arithmetic — the sedition is destroyed, the man is spared, and the rulebook is one peanut short of satisfied.',
+            text: 'You confiscate the handbill and send him home with the channa.',
           },
           detain: {
             crown: 5,
             conscience: -10,
             movement: -5,
-            text: 'The rule says the bearer of seditious material is detained. You apply it to a sixty-eight-year-old with a snack. He is bewildered, then courteous, then — in the holding room, to the warder\'s lasting confusion — grateful for the chair. Pandurang is pleased. That is how you know what you have done.',
+            text: 'You apply the rule to a sixty-eight-year-old with a snack. The warder takes him; he is bewildered, then courteous. Pandurang is pleased.',
           },
         },
       },
@@ -1462,7 +1462,7 @@ export const DAYS: GameDay[] = [
             crown: 2,
             movement: -5,
             conscience: -3,
-            text: 'You deny the pass and drop the leaflet in the stove-box under the desk. "Go home, Vasu." He goes. You have burned the evidence and the principle together, in one small fire.',
+            text: 'You deny the pass and drop the leaflet in the stove-box under the desk. "Go home, Vasu." He goes.',
           },
           detain: {
             crown: 5,
@@ -1489,14 +1489,14 @@ export const DAYS: GameDay[] = [
             sealState: 'valid',
           },
         ],
-        entrantLine: '"It is a welfare meeting, sahib. We distribute spectacles." It may even be true.',
+        entrantLine: '"It is a welfare meeting, sahib. We distribute spectacles."',
         ruleIds: ['r2_assembly', 'r2_seal'],
         correct: 'deny',
         outcomes: {
           approve: {
             suspicion: 8,
             movement: 3,
-            text: 'You pass a revoked permit. Whether they distribute spectacles or pamphlets, it happens under your stamp. The Empire counts both the same, and counts you alongside.',
+            text: 'You pass a revoked permit. Whether they distribute spectacles or pamphlets, it happens under your stamp.',
           },
           deny: {
             crown: 3,
@@ -1548,7 +1548,7 @@ export const DAYS: GameDay[] = [
             crown: -3,
             conscience: -5,
             movement: -3,
-            text: 'You deny a widow with valid papers because the day has taught you that approval is risk. She reroutes her children around your cowardice. The queue watches. The queue always watches.',
+            text: 'You deny a widow with valid papers. She picks up the smaller child and goes without a word.',
           },
           detain: {
             crown: -5,
@@ -1632,7 +1632,7 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Narrator',
         text:
-          'You lie awake and listen to the curfew, which has a sound after all: the sound of a city holding still on orders. Tomorrow the queue will be longer, the rules will be newer, and your son will do what your son will do. The stamp on your desk does not care about any of this.',
+          'The curfew has a sound after all: no lorries, no hawkers, only a dog somewhere near the mill gate and the neighbour\'s wireless crackling the All India Radio sign-off. Radha has left the lamp burning in the kitchen window.',
         next: undefined,
       },
     ],
@@ -1732,12 +1732,12 @@ export const DAYS: GameDay[] = [
         outcomes: {
           approve: {
             crown: 3,
-            text: 'In order. She goes through with her bundle of half-sewn shirts, already stitching in her head. A quiet correct stamp on a quiet frightened day.',
+            text: 'In order. She goes through with her bundle of half-sewn shirts, already stitching in her head.',
           },
           deny: {
             crown: -3,
             conscience: -3,
-            text: 'You deny a valid curfew pass because today every face looks like August. She will lose the piece-work contract by Friday. The rulebook records nothing; the rent collector will.',
+            text: 'You deny a valid curfew pass because today every face looks like August. She will lose the piece-work contract by Friday.',
           },
           detain: {
             crown: -5,
@@ -1772,7 +1772,7 @@ export const DAYS: GameDay[] = [
             ],
           },
         ],
-        entrantLine: '"One day dead, sahib. The pass, I mean. The boy is not dead yet." She says it levelly, a woman who has learned that hysteria is a tax she cannot afford. "He is in Mazgaon. I have his milk money from the sale of the cot."',
+        entrantLine: '"One day dead, sahib. The pass, I mean. The boy is not dead yet." She puts both papers on the counter. "He is in Mazgaon. I have his milk money from the sale of the cot."',
         ruleIds: ['rn4_expiry', 'rn4_curfew', 'rn4_seal'],
         correct: 'deny',
         outcomes: {
@@ -1780,18 +1780,18 @@ export const DAYS: GameDay[] = [
             suspicion: 6,
             conscience: 5,
             movement: 3,
-            text: 'Expired by a day; you stamp it. She is through the gate and running before the ink sets. Somewhere in Mazgaon a fevered boy gets his mother instead of a correct file. The rulebook will not miss her. The boy would have.',
+            text: 'Expired by a day; you stamp it. She is through the gate and running before the ink sets.',
           },
           deny: {
             crown: 3,
             conscience: -8,
-            text: '"Expired on the last of August. The ward office renews in the morning." She does not plead. Pleadings are for daytime rules. She stands a moment doing the arithmetic of night buses she cannot take, then goes to wait for morning, or for the news, whichever comes first.',
+            text: '"Expired on the last of August. The ward office renews in the morning." She stands a moment, then turns toward the night buses that will not take her without the pass.',
           },
           detain: {
             crown: -3,
             conscience: -10,
             suspicion: 3,
-            text: 'Detained for a one-day-dead curfew pass, with a dying son in Mazgaon. She is released at first light. The neighbours\' second letter reaches the post before she does. You do not read it. You never have to; you know the shape of those letters now.',
+            text: 'Detained for a one-day-dead curfew pass, with a sick son in Mazgaon. She is released at first light. The neighbours\' second letter reaches the post before she does.',
           },
         },
       },
@@ -1830,12 +1830,12 @@ export const DAYS: GameDay[] = [
           approve: {
             suspicion: 6,
             conscience: 3,
-            text: 'One vowel between the two documents; you stamp it. He weeps with gratitude, which is embarrassing for everyone within earshot. Somewhere in the Empire\'s files, a Sawant walks around in a Savant\'s paperwork, and the Empire does not know the difference, because the difference is you.',
+            text: 'One vowel between the two documents; you stamp it. He weeps with gratitude, which is embarrassing for everyone within earshot.',
           },
           deny: {
             crown: 3,
             conscience: -5,
-            text: '"The names must match exactly. Have the ward office correct the paper." Twelve years of a clerk\'s error become his problem in one sentence. He goes away to queue three days to fix a vowel, and hates no one, which is somehow the worst of it.',
+            text: '"The names must match exactly. Have the ward office correct the paper." He goes away to queue three days to fix a vowel.',
           },
           detain: {
             crown: -3,
@@ -1846,7 +1846,7 @@ export const DAYS: GameDay[] = [
             household: 5,
             conscience: -4,
             note: 'Five rupees, folded small. The price of a vowel, payable to the man who noticed it.',
-            text: 'The folded five vanishes into your desk drawer like a note passed in class. The stamp comes down. He thanks you four times. At home, Radha will ask where the extra rice money came from, and you will say "arrears," and it will be the month\'s smallest lie, which is how you will know you are getting better at them.',
+            text: 'The folded five vanishes into your desk drawer. The stamp comes down; he thanks you four times.',
           },
         },
       },
@@ -1888,7 +1888,7 @@ export const DAYS: GameDay[] = [
           deny: {
             crown: 3,
             conscience: -3,
-            text: '"Bulk print needs the censor\'s stamp. Get it stamped and return." He carries the crate off, muttering multiplication tables like curses. The rule does not distinguish between primers and pamphlets. Distinguishing, after all, is what they pay you for — and today you declined the wage.',
+            text: '"Bulk print needs the censor\'s stamp. Get it stamped and return." He carries the crate off, muttering multiplication tables like curses.',
           },
           detain: {
             crown: -3,
@@ -1920,12 +1920,12 @@ export const DAYS: GameDay[] = [
           approve: {
             suspicion: 6,
             conscience: 3,
-            text: 'Two months dead, stamped alive. He flicks the reins and the horse does its best. August ate a great many dates; you have decided this one will not stay eaten.',
+            text: 'Two months dead, stamped alive. He flicks the reins and the horse does its best.',
           },
           deny: {
             crown: 3,
             conscience: -3,
-            text: '"Expired in July. Renew it." He nods — he expected it — and leads the horse away on foot, since a horse cannot renew anything either. The rule is correct. The horse is still hungry. Both facts keep.',
+            text: '"Expired in July. Renew it." He nods — he expected it — and leads the horse away on foot, since a horse cannot renew anything either.',
           },
           detain: {
             crown: -3,
@@ -1965,7 +1965,7 @@ export const DAYS: GameDay[] = [
         outcomes: {
           approve: {
             crown: 3,
-            text: 'In order. She counts the bottles twice before leaving — not because she doubts your stamp, but because she doubts everything, professionally. You could learn from her. In a sense, you are her.',
+            text: 'In order. She counts the bottles twice before leaving — not because she doubts your stamp, but because she doubts everything, professionally.',
           },
           deny: {
             crown: -3,
@@ -2040,7 +2040,7 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Narrator',
         text:
-          'The quiet after is not quiet; it is everyone counting. The Empire counts its detentions, the Movement counts its missing, Radha counts the tin box, and you count the stamps — today\'s, August\'s, all of them, in both columns. Five rupees sit in your desk drawer at the office, folded small, waiting to become rice. You will not remember the man\'s face by Diwali. You will remember the fold.',
+          'The quiet after is not quiet; it is everyone counting. The Empire counts its detentions, the Movement counts its missing, Radha counts the tin box. In your desk drawer at the office, five rupees sit folded small, waiting to become rice.',
         next: undefined,
       },
     ],
@@ -2163,7 +2163,7 @@ export const DAYS: GameDay[] = [
           deny: {
             crown: 3,
             conscience: -8,
-            text: '"The card is altered. Take it to the ration office." She knows there is no point arguing with a man who is correct. That is the special loneliness of this desk: everyone you refuse agrees with you.',
+            text: '"The card is altered. Take it to the ration office." She nods once, gathers the children, and goes.',
           },
           detain: {
             crown: -3,
@@ -2215,12 +2215,12 @@ export const DAYS: GameDay[] = [
         outcomes: {
           approve: {
             suspicion: 8,
-            text: 'Forty maunds of rice roll through on a dead licence while the city queues. No bribe changes hands, which Pandurang will note is either integrity or stupidity. The rice will be sold at triple price by Thursday.',
+            text: 'Forty maunds of rice roll through on a dead licence, unbribed. The rice will sell at triple price by Thursday.',
           },
           deny: {
             crown: 4,
             conscience: 3,
-            text: '"Licence expired. Countersignature missing." His smile does not move; only his eyes recalculate. "Another examiner, then," he says pleasantly, and you understand that somewhere down the queue there is another stamp, and it will be cheaper.',
+            text: '"Licence expired. Countersignature missing." His smile does not move; only his eyes recalculate. "Another examiner, then," he says pleasantly.',
           },
           detain: {
             crown: 2,
@@ -2233,7 +2233,7 @@ export const DAYS: GameDay[] = [
             conscience: -10,
             flag: 'looted_bribe',
             note: 'FLAGRANT. Twenty rupees of famine money. This is not survival; this is profit.',
-            text: 'Twenty rupees — a month of rice — folds into your desk drawer. Mehta\'s lorries pass. That week Radha serves rice without weevils and Leela asks where it came from, and you answer her, which you will regret, because she believes you.',
+            text: 'Twenty rupees — a month of rice — folds into your desk drawer. Mehta\'s lorries pass. That week Radha serves rice without weevils and Leela asks where it came from.',
           },
         },
       },
@@ -2262,7 +2262,7 @@ export const DAYS: GameDay[] = [
             sealState: 'valid',
           },
         ],
-        entrantLine: '"Sawant was my father\'s name, Koli is my husband\'s. I am the same woman, sahib — ask anyone at the dock. The ration office queue is a week and the shop has rice today." Two children wait at the rope line, holding each other\'s hands in an unattended way.',
+        entrantLine: '"Sawant is my father\'s name, Koli my husband\'s — same woman, ask the dock. Ration office is a week and the shop has rice today." Two children wait at the rope line, holding each other\'s hands.',
         bribeOffer: 'She unwraps four rupees from a knot in her sari. "My bangle\'s worth, sahib. The bangle is already sold; this is what is left of it."',
         ruleIds: ['r3_ration', 'r3_seal'],
         correct: 'deny',
@@ -2272,12 +2272,12 @@ export const DAYS: GameDay[] = [
             suspicion: 6,
             conscience: 5,
             movement: 3,
-            text: 'Sawant on the card, Koli on the permit; you stamp it. Three seers of rice will not change the famine. They will change her house. The names rule was written to catch grain thieves, and it has caught a fisherwife, and you have uncaught her.',
+            text: 'Sawant on the card, Koli on the permit; you stamp it. She gathers the children and goes for the rice queue.',
           },
           deny: {
             crown: 3,
             conscience: -8,
-            text: '"The names must match. The ration office will amend it." The ration office queue is a week; the rice is today. She gathers the children with the efficiency of a woman folding nets, and goes. You were correct. The correctness will not cook.',
+            text: '"The names must match. The ration office will amend it." She gathers the children with the efficiency of a woman folding nets, and goes.',
           },
           detain: {
             crown: -3,
@@ -2334,7 +2334,7 @@ export const DAYS: GameDay[] = [
         outcomes: {
           approve: {
             suspicion: 10,
-            text: 'Licence says cotton; manifest says drums of machine parts. You stamp it anyway, unbribed, which is a mystery even to you. The lorries roll for the docks. Whatever is in those drums, it is now the harbour\'s problem, and the harbour is everyone\'s problem.',
+            text: 'Licence says cotton; manifest says drums of machine parts. You stamp it anyway, unbribed. The lorries roll for the docks.',
           },
           deny: {
             crown: 3,
@@ -2351,7 +2351,7 @@ export const DAYS: GameDay[] = [
             suspicion: 8,
             flag: 'waved_solly',
             note: 'FLAGRANT. A looted bribe. You will meet these drums again.',
-            text: 'Eighteen rupees. The drums go to the docks uninspected, and Solly Master touches his hatbrim to you like a man sealing a partnership. It all burns the same in the end, he said. You will remember that sentence, word for word, in April.',
+            text: 'Eighteen rupees. The drums go to the docks uninspected, and Solly Master touches his hatbrim to you like a man sealing a partnership.',
           },
         },
       },
@@ -2378,12 +2378,12 @@ export const DAYS: GameDay[] = [
             movement: 5,
             conscience: 5,
             suspicion: 8,
-            text: 'You issue the pass against the suspension. She visits her husband. Somewhere a jailer notes the irregular stamp and files it. The Empire\'s memory is long, and it remembers examiners too.',
+            text: 'You issue the pass against the suspension. She visits her husband. Somewhere a jailer notes the irregular stamp and files it.',
           },
           deny: {
             crown: 3,
             conscience: -10,
-            text: '"Visits are suspended." She folds the shirt back into her bag with unbearable neatness. Bhosle. You know the name. There were so many names in August, and they all have wives, and the wives all fold things neatly.',
+            text: '"Visits are suspended." She folds the shirt back into her bag with unbearable neatness.',
           },
           detain: {
             crown: -5,
@@ -2410,7 +2410,7 @@ export const DAYS: GameDay[] = [
             sealState: 'missing',
           },
         ],
-        entrantLine: '"We walked twelve days, sahib. The camp at the maidan — people say there is sickness there. Is it true?" Walking skeletons in festival clothes — their best, saved for arrival in the city of their hopes.',
+        entrantLine: '"We walked twelve days, sahib. The camp at the maidan — people say there is sickness there. Is it true?" Walking skeletons in festival clothes — their best, saved for the city.',
         ruleIds: ['r3_destitute'],
         correct: 'deny',
         outcomes: {
@@ -2418,7 +2418,7 @@ export const DAYS: GameDay[] = [
             movement: 5,
             conscience: 8,
             suspicion: 8,
-            text: 'You let them through on a village letter and a thumbprint — not a stamp, a blindness. They disappear into Byculla, where an aunt has a floor corner. Two people. The city will not notice. The rules will. Bomanji says nothing and suddenly needs to check something across the room.',
+            text: 'You let them through on a village letter and a thumbprint. Bomanji says nothing and suddenly needs to check something across the room.',
           },
           deny: {
             crown: 3,
@@ -2476,7 +2476,7 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Narrator',
         text:
-          'The city hums its hungry hum. Somewhere in the godowns, rice sleeps under guard like money in a bank. You think of the pencil mark on the ration card, the folded shirt, the festival clothes. You stamped the rules onto all of them. The rules were followed.',
+          'The city hums its hungry hum. Somewhere in the godowns, rice sleeps under guard like money in a bank. From the lane below, a ration queue is already forming for morning.',
         next: undefined,
       },
     ],
@@ -2626,12 +2626,12 @@ export const DAYS: GameDay[] = [
           approve: {
             suspicion: 6,
             conscience: 3,
-            text: 'Two months dead, stamped through. The fish will be sold before noon, before the ink is even fully honest. You tell yourself the sea is not a ward. The rulebook disagrees, in writing.',
+            text: 'Two months dead, stamped through. The fish will be sold before noon, before the ink is even fully honest.',
           },
           deny: {
             crown: 3,
             conscience: -3,
-            text: '"Expired in May. The ward office renews on Thursdays." He looks at the rain, at his catch, at the arithmetic of ice he cannot afford, and goes. Somewhere a Thursday stands between a fisherman and his living, holding an umbrella.',
+            text: '"Expired in May. The ward office renews on Thursdays." He looks at the rain, then at his catch, and goes.',
           },
           detain: {
             crown: -3,
@@ -2678,7 +2678,7 @@ export const DAYS: GameDay[] = [
           approve: {
             crown: 3,
             conscience: -6,
-            text: 'Licence current, countersigned, manifest matching — the file is flawless, which is the problem. Thirty maunds of rice leave a hungry city, legally, at three times the ceiling, under your stamp. The rulebook has been obeyed in full, and has produced exactly the result it was built, by somebody, to produce.',
+            text: 'Licence current, countersigned, manifest matching — the file is flawless, which is the problem. Thirty maunds of rice leave a hungry city, legally, at three times the ceiling, under your stamp.',
           },
           deny: {
             crown: -3,
@@ -2709,7 +2709,7 @@ export const DAYS: GameDay[] = [
             sealState: 'missing',
           },
         ],
-        entrantLine: 'He carried the pass inside his shirt for nine days of walking and the rain found it anyway. "It was whole when I started, sahib" — which is the monsoon\'s own anthem.',
+        entrantLine: 'He carried the pass inside his shirt for nine days of walking and the rain found it anyway. "It was whole when I started, sahib."',
         ruleIds: ['rn6_legible', 'rn6_seal'],
         correct: 'deny',
         outcomes: {
@@ -2717,12 +2717,12 @@ export const DAYS: GameDay[] = [
             suspicion: 8,
             conscience: 3,
             movement: 3,
-            text: 'A blue ghost of a seal, a date made of water — you stamp it. He has work by nightfall. Somewhere the rule about legibility stands dry and correct in its book, unread by the rain, obeyed by everyone but you.',
+            text: 'A blue ghost of a seal, a date made of water — you stamp it. He has work by nightfall.',
           },
           deny: {
             crown: 3,
             conscience: -5,
-            text: '"The paper is void. The ward office reissues on Mondays." He walked nine days; he will queue one more. He folds the pulp back into his shirt — it is still his only document, even ruined, even refused, and he will not abandon it, because it is the only proof he was ever approved of by anything.',
+            text: '"The paper is void. The ward office reissues on Mondays." He walked nine days; he will queue one more. He folds the pulp back into his shirt.',
           },
           detain: {
             crown: -3,
@@ -2775,12 +2775,12 @@ export const DAYS: GameDay[] = [
             suspicion: 8,
             conscience: 5,
             movement: 3,
-            text: 'The licence is a dead man\'s; you stamp it anyway. Eight maunds reach the market legally enough to be bought and illegally enough to be, technically, your fault. The children eat until Diwali. The rule about transfer was written by men who assumed the dead would keep their paper in order.',
+            text: 'The licence is a dead man\'s; you stamp it anyway. Eight maunds reach the market, and the children eat until Diwali.',
           },
           deny: {
             crown: 3,
             conscience: -10,
-            text: '"Licences are not transferable, even from the dead. Apply to the Food Department for reissue in your name." She stands very still, doing the arithmetic: the Food Department takes six weeks; the rain takes three. She thanks you — formally, precisely — and it lands like a stone in a well.',
+            text: '"Licences are not transferable, even from the dead. Apply to the Food Department for reissue in your name." She stands very still, doing the arithmetic: the Food Department takes six weeks; the rain takes three. She thanks you — formally, precisely — and goes.',
           },
           detain: {
             crown: -5,
@@ -2821,13 +2821,13 @@ export const DAYS: GameDay[] = [
           approve: {
             crown: 3,
             conscience: 3,
-            text: 'Four maunds, under the licence line, papers in order. The cart squeaks off toward Girangaon, where your son will unload it sack by sack. The Empire stamps the famine\'s relief and calls it logistics; you stamp it and call it, privately, something else.',
+            text: 'Four maunds, under the licence line, papers in order. The cart squeaks off toward Girangaon, where your son will unload it sack by sack.',
           },
           deny: {
             crown: -3,
             conscience: -5,
             movement: -5,
-            text: 'You deny a legal load because the kitchen\'s name smells of August to you. Two hundred bowls go un-served. The rulebook is unmarked by the refusal; the queue at the kitchen is not.',
+            text: 'You deny a legal load because the kitchen\'s name smells of August to you. Two hundred bowls go un-served.',
           },
           detain: {
             crown: -5,
@@ -2896,7 +2896,7 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Narrator',
         text:
-          'The rain talks on the roof all night, the same sentence over and over. You think of the widow\'s eight maunds, the fisherman\'s damp six rupees, the blue ghost of a seal in a dead man\'s pocket of a walking man\'s shirt. The monsoon voids more paper than the Empire ever stamped. It is, you realize, the only authority in the city whose rulings nobody questions — and the only one that grants no appeals.',
+          'The rain talks on the roof all night, the same sentence over and over. Radha\'s three vessels fill beneath the leak, each at its own pitch against the tin.',
         next: undefined,
       },
     ],
@@ -3027,7 +3027,7 @@ export const DAYS: GameDay[] = [
             ],
           },
         ],
-        entrantLine: '"My Peter works the coal barges at No. 2 berth, sahib. Since the fire I have heard nothing. Only let me go to the gate and call his name. A mother\'s voice needs no pass." The smoke behind her has not cleared; neither has her face.',
+        entrantLine: '"My Peter — coal barges, No. 2 berth, sahib. Since the fire I have heard nothing." She puts the photograph on the counter.',
         bribeOffer: 'She unpins five rupees from inside her blouse corner. "The bangle money, sahib. Peter gave me the bangle. He would want it spent so."',
         ruleIds: ['r4_dockpass', 'r4_loiter'],
         correct: 'deny',
@@ -3036,24 +3036,24 @@ export const DAYS: GameDay[] = [
           approve: {
             conscience: 5,
             movement: 3,
-            text: 'No pass, no papers, a prayer book and a photograph — you lift the rope. She goes into the smoke calling a name. Whether a mother\'s voice is a document is a question the rulebook does not answer, and today you did not ask it.',
+            text: 'No pass, no papers, a prayer book and a photograph — you lift the rope. She goes into the smoke calling a name.',
           },
           deny: {
             crown: 2,
             conscience: -8,
-            text: '"The casualty lists are at the hospital, mother. No one enters the cordon without a Trust pass." She nods — the lists come slower than the dying, and you have sent her to them — and pins the five rupees back into her blouse, saving the bangle\'s ghost for a worse day.',
+            text: '"The casualty lists are at the hospital, mother. No one enters the cordon without a Trust pass." She pins the five rupees back into her blouse and goes.',
           },
           detain: {
             crown: 3,
             conscience: -8,
-            text: 'Detained for approaching the cordon without authorisation. She spends the worst night of the city\'s year in a holding room, praying audibly. The warder on duty does not sleep either, and does not forgive you, and is correct not to.',
+            text: 'Detained for approaching the cordon without authorisation. She spends the night in a holding room, praying audibly.',
           },
           bribe: {
             household: 5,
             conscience: -5,
             suspicion: 4,
             note: 'Five rupees of bangle money, pinned out of a blouse corner. It buys a mother into a fire zone, and you into a version of yourself you had not met before.',
-            text: 'The five rupees are warm when you take them. You lift the rope. She goes through calling Peter, Peter, Peter, and the sound of it follows you back to your stool and sits down beside you and stays for the rest of the day. It stays longer than that.',
+            text: 'You take the five rupees and lift the rope. She goes through calling Peter, Peter, Peter.',
           },
         },
         risk: {
@@ -3095,17 +3095,17 @@ export const DAYS: GameDay[] = [
             movement: 5,
             conscience: 8,
             suspicion: 6,
-            text: 'No endorsement. You pass her. She is inside the cordon before the stamp ink settles, already giving orders to men twice her size. Somewhere in the smoke her morphine is a verdict you will never hear appealed.',
+            text: 'You pass her without endorsement. She is inside the cordon before the stamp ink settles, already giving orders to men twice her size.',
           },
           deny: {
             crown: 3,
             conscience: -10,
-            text: '"No endorsement, Doctor. The rule is new and I am sorry." She looks at the stamp, then at you. "So is everyone," she says, and turns toward the civilian hospital, where she is also needed, which is the only mercy in the transaction.',
+            text: '"No endorsement, Doctor. The rule is new and I am sorry." She looks at the stamp, then at you. "So is everyone," she says, and turns toward the civilian hospital.',
           },
           detain: {
             crown: -5,
             conscience: -15,
-            text: 'You detain a doctor at a disaster. The warder pretends not to hear the order twice. When she is released an hour later she does not look at you at all, which is a sentence in itself.',
+            text: 'You detain a doctor at a disaster. The warder pretends not to hear the order twice. When she is released an hour later she does not look at you.',
           },
         },
       },
@@ -3141,11 +3141,11 @@ export const DAYS: GameDay[] = [
           approve: {
             suspicion: 6,
             conscience: 3,
-            text: 'Expired pass, through. His photographs will be censored or published, burned or believed, but they will exist. You have stamped evidence into the world. It is not the job. It may be the work.',
+            text: 'Expired pass, through. His photographs will be censored or published, burned or believed, but they will exist.',
           },
           deny: {
             crown: 3,
-            text: '"Expired in March. Renew and return." He laughs once, without humour. "Return," he says, looking at the fire. "As if it will wait." The rule is the rule. The fire is also the fire.',
+            text: '"Expired in March. Renew and return." He laughs once. "Return," he says, looking at the fire. "As if it will wait."',
           },
           detain: {
             crown: -3,
@@ -3244,7 +3244,7 @@ export const DAYS: GameDay[] = [
             ],
           },
         ],
-        entrantLine: 'He has been turning over debris with his hands. There is blood to the elbow, most of it not his. "My brother works the No. 4 berth, sahib. Only let me look. Only let me look." It might be true. There is no way to know. The rule does not care.',
+        entrantLine: 'He has been turning over debris with his hands. There is blood to the elbow, most of it not his. "My brother works the No. 4 berth, sahib. Only let me look. Only let me look."',
         ruleIds: ['r4_loiter', 'r4_dockpass'],
         correct: 'detain',
         outcomes: {
@@ -3252,17 +3252,17 @@ export const DAYS: GameDay[] = [
             suspicion: 10,
             conscience: 5,
             movement: 3,
-            text: 'You wave a paperless man into a disaster zone. He runs for No. 4 berth. Whether he finds a brother or a grave or a locked shed of lootable cotton, you have made it possible. The stamp is silent on the difference.',
+            text: 'You wave a paperless man into a disaster zone. He runs for No. 4 berth.',
           },
           deny: {
             crown: 2,
             conscience: -8,
-            text: 'You deny him and send him to the casualty lists at the hospital, where the names come in slower than the dying. He goes without anger. Anger is for men with time.',
+            text: 'You send him to the casualty lists at the hospital. He nods once and goes, hands still bloody.',
           },
           detain: {
             crown: 4,
             conscience: -8,
-            text: 'Detained, per the rule, hands still bloody. He spends the night in the lockup asking every passing warder about No. 4 berth. Correct procedure. You will hear the asking for years.',
+            text: 'Detained, per the rule, hands still bloody. He spends the night in the lockup asking every passing warder about No. 4 berth.',
           },
         },
       },
@@ -3438,18 +3438,18 @@ export const DAYS: GameDay[] = [
             ],
           },
         ],
-        entrantLine: '"Half shifts on the burnt looms, sahib — but shifts." He is lucky to have a pass to renew and says so, in the tone of a man apologizing for his luck.',
+        entrantLine: '"Half shifts on the burnt looms, sahib — but shifts." He puts the pass down carefully, both hands flat on it until the counter takes the weight.',
         ruleIds: ['rn8_ward', 'rn8_seal', 'rn8_expiry', 'rn8_names'],
         correct: 'approve',
         outcomes: {
           approve: {
             crown: 3,
-            text: 'In order. He ducks his head and goes off to make half a living on a half loom. The borrowed desk registers its first correct stamp; the wood accepts it without comment.',
+            text: 'In order. He ducks his head and goes off to make half a living on a half loom.',
           },
           deny: {
             crown: -3,
             conscience: -3,
-            text: 'You deny a Byculla pass at the Byculla gate because you are new here and fear is thorough. He misses a shift. The loom misses a man. The ward notices nothing; the ward is large.',
+            text: 'You deny a Byculla pass at the Byculla gate. He folds it back into his shirt pocket and goes without a word.',
           },
           detain: {
             crown: -5,
@@ -3476,7 +3476,7 @@ export const DAYS: GameDay[] = [
             sealState: 'forged',
           },
         ],
-        entrantLine: '"The seal tin melted in April, sahib, with the shop. The ward officer sahib signed the slip himself — look, his initials. I only made the seal show again, with the shop\'s nib. I draw well. Ask anyone." He is terrified, and proud of the ring, in equal measure.',
+        entrantLine: '"The seal tin melted in April, sahib, with the shop. Ward officer signed it himself — look, his initials. I only made the seal show again, with the nib. I draw well. Ask anyone." His finger taps the traced ring twice.',
         ruleIds: ['rn8_seal', 'rn8_provisional'],
         correct: 'detain',
         outcomes: {
@@ -3484,12 +3484,12 @@ export const DAYS: GameDay[] = [
             suspicion: 8,
             conscience: 5,
             movement: 3,
-            text: 'A hand-drawn ring over genuine initials. You stamp it. He runs his messages all week, and the typing shop lives another month. Somewhere the forgery rule stands tall and correct and entirely unhelped, like a fence around a field the fire already took.',
+            text: 'A hand-drawn ring over genuine initials. You stamp it. He runs his messages all week, and the typing shop lives another month.',
           },
           deny: {
             crown: 2,
             conscience: -3,
-            text: 'You send him back for a fresh slip without the artwork — kinder than the rule, wronger than the truth. He goes, re-inking things in his head, a boy learning which of his talents the Empire prices and which it fears.',
+            text: 'You send him back for a fresh slip without the artwork. He goes, already re-drawing the ring in his head.',
           },
           detain: {
             crown: 5,
@@ -3531,7 +3531,7 @@ export const DAYS: GameDay[] = [
           approve: {
             suspicion: 6,
             conscience: 3,
-            text: 'Fort pass, Byculla gate, through. Thirty children get their teacher back; the rulebook loses one skirmish in a war it is comfortably winning. The substitute, seventy, is carried out on the children\'s shoulders like a retiring general.',
+            text: 'Fort pass, Byculla gate, through. Thirty children get their teacher back.',
           },
           deny: {
             crown: 3,
@@ -3622,12 +3622,12 @@ export const DAYS: GameDay[] = [
           approve: {
             suspicion: 10,
             conscience: -3,
-            text: 'You stamp Master & Co.\'s lorries through on a seal you cannot swear to. The "blankets" will be sold by Friday at prices only the recently burned can afford. Somewhere Solly Master touches a hatbrim in his sleep.',
+            text: 'You stamp Master & Co.\'s lorries through on a seal you cannot swear to. The "blankets" will be sold by Friday at prices only the recently burned can afford.',
           },
           deny: {
             crown: 3,
             suspicion: 3,
-            text: '"No consignment note, no passage." The clerk does not argue; clerks of such firms are paid not to argue but to remember. He drives off unhurried. The lorries will try another gate by noon — there is always another gate — but it will not be yours.',
+            text: '"No consignment note, no passage." The clerk does not argue. He drives off unhurried.',
           },
           detain: {
             crown: 5,
@@ -3667,12 +3667,12 @@ export const DAYS: GameDay[] = [
           approve: {
             crown: 3,
             conscience: 3,
-            text: 'Initialled, dated, in order. She goes through with the replacement bag. Somewhere tonight a child will be delivered by a woman the paperwork correctly identified, which is more ceremony than most arrivals get.',
+            text: 'Initialled, dated, in order. She goes through with the replacement bag, already walking fast.',
           },
           deny: {
             crown: -3,
             conscience: -8,
-            text: 'You deny a properly initialled slip because April taught you to flinch at paper. A birth in Byculla is attended by a neighbour with string and boiled scissors. It goes fine. It could have not gone fine.',
+            text: 'You deny a properly initialled slip. A birth in Byculla that night is attended by a neighbour with string and boiled scissors.',
           },
           detain: {
             crown: -5,
@@ -3750,7 +3750,7 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Narrator',
         text:
-          'Two months at a borrowed desk teaches you what a desk is: not the wood, but the line it draws. In Byculla the queue is shorter and the faces newer, and the rules are the same rules, and the stamp is your own stamp, carried in a tiffin-tier city to a ward that did not choose you. The smoke never quite leaves the tunic. You have stopped sending it to the dhobi. Some stains you stop paying to remove.',
+          'The smoke from April never quite leaves the tunic. You have stopped sending it to the dhobi. On the landing, the rain hits the Byculla tin awning harder than it ever hit the Fort stone.',
         next: undefined,
       },
     ],
@@ -3882,13 +3882,13 @@ export const DAYS: GameDay[] = [
           approve: {
             crown: 3,
             conscience: 5,
-            text: 'Kinship papers in order — one of the few unambiguous stamps of the day. He goes through with his bhakri like a man carrying a flag. Whatever his son is to the Empire, to the father he is simply hungry.',
+            text: 'Kinship papers in order. He goes through with his bhakri held close.',
           },
           deny: {
             crown: -3,
             conscience: -10,
             movement: -5,
-            text: 'You deny valid kinship papers because the day has frightened you. He stands outside the cordon until dark, holding the bundle. The bhakri goes cold. So does something in you, by one degree you cannot afford.',
+            text: 'You deny valid kinship papers. He stands outside the cordon until dark, holding the bundle. The bhakri goes cold.',
           },
           detain: {
             crown: -5,
@@ -3931,12 +3931,12 @@ export const DAYS: GameDay[] = [
             movement: 5,
             conscience: 5,
             suspicion: 8,
-            text: 'No countersign; you pass her. Whatever she writes will be seized or smuggled, spiked or printed, but it will be true. You have stamped truth through on a technicality\'s corpse. The Empire notices. The Empire has a drawer for such notices.',
+            text: 'No countersign; you pass her. The Empire notices. The Empire has a drawer for such notices.',
           },
           deny: {
             crown: 3,
             movement: -3,
-            text: '"No countersign, no passage." She laughs — one note, like a stamp coming down. "Correct as always," she says, and writes something in her notebook while looking directly at you. You will read it someday. Everyone will.',
+            text: '"No countersign, no passage." She laughs — one note, like a stamp coming down. "Correct as always," she says, and writes something in her notebook while looking directly at you.',
           },
           detain: {
             crown: -3,
@@ -3978,7 +3978,7 @@ export const DAYS: GameDay[] = [
           approve: {
             crown: 3,
             conscience: -6,
-            text: 'Military pass, countersigned, in order. You stamp him through, and eleven households get their summons read aloud, and their remarks noted. Every document was correct. Correctness, you are learning, is only the shape of a thing. It is not the thing.',
+            text: 'Military pass, countersigned, in order. You stamp him through, and eleven households get their summons read aloud, and their remarks noted.',
           },
           deny: {
             crown: -3,
@@ -4634,7 +4634,7 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Narrator',
         text:
-          'You lie awake doing the day\'s sums: a bridge-builder stamped home, a vegetable seller\'s four rupees, a woman with folded clothes standing at the wrong gate on the right day of somebody else\'s week. The Empire is tired — Madhav is right about the grip — but a tired Empire is not a gentle one.',
+          'You lie awake doing the day\'s sums: a bridge-builder stamped home, a vegetable seller\'s four rupees, a woman with folded clothes standing at the wrong gate on the right day of somebody else\'s week.',
         next: undefined,
       },
     ],
@@ -5029,7 +5029,7 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Narrator',
         text:
-          'You lie awake listening to a city rehearsing its own departure from itself. Somewhere trains are being booked by families who cannot say why they are going, only that the going has begun. The stamp on your desk does not know its days are numbered. Neither, officially, do you. But Bomanji\'s recipe diary is full of copied rules now, a private ark of procedure, and you have begun to understand that he is not saving the rules — he is saving proof that the rules once were, in case anyone later claims otherwise.',
+          'You lie awake listening to a city rehearsing its own departure from itself. Somewhere trains are being booked by families who cannot say why they are going, only that the going has begun. Bomanji\'s recipe diary is full of copied rules now — a private ark of procedure — in case anyone later claims they never existed.',
         next: undefined,
       },
     ],
