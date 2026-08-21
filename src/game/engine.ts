@@ -269,6 +269,7 @@ export function evalCondition(cond: Condition, s: GameState): boolean {
   if (cond.flag !== undefined && !s.flags.includes(cond.flag)) return false;
   if (cond.flagNot !== undefined && s.flags.includes(cond.flagNot)) return false;
   if (cond.madhavAlive !== undefined && madhavAlive(s) !== cond.madhavAlive) return false;
+  if (cond.dayIndexMax !== undefined && s.dayIndex > cond.dayIndexMax) return false;
   return true;
 }
 

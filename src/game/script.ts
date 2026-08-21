@@ -125,6 +125,7 @@ export interface Condition {
   flagNot?: string;
   madhavAlive?: boolean;
   rupeesMin?: number; // tin-box cash at least this (used by event-chain choices)
+  dayIndexMax?: number; // chain must not fire on days after this 0-based index
 }
 
 export interface Choice {
@@ -755,7 +756,7 @@ export const DAYS: GameDay[] = [
         speaker: 'Radha',
         portrait: 'radha',
         text:
-          'The first full month\'s wage lies on the table in an envelope Radha has not opened, because opening it is your duty and hers is the arithmetic after. "Rent, rice, the dhobi, Leela\'s school annas," she recites. "Whatever is left goes in the tin box, and the tin box is not a bank, Keshav. It is a superstition with a lid."',
+          'The first full month\'s wage lies on the table in an envelope Radha has not opened. On the windowsill: a letter from her sister in Nagpur, re-folded twice. She has not mentioned it. "Rent, rice, the dhobi, Leela\'s school annas," she recites, without looking up. "Whatever is left goes in the tin box, and the tin box is not a bank, Keshav. It is a superstition with a lid."',
         choices: [
           {
             id: 'n2_m1_a',
@@ -765,7 +766,7 @@ export const DAYS: GameDay[] = [
           },
           {
             id: 'n2_m1_b',
-            text: 'Hold back two rupees first. "For office expenses."',
+            text: 'Keep two rupees back. Pocket them.',
             effects: { rupees: 2, household: -2, conscience: -5, note: 'Two rupees into your own pocket. There are no office expenses. She knows there are no office expenses. The two rupees weigh more than the envelope.' },
             next: 'n2_m2',
           },
@@ -3157,7 +3158,6 @@ export const DAYS: GameDay[] = [
       {
         id: 'd4_c4',
         entrantName: '"Milind Dalvi"',
-        entrantPortrait: 'madhav',
         portraitBg: 'harbour',
         documents: [
           {
@@ -3312,7 +3312,7 @@ export const DAYS: GameDay[] = [
         speaker: 'Radha',
         portrait: 'radha',
         text:
-          'Radha has kept dinner and said nothing about the hour. She has heard about the docks — the whole city has heard about the docks; the docks were heard in Pune. She serves you and sits across from you and waits until you have eaten, because Radha believes a man should face his accounts on a full stomach. "Well," she says at last. "Tell me which of the day was yours."',
+          'Radha has kept dinner and said nothing about the hour. She went to the Victoria herself — there is a queue number still folded in her sari corner — and checked the hospital lists before you came home. She did not find Emil. She serves you and sits across and waits until you have eaten. "Well," she says at last. "Tell me which of the day was yours."',
         choices: [
           {
             id: 'd4_e3_a',
@@ -3690,7 +3690,7 @@ export const DAYS: GameDay[] = [
         speaker: 'Radha',
         portrait: 'radha',
         text:
-          'Dinner is laid, as it is laid every night, for the number of people this house claims. Radha serves in silence, and the silence has a different shape depending on what April took out of it.',
+          'Dinner is laid, as it is laid every night. Radha has spent the afternoon at the Byculla relief post — she has taken on their accounts two days a week, quietly, without saying why — and she serves in the silence of someone who has been somewhere else all day and is not yet back.',
         choices: [
           {
             id: 'n8_e1_a',
@@ -5725,7 +5725,7 @@ export const EVENT_BEATS: EventChain[] = [
   // --------------------------------------------------------------------------
   {
     id: 'radha_sick',
-    requires: { householdMax: 30, flagNot: 'radha_sick' },
+    requires: { householdMax: 30, flagNot: 'radha_sick', dayIndexMax: 9 },
     beats: [
       {
         id: 'ev_radha_sick_1',
@@ -5847,7 +5847,7 @@ export const EVENT_BEATS: EventChain[] = [
   // --------------------------------------------------------------------------
   {
     id: 'community_cold',
-    requires: { crownMin: 70, flagNot: 'community_cold' },
+    requires: { crownMin: 70, flagNot: 'community_cold', dayIndexMax: 10 },
     beats: [
       {
         id: 'ev_community_cold_1',

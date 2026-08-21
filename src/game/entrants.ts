@@ -78,7 +78,8 @@ const CASE_BUSTS: Record<string, EntrantBust> = {
   d3_c3: 'sailor', // Solly Master, shipping agent (harbour man, not the merchant bust)
   d3_c4: 'lass', // Kusum Bhosle, young wife of a detainee
   d3_c5: 'beggar', // Genu and Laxmi Shinde, destitute couple off the road
-  // Day 4 — The Harbour Fire (d4_c4 is Madhav: story bust)
+  // Day 4 — The Harbour Fire
+  d4_c4: 'boy', // "Milind Dalvi" — Madhav in disguise; face down, let the handwriting be the tell
   d4_c1: 'dockworker', // Caetano D'Souza, winch operator
   d4_c2: 'nurse', // Dr. Shirin Billimoria, physician
   d4_c3: 'student', // Triambak Shukla, young press photographer
@@ -99,12 +100,13 @@ const CASE_BUSTS: Record<string, EntrantBust> = {
   n2_c1: 'elder', // Trimbak Joshi, temple clerk, bows to the stamp
   n2_c2: 'porter', // Mahadu Sathe, Girangaon mill hand (borrowed pass)
   n2_c3: 'fisherwoman', // Gangabai Shirodkar, vendor
+  n2_moral_notice_warrant: 'clerk2', // Tukaram Phadke, process-server, Small Causes bailiff's office
   n2_c4: 'cook', // Santoo Yadav, tiffin carrier with sixty lunches on his tray
   n2_c5: 'merchant', // Dinshaw Gandhi, tradesman
   // Day 4 (v2) — September 1942
   n4_c1: 'widow', // Janabai Kamat, seamstress on piece-work, a widow
   n4_c2: 'clerk2', // Ramchandra Sawant, despatch clerk
-  n4_c3: 'teacher', // Master Dinanath, municipal school teacher
+  n4_c3: 'elder', // Master Dinanath, municipal school teacher (male)
   n4_c4: 'porter', // Fakir Mahomed, tonga driver
   n4_c5: 'nurse', // Perin Bharucha, dispenser
   // Day 6 (v2) — July 1943
@@ -124,7 +126,7 @@ const CASE_BUSTS: Record<string, EntrantBust> = {
   n10_c2: 'fisherwoman', // Sonabai More, vendor
   n10_c3: 'mechanic', // Hormusji Driver, motor mechanic
   n10_c4: 'lass', // Zulekha Bi, young wife of an accused rating
-  n10_c5: 'teacher', // Narayan Bhat, municipal school teacher
+  n10_c5: 'elder', // Narayan Bhat, municipal school teacher (male)
   // Day 11 (v2) — December 1946
   n11_c1: 'porter', // Yusuf Qureshi, refugee father of two
   n11_c2: 'merchant', // Damodar Nadkarni, provisions broker
