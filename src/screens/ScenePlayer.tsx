@@ -179,6 +179,14 @@ export function ScenePlayer({ game, run }: ScenePlayerProps) {
 
           {typed && choices.length > 0 && (
             <div className="slide-up mt-4 space-y-2">
+              {choices.some((c) => typeof c.effects?.rupees === 'number' && c.effects.rupees !== 0) && (
+                <div className="mb-1 flex items-center gap-1.5">
+                  <span className="font-pixel text-[7px] tracking-widest text-[#6E7278] uppercase">Tin box</span>
+                  <span className={`font-vt text-lg font-bold ${run.rupees < 0 ? 'text-[#8C2F2B]' : 'text-[#9C7A3C]'}`}>
+                    {run.rupees < 0 ? '−' : ''}₹{Math.abs(run.rupees)}
+                  </span>
+                </div>
+              )}
               {choices.map((c, i) => (
                 <button
                   key={c.id}
