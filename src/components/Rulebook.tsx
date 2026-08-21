@@ -178,18 +178,23 @@ export function BriefingCard({
             No new orders today. The old ones stand.
           </p>
         ) : (
-          <ul className="mt-2 flex flex-wrap items-start gap-1.5">
-            {newRules.map((r) => (
-              <li
-                key={r.id}
-                className="border-2 border-[#8C2F2B] bg-[#D8C7A1] px-1.5 py-0.5 font-vt text-base leading-tight text-[#8C2F2B]"
-                style={{ transform: 'rotate(-0.6deg)' }}
-                title={r.text}
-              >
-                NEW: {ruleShort(r.text)}
-              </li>
-            ))}
-          </ul>
+          <>
+            <ul className="mt-2 flex flex-wrap items-start gap-1.5">
+              {newRules.map((r) => (
+                <li
+                  key={r.id}
+                  className="border-2 border-[#8C2F2B] bg-[#D8C7A1] px-1.5 py-0.5 font-vt text-base leading-tight text-[#8C2F2B]"
+                  style={{ transform: 'rotate(-0.6deg)' }}
+                  title={r.text}
+                >
+                  NEW: {ruleShort(r.text)}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-1.5 font-vt text-base leading-tight text-[#9C7A3C] italic">
+              Open the rulebook for the full orders ▸
+            </p>
+          </>
         )}
 
         {showTutorial && (

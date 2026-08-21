@@ -314,7 +314,7 @@ export const DAYS: GameDay[] = [
         speaker: 'Radha',
         portrait: 'radha',
         text:
-          'The milkman has been at the door with his cans and his apologies: the dairy has raised the chawl rate, and he needs two rupees to keep this landing on his round. "Leela is eight," Radha says, which is her whole argument. "Two rupees is two days of rice," she adds, which is the rest of it. The milkman waits on the stairs, counting nothing, the way poor men wait for other poor men to decide.',
+          'The milkman has been at the door with his cans and his apologies: the dairy has raised the chawl rate, and he needs two rupees to keep this landing on his round. "Leela is eight," Radha says. "Two rupees is two days of rice." The milkman waits on the stairs.',
         choices: [
           {
             id: 'd1_m2b_a',
@@ -403,7 +403,7 @@ export const DAYS: GameDay[] = [
         outcomes: {
           approve: {
             crown: 3,
-            text: 'The stamp comes down clean. Seth folds the permit into his turban cloth and is gone before the ink dries. Correct papers, correctly passed. This is the job.',
+            text: 'The stamp comes down clean. Seth folds the permit into his turban cloth and is gone before the ink dries.',
           },
           deny: {
             crown: -3,
@@ -468,7 +468,7 @@ export const DAYS: GameDay[] = [
             household: 3,
             conscience: -5,
             note: 'Three rupees of bangle money. The smallest bribe the day offered, and the hardest to refuse.',
-            text: 'The three coins are warm from the sari corner. The stamp comes down. She leaves lighter by a bangle and heavier by a living, and you sit with the warmth of the coins like evidence.',
+            text: 'The three coins are warm from the sari corner. The stamp comes down. She leaves lighter by a bangle and heavier by a living.',
           },
         },
       },
@@ -512,7 +512,7 @@ export const DAYS: GameDay[] = [
           deny: {
             crown: 3,
             conscience: -8,
-            text: '"The face must match the photograph. He can renew it himself when the fever breaks." She folds the pass into her blouse. Three days of wages, gone to a rule about faces. She does not curse you. She has no energy left for curses; she has a hod to find elsewhere.',
+            text: '"The face must match the photograph. He can renew it himself when the fever breaks." She folds the pass into her blouse. Three days of wages, gone to a rule about faces.',
           },
           detain: {
             crown: -3,
@@ -563,7 +563,7 @@ export const DAYS: GameDay[] = [
           detain: {
             crown: -3,
             conscience: -5,
-            text: 'Detained for an expired pass. Even Pandurang finds this excessive, and says so, which is somehow worse than praise would have been.',
+            text: 'Detained for an expired pass. Even Pandurang finds this excessive, and says so.',
           },
         },
       },
@@ -610,13 +610,13 @@ export const DAYS: GameDay[] = [
           detain: {
             crown: -3,
             conscience: -8,
-            text: 'You detain a milkman. His cans are confiscated and will be poured out at the depot. Leela drinks milk at breakfast. You will think of this tonight.',
+            text: 'You detain a milkman. His cans are confiscated and will be poured out at the depot. Leela drinks milk at breakfast.',
           },
           bribe: {
             household: 8,
             conscience: -5,
             note: 'Eight rupees. Not flagrant — a survival bribe, the smallest denomination of corruption.',
-            text: 'Eight rupees disappear into your tunic. The milk goes through. At home it will become rice, and rice has no memory of where it came from. That is what you tell yourself.',
+            text: 'Eight rupees disappear into your tunic. The milk goes through. At home it will become rice, and rice has no memory of where it came from.',
           },
         },
       },
@@ -735,7 +735,7 @@ export const DAYS: GameDay[] = [
     ],
     householdCost: 9,
     salary: 12,
-    summaryText: 'Day 1 ends. Rice bought, rent held, first wage in the tin box. Household -{cost}. The stamp is heavier than it looks.',
+    summaryText: 'Day 1 ends. Rice bought, rent held, first wage in the tin box. Household -{cost}.',
   },
 
   // ==========================================================================
@@ -1163,7 +1163,7 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Narrator',
         text:
-          'Second month, second wage, and the tin box has begun to believe in itself. You lie awake cataloguing the day: a borrowed face, a dead month, three rupees wrapped in a flower petal. Nothing historic happened today. That is how the job works on you — not with events, but with repetitions, like water on stone.',
+          'Second month, second wage, and the tin box has begun to believe in itself. You lie awake cataloguing the day: a borrowed face, a dead month, three rupees wrapped in a flower petal.',
         next: undefined,
       },
     ],
@@ -1197,7 +1197,7 @@ export const DAYS: GameDay[] = [
         speaker: 'Radha',
         portrait: 'radha',
         text:
-          'Madhav has not come out of the room he shares with his temper. Radha sets your tea down with unusual care, which in Radha is a form of shouting. "He will want to go to the maidan," she says. "Today or tomorrow. I am not asking you to stop him. I am asking you to tell me you will."',
+          'Madhav has not come out of the room he shares with his temper. Radha sets your tea down with unusual care. "He will want to go to the maidan," she says. "Today or tomorrow. I am not asking you to stop him. I am asking you to tell me you will."',
         choices: [
           {
             id: 'd2_m2_a',
@@ -1294,7 +1294,7 @@ export const DAYS: GameDay[] = [
             crown: 2,
             movement: -3,
             conscience: -5,
-            text: 'You deny the permit and let him keep the satchel — a half-measure, the coward\'s arithmetic. He goes. Somewhere a warder will find the handbills anyway. You have split the difference and satisfied no one, including yourself.',
+            text: 'You deny the permit and let him keep the satchel — a half-measure, the coward\'s arithmetic. He goes. Somewhere a warder will find the handbills anyway.',
           },
           detain: {
             crown: 5,
@@ -1347,12 +1347,12 @@ export const DAYS: GameDay[] = [
             suspicion: 6,
             movement: 3,
             conscience: 5,
-            text: 'Wrong ward. You pass her anyway. She does not thank you; she is already running. Twenty minutes saved for a fever ward. The rulebook will survive the insult. The question is whether you will survive the rulebook.',
+            text: 'Wrong ward. You pass her anyway. She does not thank you; she is already running. Twenty minutes saved for a fever ward. The rulebook will survive the insult.',
           },
           deny: {
             crown: 3,
             conscience: -5,
-            text: '"The Byculla gate, nurse." She looks at you for exactly as long as it takes to hate you efficiently, then goes. Tonight the ward will be short two nurses. The rule stands. Rules always stand; that is all they can do.',
+            text: '"The Byculla gate, nurse." She looks at you for exactly as long as it takes to hate you efficiently, then goes. Tonight the ward will be short two nurses.',
           },
           detain: {
             crown: -5,
@@ -1469,7 +1469,7 @@ export const DAYS: GameDay[] = [
             movement: -10,
             conscience: -15,
             flag: 'detained_vasu',
-            text: 'The rule says the bearer of seditious material is detained. You apply it to a boy who has eaten your rice. He does not cry until the warder turns him around. Madhav will hear of this by dinner. So will Radha. So, apparently, will you, for the rest of your life.',
+            text: 'The rule says the bearer of seditious material is detained. You apply it to a boy who has eaten your rice. He does not cry until the warder turns him around. Madhav will hear of this by dinner. So will Radha.',
           },
         },
       },
@@ -1542,7 +1542,7 @@ export const DAYS: GameDay[] = [
           approve: {
             crown: 3,
             conscience: 3,
-            text: 'Papers in order. The stamp comes down and the smaller child flinches at the sound. They pass through. A correct approval on a day of corrections — it feels, absurdly, like mercy.',
+            text: 'Papers in order. The stamp comes down and the smaller child flinches at the sound. They pass through.',
           },
           deny: {
             crown: -3,
@@ -1565,7 +1565,7 @@ export const DAYS: GameDay[] = [
         bg: 'curfew',
         speaker: 'Narrator',
         text:
-          'Curfew. Madhav has not come home. Radha fries onions she does not need, which in Radha is a form of prayer. At half past nine there are feet on the stairs — too heavy to be Madhav — and then past the door, and the feet of the whole chawl seem to hold their breath until the stairs go quiet again.',
+          'Curfew. Madhav has not come home. Radha fries onions she does not need. At half past nine there are feet on the stairs — too heavy to be Madhav — and then past the door, and the feet of the whole chawl seem to hold their breath until the stairs go quiet again.',
         next: 'd2_e2',
       },
       {
@@ -1574,7 +1574,7 @@ export const DAYS: GameDay[] = [
         speaker: 'Madhav',
         portrait: 'madhav',
         text:
-          'He comes in at ten, through the window he thinks you do not know about, and finds you at the table with the lamp lit. There is brick dust on his shoulder. "The maidan was full," he says. "They charged it. I am going again tomorrow." He is not defying you. He is informing you, the way you would inform a colleague. Somehow that is worse.',
+          'He comes in at ten, through the window he thinks you do not know about, and finds you at the table with the lamp lit. There is brick dust on his shoulder. "The maidan was full," he says. "They charged it. I am going again tomorrow." He is not defying you. He is informing you, the way you would inform a colleague.',
         choices: [
           {
             id: 'd2_e2_a',
@@ -1632,7 +1632,7 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Narrator',
         text:
-          'You lie awake and listen to the curfew, which has a sound after all: the sound of a city holding still on orders. Tomorrow the queue will be longer, the rules will be newer, and your son will do what your son will do. The stamp on your desk does not care about any of this. That is its job. You are beginning to understand it is yours, too.',
+          'You lie awake and listen to the curfew, which has a sound after all: the sound of a city holding still on orders. Tomorrow the queue will be longer, the rules will be newer, and your son will do what your son will do. The stamp on your desk does not care about any of this.',
         next: undefined,
       },
     ],
@@ -2054,11 +2054,11 @@ export const DAYS: GameDay[] = [
   // ==========================================================================
   {
     day: 5,
-    date: '1943',
+    date: 'March 1943',
     title: 'The Price of Rice',
     post: 'Fort',
     intro:
-      'Bombay, 1943. The famine in the countryside has reached the city the way famine always reaches cities: not as hunger, but as price. Rice has tripled. The ration queues start before dawn, and men with lorries and licences are getting rich in a war they never have to see.',
+      'Bombay, March 1943. The famine in the countryside has reached the city the way famine always reaches cities: not as hunger, but as price. Rice has tripled. The ration queues start before dawn, and men with lorries and licences are getting rich in a war they never have to see.',
     morning: [
       {
         id: 'd3_m1',
@@ -2088,7 +2088,7 @@ export const DAYS: GameDay[] = [
         speaker: 'Leela',
         portrait: 'leela',
         text:
-          'Leela, eleven now, has been reading the newspaper upside down while you read it. "Baba," she says, "if the ships can carry soldiers, why can they not carry rice?" She is not accusing you. That is what makes it unbearable.',
+          'Leela, eleven now, has been reading the newspaper upside down while you read it. "Baba," she says, "if the ships can carry soldiers, why can they not carry rice?"',
         choices: [
           {
             id: 'd3_m2_a',
@@ -2158,7 +2158,7 @@ export const DAYS: GameDay[] = [
             movement: 3,
             conscience: 5,
             suspicion: 6,
-            text: 'You see the pencil mark. You stamp anyway. She does not perform gratitude — she is past performance — but the oldest child\'s shoulders drop an inch. Two extra units of rice. Somewhere a ledger disagrees with a stomach. You have chosen the stomach.',
+            text: 'You see the pencil mark. You stamp anyway. She does not perform gratitude — she is past performance — but the oldest child\'s shoulders drop an inch. Two extra units of rice.',
           },
           deny: {
             crown: 3,
@@ -2288,7 +2288,7 @@ export const DAYS: GameDay[] = [
             household: 4,
             conscience: -5,
             note: 'Four rupees — a sold bangle, the last of her dowry, for three seers of rice.',
-            text: 'The bangle money crosses the file. The stamp comes down. She goes away with rice and without a dowry, and you go home with four rupees that used to be a circle of gold on a woman\'s wrist, and the tin box accepts them the way it accepts everything: without comment, which is its own comment.',
+            text: 'The bangle money crosses the file. The stamp comes down. She goes away with rice and without a dowry, and you go home with four rupees that used to be a circle of gold on a woman\'s wrist.',
           },
         },
       },
@@ -2389,7 +2389,7 @@ export const DAYS: GameDay[] = [
             crown: -5,
             conscience: -15,
             suspicion: 5,
-            text: 'You detain a detainee\'s wife for asking. Bomanji actually puts his head in his hands. She is released at dusk with a warning, and the shirt is still folded. Nothing in this job has ever made you feel smaller.',
+            text: 'You detain a detainee\'s wife for asking. Bomanji actually puts his head in his hands. She is released at dusk with a warning, and the shirt is still folded.',
           },
         },
       },
@@ -2423,7 +2423,7 @@ export const DAYS: GameDay[] = [
           deny: {
             crown: 3,
             conscience: -12,
-            text: 'You direct them to the relief camp at the maidan, as the rule requires. They thank you. That is the part you were not prepared for. They thank you, and they walk toward the typhus, festival-bright, and the stamp on your desk feels like a stone.',
+            text: 'You direct them to the relief camp at the maidan, as the rule requires. They thank you. They walk toward the typhus, festival-bright.',
           },
           detain: {
             crown: -5,
@@ -2476,13 +2476,13 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Narrator',
         text:
-          'The city hums its hungry hum. Somewhere in the godowns, rice sleeps under guard like money in a bank. You think of the pencil mark on the ration card, the folded shirt, the festival clothes. You stamped the rules onto all of them. The rules were followed. That is what you will say at the end of your life, and you already know exactly how much comfort it will be.',
+          'The city hums its hungry hum. Somewhere in the godowns, rice sleeps under guard like money in a bank. You think of the pencil mark on the ration card, the folded shirt, the festival clothes. You stamped the rules onto all of them. The rules were followed.',
         next: undefined,
       },
     ],
     householdCost: 16,
     salary: 13,
-    summaryText: 'Day 5 ends. Rice costs what it costs; it will cost more tomorrow. Household -{cost}. The jar is lighter. So, somehow, are you.',
+    summaryText: 'Day 5 ends. Rice costs what it costs; it will cost more tomorrow. Household -{cost}. The jar is lighter.',
   },
 
   // ==========================================================================
@@ -2642,7 +2642,7 @@ export const DAYS: GameDay[] = [
             household: 6,
             conscience: -4,
             note: 'Six salt-damp rupees. The sea\'s money, for the sea\'s dates.',
-            text: 'Six rupees, faintly fishy, into the drawer. The stamp comes down. He touches his forehead and is gone. That night Radha fries fish and remarks that fish has got cheaper, and you say "the rains," which is not even a whole lie, which is somehow worse than a whole one.',
+            text: 'Six rupees, faintly fishy, into the drawer. The stamp comes down. He touches his forehead and is gone. That night Radha fries fish and remarks that fish has got cheaper, and you say "the rains."',
           },
         },
       },
@@ -2683,7 +2683,7 @@ export const DAYS: GameDay[] = [
           deny: {
             crown: -3,
             conscience: 3,
-            text: 'You deny a file without a fault. He is too experienced to be angry. "The lorries will go Wednesday instead," he says, "from the Dadar gate." He tips his hat to the exact weight of your gesture: one day\'s delay in a famine, purchased by a conscience.',
+            text: 'You deny a file without a fault. He is too experienced to be angry. "The lorries will go Wednesday instead," he says, "from the Dadar gate." He tips his hat and goes.',
           },
           detain: {
             crown: -5,
@@ -3355,7 +3355,7 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Narrator',
         text:
-          'You close your eyes and see your son\'s handwriting — the loop of the M, the impatient tail of the last letter — on a forged dock pass, under your own stamp. Whatever the harbour took today, it taught you the exact weight of the thing you do for a living. It weighs the same as a life. It always did. You just had a fire to read it by, now.',
+          'You close your eyes and see your son\'s handwriting — the loop of the M, the impatient tail of the last letter — on a forged dock pass, under your own stamp.',
         next: undefined,
       },
     ],
@@ -4234,7 +4234,7 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Narrator',
         text:
-          'The house is quiet. You have stopped listening for Madhav\'s step and started listening for the knock — every parent in Bombay knows the difference tonight. Radha has not asked what happened at the post. Some questions wives learn not to ask, and the not-asking is its own kind of wound, carried without complaint, the way the women of this city carry everything.',
+          'The house is quiet. You have stopped listening for Madhav\'s step and started listening for the knock — every parent in Bombay knows the difference tonight. Radha has not asked what happened at the post.',
         next: undefined,
       },
     ],
@@ -4634,7 +4634,7 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Narrator',
         text:
-          'You lie awake doing the day\'s sums: a bridge-builder stamped home, a vegetable seller\'s four rupees, a woman with folded clothes standing at the wrong gate on the right day of somebody else\'s week. The Empire is tired — Madhav is right about the grip — but a tired Empire is not a gentle one. It is a heavy man falling asleep on your chest.',
+          'You lie awake doing the day\'s sums: a bridge-builder stamped home, a vegetable seller\'s four rupees, a woman with folded clothes standing at the wrong gate on the right day of somebody else\'s week. The Empire is tired — Madhav is right about the grip — but a tired Empire is not a gentle one.',
         next: undefined,
       },
     ],
@@ -5389,7 +5389,7 @@ export const DAYS: GameDay[] = [
           deny: {
             crown: 2,
             conscience: -3,
-            text: '"Surrender the weapon or the pass. Not both through my gate." He surrenders the revolver with the reluctance of a man giving up his last argument, and goes through lighter and less safe, which is what rules do to people.',
+            text: '"Surrender the weapon or the pass. Not both through my gate." He surrenders the revolver with the reluctance of a man giving up his last argument, and goes through lighter and less safe.',
           },
           detain: {
             crown: 4,
@@ -5505,7 +5505,7 @@ export const DAYS: GameDay[] = [
               p: 0.3,
               onFail: { household: -3, conscience: 5, suspicion: 5, flag: 'bruised_night' },
               onSuccess: { movement: 15, conscience: 15, flag: 'shielded_family' },
-              failText: 'It works for a minute — the voice, the stance, twenty-two years of unquestioned stamp. Then someone swings, and you are on the ground with a split lip, watching the chalked trunk carried off through the fireworks. You walk home holding your side. Radha cleans the cut without asking, which is its own question. You failed them, and you are alive, and you will carry both of those facts to the end of your days.',
+              failText: 'It works for a minute — the voice, the stance, twenty-two years of unquestioned stamp. Then someone swings, and you are on the ground with a split lip, watching the chalked trunk carried off through the fireworks. You walk home holding your side. Radha cleans the cut without asking.',
               successText: 'The voice works. Twenty-two years of stamping has left a residue of command you never asked for and finally spend well. The knot of men breaks apart the way crowds do — suddenly, and pretending it was their idea. You walk the family to the platform and stand with them until the train takes the chalked trunk north. No one thanks you. It is the best stamp you never made.',
             },
             next: 'd6_e3',
@@ -5681,7 +5681,7 @@ export const EVENT_BEATS: EventChain[] = [
         bg: 'dawn',
         speaker: 'Narrator',
         text:
-          'They are quick about it, the people who come for the small ones; the chawl has done this before and lends you its practised kindnesses — a length of cloth, four shoulders, a lane kept clear. Madhav does not cry. He stands at attention beside a grief too large for a boy\'s frame. Radha lights the lamp that evening, and the next, because lamps are lit. You return to the desk, and the stamp is in your hand, and the stamp weighs nothing at all now. That is the worst of it: nothing, at all.',
+          'They are quick about it, the people who come for the small ones; the chawl has done this before and lends you its practised kindnesses — a length of cloth, four shoulders, a lane kept clear. Madhav does not cry. He stands at attention beside a grief too large for a boy\'s frame. Radha lights the lamp that evening, and the next, because lamps are lit. You return to the desk, and the stamp is in your hand, and the stamp weighs nothing at all now.',
         effects: { flag: 'leela_worst' },
       },
     ],

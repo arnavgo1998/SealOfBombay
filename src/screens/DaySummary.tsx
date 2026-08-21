@@ -119,7 +119,7 @@ export function DaySummary({ run, onSleep }: DaySummaryProps) {
             )}
             <LedgerRow label="Household expenses" paise={`−₹${day.householdCost}`} tone="text-[#8C2F2B]" />
             {bazaarCold && (
-              <LedgerRow label="No credit at the bazaar" paise="−₹2" tone="text-[#8C2F2B]" />
+              <LedgerRow label="Bazaar cold — crown standing too high" paise="−₹2" tone="text-[#8C2F2B]" />
             )}
             {/* red pencil day net */}
             <div
