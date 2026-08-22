@@ -264,8 +264,32 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { rupeesMin: 5 },
+        next: 'd1_m1_low',
         text:
           'Radha measures the morning rice into the pot and levels it with a finger, the way she levels everything. "A government stool," she says. "It pays a rupee more than the railway. It also makes enemies one at a time, and friends never." She does not look up. "Come home at six."',
+        choices: [
+          {
+            id: 'd1_m1_a',
+            text: '"I stamp paper, Radha. Paper cannot hate a man."',
+            effects: { conscience: -5, note: 'You have already begun lying at your own table.' },
+            next: 'd1_m2',
+          },
+          {
+            id: 'd1_m1_b',
+            text: '"I will come home at six. That much I can promise."',
+            effects: { conscience: 5, note: 'A small promise, honestly sized.' },
+            next: 'd1_m2',
+          },
+        ],
+      },
+      {
+        id: 'd1_m1_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'Radha measures the morning rice into the pot — one level finger\'s worth, no more — and says it without turning around: "A rupee more than the railway. That keeps the landing." She sets the lid on. "Come home at six."',
         choices: [
           {
             id: 'd1_m1_a',
@@ -336,8 +360,32 @@ export const DAYS: GameDay[] = [
         bg: 'office',
         speaker: 'Pandurang',
         portrait: 'pandurang',
+        requires: { crownMin: 52 },
+        next: 'd1_m3_low',
         text:
-          'Chief Examiner Pandurang shows you the stool, the stamp, the rulebook, in that order, as if ranking them. "The seal of this office is the Empire in miniature," he says. "It does not tire. It does not sympathize. It does not err. See that you do not disgrace it." One desk over, Examiner Bomanji smiles at you the way a drowning man waves.',
+          'Chief Examiner Pandurang shows you the stool, the stamp, the rulebook, in that order, as if ranking them. "The seal of this office is the Empire in miniature," he says. "It does not tire. It does not sympathize. It does not err. See that you do not disgrace it." He looks at you for a moment before returning to his papers. One desk over, Examiner Bomanji smiles at you the way a drowning man waves.',
+        choices: [
+          {
+            id: 'd1_m3_a',
+            text: 'Stand straight. "You can rely on me, sir."',
+            effects: { crown: 5, conscience: -3, note: 'Pandurang files your obedience away where he can find it.' },
+            next: 'd1_m4',
+          },
+          {
+            id: 'd1_m3_b',
+            text: 'Nod once. Take the stool. Read the rulebook.',
+            effects: { note: 'You begin as you mean to continue: reading.' },
+            next: 'd1_m4',
+          },
+        ],
+      },
+      {
+        id: 'd1_m3_low',
+        bg: 'office',
+        speaker: 'Pandurang',
+        portrait: 'pandurang',
+        text:
+          'Chief Examiner Pandurang shows you the stool, the stamp, the rulebook, in that order, as if ranking them. He does not wait for you to settle. "The seal of this office is the Empire in miniature," he says. "It does not tire. It does not sympathize. It does not err. See that you do not disgrace it." He has returned to his papers before the instruction lands. One desk over, Examiner Bomanji smiles at you the way a drowning man waves.',
         choices: [
           {
             id: 'd1_m3_a',
@@ -674,8 +722,38 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Leela',
         portrait: 'leela',
+        requires: { conscienceMin: 53 },
+        next: 'd1_e1_low',
         text:
           'The first wage is on the table. Leela, eight years old and conducting her own examination of you, asks the question she has clearly been saving: "Baba. At your office. Did you let the good people through?"',
+        choices: [
+          {
+            id: 'd1_e1_a',
+            text: '"All of them, Leela."',
+            effects: { conscience: -3, note: 'The first lie of the new job, told to its smallest citizen.' },
+            next: 'd1_e2',
+          },
+          {
+            id: 'd1_e1_b',
+            text: '"The ones the rules allowed."',
+            effects: { conscience: 3, note: 'She considers this. It is not the answer she wanted. It may be the only true one.' },
+            next: 'd1_e2',
+          },
+          {
+            id: 'd1_e1_c',
+            text: '"I don\'t know yet. Ask me again in a year."',
+            effects: { movement: 3, note: 'She nods, gravely, as though you have made an appointment with her.' },
+            next: 'd1_e2',
+          },
+        ],
+      },
+      {
+        id: 'd1_e1_low',
+        bg: 'chawl',
+        speaker: 'Leela',
+        portrait: 'leela',
+        text:
+          'The first wage is on the table. Leela has been watching the door since you came in, not moving, just accounting. Eight years old and conducting her own examination of you, she asks the question she has clearly been saving: "Baba. At your office. Did you let the good people through?"',
         choices: [
           {
             id: 'd1_e1_a',
@@ -702,8 +780,38 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Bomanji',
         portrait: 'bomanji',
+        requires: { suspicionMax: 5 },
+        next: 'd1_e2_low',
         text:
           'A knock after dinner. Bomanji, still in his office tunic, sweating through it. He left the day\'s intake ledger on his desk; if Pandurang finds it unlocked overnight there will be what he calls "a memo" and what his face calls a catastrophe. "It is only a walk back to the Fort," he says. "Twenty minutes. I am asking because my wife—" He stops. He does not finish it.',
+        choices: [
+          {
+            id: 'd1_e2_a',
+            text: 'Take your cap and walk back with him.',
+            effects: { conscience: 5, flag: 'bomanji_owes', note: 'Bomanji talks the whole way about nothing. He will remember this. Men like Bomanji keep ledgers of kindness.' },
+            next: 'd1_e3',
+          },
+          {
+            id: 'd1_e2_b',
+            text: '"Say nothing tomorrow. Say we counted it together at close."',
+            effects: { suspicion: 5, conscience: -3, flag: 'bomanji_owes', note: 'A shared lie is a shared rope. Bomanji owes you now, and knows it.' },
+            next: 'd1_e3',
+          },
+          {
+            id: 'd1_e2_c',
+            text: 'Send him back alone. It is his ledger.',
+            effects: { crown: 3, note: 'He nods too many times and goes. The landing feels colder after.' },
+            next: 'd1_e3',
+          },
+        ],
+      },
+      {
+        id: 'd1_e2_low',
+        bg: 'chawl',
+        speaker: 'Bomanji',
+        portrait: 'bomanji',
+        text:
+          'A knock after dinner. Bomanji, still in his office tunic, sweating through it. He left the day\'s intake ledger on his desk; if Pandurang finds it unlocked overnight — and today has given him reasons to look — there will be what he calls "a memo" and what his face calls something worse. "It is only a walk back to the Fort," he says. "Twenty minutes. I am asking because my wife—" He stops. He does not finish it.',
         choices: [
           {
             id: 'd1_e2_a',
@@ -755,8 +863,33 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { rupeesMin: 5 },
+        next: 'n2_m1_low',
         text:
           'The first full month\'s wage lies on the table in an envelope Radha has not opened. On the windowsill: a letter from her sister in Nagpur, re-folded twice. She has not mentioned it. "Rent, rice, the dhobi, Leela\'s school annas," she recites, without looking up. "Whatever is left goes in the tin box, and the tin box is not a bank, Keshav. It is a superstition with a lid."',
+        choices: [
+          {
+            id: 'n2_m1_a',
+            text: 'Hand her the envelope unopened.',
+            effects: { conscience: 5, household: 3, note: 'She counts it twice, nods once. The tin box swallows its first honest month.' },
+            next: 'n2_m2',
+          },
+          {
+            id: 'n2_m1_b',
+            text: 'Keep two rupees back. Pocket them.',
+            effects: { rupees: 2, household: -2, conscience: -5, note: 'Two rupees into your own pocket. There are no office expenses. She knows there are no office expenses. The two rupees weigh more than the envelope.' },
+            next: 'n2_m2',
+          },
+        ],
+      },
+      {
+        id: 'n2_m1_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'The first full month\'s wage lies on the table in an envelope Radha has already opened. The bills are sorted face-up, smallest denomination to largest. On the windowsill: a letter from her sister in Nagpur, re-folded twice and placed face-down. "Rent, rice, the dhobi, Leela\'s school annas," she recites, finger moving down the row. "Whatever is left goes in the tin box." She taps the last bill. "The arithmetic works. I checked it twice to be certain."',
+        next: 'n2_m2',
         choices: [
           {
             id: 'n2_m1_a',
@@ -777,8 +910,33 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Leela',
         portrait: 'leela',
+        requires: { crownMin: 50 },
+        next: 'n2_m2_low',
         text:
           'Leela has found your spare date-stamp pad and is printing her own hand, finger by finger, in violet. "At school the teacher says the Empire keeps us safe," she reports, in the flat tone of a child reading back a suspect document. "Is that what your stamp does, Baba? Keeps us safe?" Madhav snorts into his tea and says nothing, which for Madhav is a speech.',
+        choices: [
+          {
+            id: 'n2_m2_a',
+            text: '"The stamp keeps the road in order. Order is not the same as safe."',
+            effects: { conscience: 3, note: 'She files the distinction away. You can hear the drawer close.' },
+            next: 'n2_m3',
+          },
+          {
+            id: 'n2_m2_b',
+            text: '"Yes. That is what it does."',
+            effects: { conscience: -3, note: 'She accepts the answer the way one accepts small change: without looking at it.' },
+            next: 'n2_m3',
+          },
+        ],
+      },
+      {
+        id: 'n2_m2_low',
+        bg: 'chawl',
+        speaker: 'Leela',
+        portrait: 'leela',
+        text:
+          'Leela has found your spare date-stamp pad and is printing her own hand, finger by finger, in violet. "At school the teacher says the Empire keeps us safe," she reports, in the flat tone of a child reading back a suspect document. "Is that what your stamp does, Baba? Keeps us safe?" Madhav sets down his tea without making a sound. He looks at his hands. Leela looks at Madhav. Then she looks at you.',
+        next: 'n2_m3',
         choices: [
           {
             id: 'n2_m2_a',
@@ -799,8 +957,18 @@ export const DAYS: GameDay[] = [
         bg: 'office',
         speaker: 'Bomanji',
         portrait: 'bomanji',
+        requires: { suspicionMax: 10 },
         text:
           'Bomanji has survived his ledger fright and is expansive with relief. "Rules of the desk, Damle," he says, counting on his fingers. "Tea before the third file. Never argue before lunch. And when Pandurang counts the fee receipts on Friday, be somewhere else in the room." Pandurang passes behind him without a sound and Bomanji becomes very interested in his blotter, the way men salute a flag they do not love.',
+        next: 'n2_m3_low',
+      },
+      {
+        id: 'n2_m3_low',
+        bg: 'office',
+        speaker: 'Bomanji',
+        portrait: 'bomanji',
+        text:
+          'Bomanji closes his ledger and leans across. "Rules of the desk, Damle," he says, counting on his fingers. "Tea before the third file. Never argue before lunch. And when Pandurang counts the fee receipts on Friday, be somewhere else in the room." Three fingers. He does not offer a fourth. "Those are the ones I give everyone," he adds, and goes back to his ledger. Pandurang passes behind him without a sound and Bomanji becomes very interested in his blotter — he appears to have been studying it for some time already.',
         next: undefined,
       },
     ],
@@ -1120,8 +1288,33 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Leela',
         portrait: 'leela',
+        requires: { householdMin: 55 },
+        next: 'n2_e1_low',
         text:
           'After dinner Leela produces a sheet of her school rough-work and holds it out. "Stamp it, Baba. I want to see how it is done." The rubber seal sits in your tunic pocket, heavier at home than it ever is at the desk.',
+        choices: [
+          {
+            id: 'n2_e1_a',
+            text: 'Let her press the stamp herself, once, on the scrap paper.',
+            effects: { conscience: 5, crown: -2, note: 'She inks it, aligns it, and brings it down with both hands. APPROVED, over her own sums. She is delighted. You have just made the Empire a toy, which may be the most subversive act of your month.' },
+            next: 'n2_e2',
+          },
+          {
+            id: 'n2_e1_b',
+            text: '"The seal is not a toy, Leela. It is the office."',
+            effects: { crown: 3, conscience: -3, note: 'She returns to her sums. The stamp stays in your pocket, unpolluted by joy.' },
+            next: 'n2_e2',
+          },
+        ],
+      },
+      {
+        id: 'n2_e1_low',
+        bg: 'chawl',
+        speaker: 'Leela',
+        portrait: 'leela',
+        text:
+          'After dinner Leela produces a sheet of her school rough-work and holds it out. "Stamp it, Baba. I want to see how it is done." She has been very quiet at dinner. The rubber seal sits in your tunic pocket, heavier at home than it ever is at the desk. From the kitchen, the sound of Radha putting things away with more care than they need.',
+        next: 'n2_e2',
         choices: [
           {
             id: 'n2_e1_a',
@@ -1142,8 +1335,33 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Domnic',
         portrait: 'anna',
+        requires: { rupeesMin: 5 },
+        next: 'n2_e2_low',
         text:
           'On the landing, Domnic Menezes is fighting the water tap again. "It gives water at five in the morning and attitude the rest of the day," he says. "My Emil — my eldest — says the docks are loading war cargo now, day and night. More work, same pay, twice the shouting." He looks at your office tunic. "And you — one month in. Tell me, examiner, does the stamp get lighter, or do you just stop noticing?"',
+        choices: [
+          {
+            id: 'n2_e2_a',
+            text: '"Ask me in a year, Domnic."',
+            effects: { note: 'He laughs, once, without much humour. "A year," he says. "I will hold you to it."' },
+            next: 'n2_e3',
+          },
+          {
+            id: 'n2_e2_b',
+            text: '"It gets lighter. That is what worries me."',
+            effects: { conscience: 3, note: 'He nods slowly, like a man who has had his suspicions professionally confirmed.' },
+            next: 'n2_e3',
+          },
+        ],
+      },
+      {
+        id: 'n2_e2_low',
+        bg: 'chawl',
+        speaker: 'Domnic',
+        portrait: 'anna',
+        text:
+          'On the landing, Domnic Menezes is fighting the water tap again. "It gives water at five in the morning and attitude the rest of the day," he says. "My Emil — my eldest — says the docks are loading war cargo now, day and night. More work, same pay, twice the shouting." He holds his cup under the tap — it fills to barely a third. He looks at the cup, then at your office tunic. "And you — one month in. Tell me, examiner, does the stamp get lighter, or do you just stop noticing?"',
+        next: 'n2_e3',
         choices: [
           {
             id: 'n2_e2_a',
@@ -1197,8 +1415,32 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { householdMin: 55 },
         text:
           'Madhav has not come out of the room he shares with his temper. Radha sets your tea down with unusual care. "He will want to go to the maidan," she says. "Today or tomorrow. I am not asking you to stop him. I am asking you to tell me you will."',
+        next: 'd2_m2_low',
+        choices: [
+          {
+            id: 'd2_m2_a',
+            text: 'Promise her. "He stays home. I will see to it."',
+            effects: { flag: 'radha_promise', crown: 3, conscience: -3, note: 'A promise made to a wife about a grown son. It will be collected.' },
+            next: 'd2_m3',
+          },
+          {
+            id: 'd2_m2_b',
+            text: '"He is nineteen, Radha. I can bar the door. I cannot bar his mind."',
+            effects: { movement: 3, conscience: 3, note: 'She accepts this the way she accepts monsoon damage: without surprise, and without forgiving the rain.' },
+            next: 'd2_m3',
+          },
+        ],
+      },
+      {
+        id: 'd2_m2_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'Radha does not bring the tea until Madhav\'s door is closed. When she sets it down she does not sit. "He will want to go to the maidan," she says. "Today or tomorrow." She wipes the counter that does not need wiping. "You know what I am asking."',
         choices: [
           {
             id: 'd2_m2_a',
@@ -1219,8 +1461,32 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Madhav',
         portrait: 'madhav',
+        requires: { movementMin: 50 },
         text:
-          'Madhav emerges at last, eyes red, voice steady. "They were in prison by breakfast," he says, "and still the call went out by lunch. Do you understand what that means, Baba? It means they cannot arrest it. It is not a list of men. It is a thing people are." He waits. He actually wants an answer.',
+          'Madhav emerges at last, eyes red, voice too steady. "They took everyone by breakfast," he says. "And the call still went out by lunch, Baba. By lunch." He waits. He actually wants an answer.',
+        next: 'd2_m3_low',
+        choices: [
+          {
+            id: 'd2_m3_a',
+            text: '"It is a thing people are. It is also a thing people are beaten for. Remember both."',
+            effects: { movement: 5, conscience: 3, note: 'He nods slowly. You have given him honesty, which is what he asked for and not what he wanted.' },
+            next: 'd2_m4',
+          },
+          {
+            id: 'd2_m3_b',
+            text: '"What it means is that the jails will be full by dinner. Eat your breakfast."',
+            effects: { movement: -5, crown: 3, conscience: -5, note: 'He eats nothing. He looks at you like a document that failed inspection.' },
+            next: 'd2_m4',
+          },
+        ],
+      },
+      {
+        id: 'd2_m3_low',
+        bg: 'chawl',
+        speaker: 'Madhav',
+        portrait: 'madhav',
+        text:
+          'Madhav emerges at last, eyes red, voice too steady. "They took everyone by breakfast," he says. "The call still went out by lunch." He says it the way you\'d read a charge into the record — clear, documented. "By lunch, Baba." He waits, watching to see which way the stamp falls.',
         choices: [
           {
             id: 'd2_m3_a',
@@ -1241,8 +1507,18 @@ export const DAYS: GameDay[] = [
         bg: 'office',
         speaker: 'Pandurang',
         portrait: 'pandurang',
+        requires: { crownMin: 55 },
         text:
           'Pandurang reads the new rules aloud in the tone of a man announcing rain he personally ordered. "The Movement is an unlawful body. Its literature is seditious material. Bearers are to be detained." He taps the page. "There will be discretion. There always is. Remember that discretion, like credit, is extended by this office and recalled by this office." Bomanji has gone the colour of old paper.',
+        next: 'd2_m4_low',
+      },
+      {
+        id: 'd2_m4_low',
+        bg: 'office',
+        speaker: 'Pandurang',
+        portrait: 'pandurang',
+        text:
+          'Pandurang reads the new rules aloud without inflection. "The Movement is an unlawful body. Its literature is seditious material. Bearers are to be detained." He sets the page down. "Discretion," he says, "is a word for people who have earned it." He does not look at Bomanji. He looks at you. "The same office that extends it recalls it." Bomanji makes himself busy with a form.',
         next: undefined,
       },
     ],
@@ -1574,8 +1850,38 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Madhav',
         portrait: 'madhav',
+        requires: { flagNot: 'detained_printer' },
         text:
           'He comes in at ten, through the window he thinks you do not know about, and finds you at the table with the lamp lit. There is brick dust on his shoulder. "The maidan was full," he says. "They charged it. I am going again tomorrow." He is not defying you. He is informing you, the way you would inform a colleague.',
+        next: 'd2_e2_low',
+        choices: [
+          {
+            id: 'd2_e2_a',
+            text: 'Bar the door. "Tomorrow you do not leave this room."',
+            effects: { movement: -8, conscience: -8, crown: 5, flag: 'madhav_forbidden', note: 'He says nothing at all. He looks at the door, then at you, and something in the room is re-districted forever.' },
+            next: 'd2_e2b',
+          },
+          {
+            id: 'd2_e2_b',
+            text: '"If you go, go with your eyes open. Come home before the lathis, not after."',
+            effects: { movement: 8, conscience: 5, suspicion: 5, flag: 'madhav_blessed', note: 'He grips your shoulder — the first time he has touched you like an equal. Radha, in the doorway, closes her eyes.' },
+            next: 'd2_e2b',
+          },
+          {
+            id: 'd2_e2_c',
+            text: '"Give me what is in your pocket. I will burn it. Then we will not speak of tonight."',
+            effects: { movement: -3, conscience: -3, note: 'He hands over a single folded handbill. You burn it in the stove. The smoke smells like every other compromise you have ever made.' },
+            next: 'd2_e2b',
+          },
+        ],
+      },
+      {
+        id: 'd2_e2_low',
+        bg: 'chawl',
+        speaker: 'Madhav',
+        portrait: 'madhav',
+        text:
+          'He comes in at ten, through the window he thinks you do not know about, and finds you at the table with the lamp lit. There is brick dust on his shoulder and a pause before he uses it. "The maidan was full," he says. "They charged it." He sets down something he was carrying. "Bhosle\'s family knows by now. The whole ward knows." He looks at the lamp. "I am going again tomorrow."',
         choices: [
           {
             id: 'd2_e2_a',
@@ -1602,8 +1908,32 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Leela',
         portrait: 'leela',
+        requires: { rupeesMin: 10 },
         text:
           'Later, in the lull, Leela brings her school list and lays it beside your plate like a small manifest. New term: a geometry primer, two exercise books, the examination fee. Three rupees altogether. "Manjula\'s father paid on Monday," she reports, neutrally, a clerk entering a fact. Three rupees, after a month like this one. She watches you read the list the way you watch the queue read the ruleboard.',
+        next: 'd2_e2b_low',
+        choices: [
+          {
+            id: 'd2_e2b_a',
+            text: 'Count out the three rupees. School is not where the economizing starts.',
+            effects: { rupees: -3, household: 2, conscience: 3, note: 'Three rupees for a geometry primer and the fee. She folds the list away with a schoolgirl\'s exactness. Somewhere in the city the whole of August is on fire, and in this room a child has her books.' },
+            next: 'd2_e3',
+          },
+          {
+            id: 'd2_e2b_b',
+            text: '"Share Manjula\'s primer this term. The fee can wait a fortnight."',
+            effects: { household: -3, conscience: -3, note: '"Manjula sits three rows ahead," Leela says, not arguing, only entering the difficulty into the record. She copies her sums into an old ledger of yours that night, in the margins, around the Empire\'s arithmetic.' },
+            next: 'd2_e3',
+          },
+        ],
+      },
+      {
+        id: 'd2_e2b_low',
+        bg: 'chawl',
+        speaker: 'Leela',
+        portrait: 'leela',
+        text:
+          'Later, in the lull, Leela brings her school list and lays it beside your plate like a small manifest. New term: a geometry primer, two exercise books, the examination fee. Three rupees altogether. She sits down across from you. "Manjula\'s father paid on Monday," she says. Then: "Is there enough?" Not accusing. Asking. The way she would ask if the gas was on.',
         choices: [
           {
             id: 'd2_e2b_a',
@@ -1624,8 +1954,18 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Domnic',
         portrait: 'anna',
+        requires: { flag: 'madhav_blessed' },
         text:
-          'On the landing, later, Domnic Menezes is sitting on the stairs he is supposed to be washing. "My Emil hauls cargo for their war," he says. "Your boy marches against their war. Both of them feed the same machine, Keshav — one with his back, one with his blood. I no longer clap for either side. I only count who comes home."',
+          'On the landing, later, Domnic Menezes is sitting on the stairs he is supposed to be washing. "Emil\'s at the docks hauling their cargo," he says. "Your boy is at the maidan. Different doors, same house." He picks up the mop. "I only count who comes home."',
+        next: 'd2_e3_low',
+      },
+      {
+        id: 'd2_e3_low',
+        bg: 'chawl',
+        speaker: 'Domnic',
+        portrait: 'anna',
+        text:
+          'On the landing, later, Domnic Menezes is sitting on the stairs he is supposed to be washing. He makes room on the step without being asked. "Emil\'s at the docks," he says. "Different work than the maidan." He does not finish the thought. He picks up the mop. "Man can only hold so much in one room. I\'ve found that."',
         next: 'd2_e4',
       },
       {
@@ -1666,8 +2006,33 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { suspicionMax: 29 },
         text:
           'Madhav has stopped arguing, which Radha finds more frightening than the arguing. He copies out lists at the table all evening — names, addresses, who is taken, who is still outside — and folds them small. "He says it is relief work," Radha says. "Families of the arrested. Food parcels." She dries a cup that is already dry. "Keshav. Relief work is what they called it in the papers before they arrested them for it."',
+        next: 'n4_m2_low',
+        choices: [
+          {
+            id: 'n4_m2_a',
+            text: '"Feeding prisoners\' families is not sedition, even now."',
+            effects: { movement: 3, conscience: 3, note: '"Not yet," Radha says, and puts the cup down with a click like a full stop.' },
+            next: 'n4_m3',
+          },
+          {
+            id: 'n4_m2_b',
+            text: '"Then he should copy his lists somewhere other than my table."',
+            effects: { crown: 3, conscience: -5, note: 'Radha says nothing. That evening Madhav copies his lists at Vasu\'s empty desk at the school, and the table at home is bare in a new way.' },
+            next: 'n4_m3',
+          },
+        ],
+      },
+      {
+        id: 'n4_m2_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'Madhav has stopped arguing. The lists come out after supper — names, addresses, who is taken — and he folds them before Radha can read them. She does not ask to. "He calls it relief work," she says. She does not dry the cup. She puts it down on the shelf and her hand stays there. "They arrested the last three people who called it that."',
+        next: 'n4_m3',
         choices: [
           {
             id: 'n4_m2_a',
@@ -1688,8 +2053,18 @@ export const DAYS: GameDay[] = [
         bg: 'office',
         speaker: 'Pandurang',
         portrait: 'pandurang',
+        requires: { crownMin: 60 },
         text:
           'Pandurang pins a clean sheet over the August rule page like a shroud over a face. "The emergency continues," he says. "The enthusiasm for it, however, is over. Detention figures for this office were — adequate. Adequate is not a target, it is a climate." He adjusts the sheet by one millimetre. "Also: a woman came to the gate yesterday asking after the printer Bhosle. Such enquiries are to be referred to the ward office, not answered by examiners. We stamp paper. We do not answer questions."',
+        next: 'n4_m3_low',
+      },
+      {
+        id: 'n4_m3_low',
+        bg: 'office',
+        speaker: 'Pandurang',
+        portrait: 'pandurang',
+        text:
+          'Pandurang pins a clean sheet over the August rule page. He does not look at Keshav directly. "The emergency continues," he says. "The enthusiasm for it is over. Detention figures for this office were — adequate. Adequate is not a target, it is a floor." He adjusts the sheet by one millimetre, then adjusts it back. "A woman came to the gate yesterday asking after the printer Bhosle. She was answered. That is not to happen again. We stamp paper. We do not tell people what happened to their printer."',
         next: undefined,
       },
     ],
@@ -1988,8 +2363,33 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Madhav',
         portrait: 'madhav',
+        requires: { movementMin: 60 },
         text:
-          'Madhav is copying his lists again — the families of the taken, who needs rice, who needs bail money, who needs only to be remembered. He looks up. "Baba. In August, at your post — did any of them come through your desk? The ones they took." He is not accusing. He is asking the way a surveyor asks, for the map he is making.',
+          'Madhav is copying his lists again — the families of the taken, who needs rice, who needs bail money, who needs only to be remembered. He looks up. "Baba. In August, at your post — did any of them come through your desk? The ones they took." He is not accusing. He actually wants an answer.',
+        next: 'n4_e1_low',
+        choices: [
+          {
+            id: 'n4_e1_a',
+            text: 'Tell him the truth, whatever August held.',
+            effects: { conscience: 5, movement: 3, note: 'He writes nothing down. Some entries he keeps in his head, where the files cannot find them.' },
+            next: 'n4_e2',
+          },
+          {
+            id: 'n4_e1_b',
+            text: '"My desk is not your business. Your lists are not mine. Let us keep it so."',
+            effects: { crown: 3, conscience: -3, note: 'He nods and folds the lists smaller. You have built a wall with an honest door in it, and you both pretend not to see the door.' },
+            next: 'n4_e2',
+          },
+        ],
+      },
+      {
+        id: 'n4_e1_low',
+        bg: 'chawl',
+        speaker: 'Madhav',
+        portrait: 'madhav',
+        text:
+          'Madhav is copying his lists again — he turns them face-down when he hears the stairs. He turns them back when he sees it is Keshav, then looks at that for a moment. "Baba. In August — at the gate. Did any of them — the ones they took—" He stops. Starts again. "I have a name. I only want to know if they went through."',
+        next: 'n4_e2',
         choices: [
           {
             id: 'n4_e1_a',
@@ -2010,8 +2410,18 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { rupeesMin: 15 },
         text:
           'Radha reads the bazaar prices off her fingertips like bad news from the front. "Rice up again. Kerosene up. The washerwoman wants an extra anna because her son was taken in August and she has his children now." She pauses. "Everyone\'s arithmetic has a new column this year, Keshav. Even ours. Especially ours."',
+        next: 'n4_e2_low',
+      },
+      {
+        id: 'n4_e2_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'Radha reads the bazaar prices off her fingertips the way she has been reading them for three months, in the same order, as if the list does not change by itself when her back is turned. "Rice up again. Kerosene up. The washerwoman wants an extra anna — her son was taken in August and she has his children now." She sets her hand flat on the table. "Keshav. Everyone has a new column this year. Ours has been filling in for a while now."',
         next: 'n4_e2b',
       },
       {
@@ -2019,8 +2429,33 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { rupeesMin: 15 },
         text:
           'There is one more column. A letter came from Pen: Radha\'s mother\'s cough has gone past home remedies, and the vaid there wants five rupees for the medicine and the visit. Radha recites this without inflection, the way she recites bazaar prices. "She carried me through two fevers and a monsoon," she says. "I am not asking, Keshav. I am entering it in the ledger. What we do with the entry is ours."',
+        next: 'n4_e2b_low',
+        choices: [
+          {
+            id: 'n4_e2b_a',
+            text: 'Send the five rupees by Friday\'s post.',
+            effects: { rupees: -5, household: 2, conscience: 3, note: 'Five rupees in a money-order envelope, address written in Radha\'s steadiest hand. She does not thank you. It was never a favour; it was the debt coming due.' },
+            next: 'n4_e3',
+          },
+          {
+            id: 'n4_e2b_b',
+            text: '"Next month. After the rent. The vaid will keep."',
+            effects: { household: -3, conscience: -4, note: 'Radha closes the letter back into its fold. "The cough will also keep," she says, evenly, and the sentence stands in the room a long time after she has left it.' },
+            next: 'n4_e3',
+          },
+        ],
+      },
+      {
+        id: 'n4_e2b_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'There is one more column. A letter came from Pen: Radha\'s mother\'s cough has gone past home remedies, and the vaid there wants five rupees. Radha folds the letter before she reads the amount aloud, then unfolds it. She recites it flat, the way she recites kerosene prices. "She carried me through two fevers and a monsoon. I know what is in the box, Keshav. I am not asking. I am only telling you, so you know too."',
+        next: 'n4_e3',
         choices: [
           {
             id: 'n4_e2b_a',
@@ -2066,8 +2501,32 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { rupeesMin: 12 },
+        next: 'd3_m1_low',
         text:
-          'Radha shows you the rice jar the way a doctor shows an X-ray. Half full. "At this price it lasts three weeks," she says. "The ration shop has weevils and a four-hour queue. The black market has rice and no queue." She sets the lid on the jar. "You examine permits. Examine this."',
+          'Radha sets the rice jar between the breakfast things — half full — and recites it the way she recites a sum. "At this price it lasts three weeks. The ration shop has weevils and four hours in the queue. The black market has rice and no queue." She lids the jar and wipes the shelf. "You examine permits all day. This one is yours."',
+        choices: [
+          {
+            id: 'd3_m1_a',
+            text: 'Give her money for the black market. The children eat first.',
+            effects: { rupees: -10, household: 5, conscience: -3, flag: 'blackmarket_rice', note: 'Ten rupees of black-market rice. It is somebody else\'s ration, bought twice. It cooks exactly the same. That is the horror of it.' },
+            next: 'd3_m2',
+          },
+          {
+            id: 'd3_m1_b',
+            text: '"We queue. Like everyone."',
+            effects: { household: 3, conscience: 5, note: 'Radha nods. She queues four hours the next day and does not once mention it, which is worse than mentioning it.' },
+            next: 'd3_m2',
+          },
+        ],
+      },
+      {
+        id: 'd3_m1_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'Radha shows you the rice jar the way a doctor shows an X-ray. Half full. "At this price it lasts three weeks," she says. "The ration shop has weevils and a four-hour queue. The black market has rice and no queue — and ten rupees we do not have." She sets the lid on the jar. "You examine permits. Examine this."',
         choices: [
           {
             id: 'd3_m1_a',
@@ -2088,8 +2547,32 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Leela',
         portrait: 'leela',
+        requires: { householdMin: 65 },
+        next: 'd3_m2_low',
         text:
-          'Leela, eleven now, has been reading the newspaper upside down while you read it. "Baba," she says, "if the ships can carry soldiers, why can they not carry rice?"',
+          'Leela, eleven now, has been reading the newspaper upside down while you read it. She finishes her breakfast before she asks. "Baba," she says, "if the ships can carry soldiers, why can they not carry rice?" She asks it the way she asks about sums — expecting that there is an answer, expecting you to have it.',
+        choices: [
+          {
+            id: 'd3_m2_a',
+            text: '"Ask the men who own the ships, Leela."',
+            effects: { movement: 5, note: 'She files this away. You can almost hear the drawer close.' },
+            next: 'd3_m3',
+          },
+          {
+            id: 'd3_m2_b',
+            text: '"Eat your breakfast and do your sums. The world is a problem for grown men."',
+            effects: { movement: -3, conscience: -3, note: 'She obeys. Her obedience has begun to feel like a verdict.' },
+            next: 'd3_m3',
+          },
+        ],
+      },
+      {
+        id: 'd3_m2_low',
+        bg: 'chawl',
+        speaker: 'Leela',
+        portrait: 'leela',
+        text:
+          'Leela, eleven now, has been reading the newspaper upside down while you read it. She is quiet through most of breakfast. "Baba," she says at last, "if the ships can carry soldiers, why can they not carry rice?" She does not look up when she asks.',
         choices: [
           {
             id: 'd3_m2_a',
@@ -2107,6 +2590,16 @@ export const DAYS: GameDay[] = [
       },
       {
         id: 'd3_m3',
+        bg: 'office',
+        speaker: 'Bomanji',
+        portrait: 'bomanji',
+        requires: { suspicionMin: 40 },
+        text:
+          'Bomanji comes in and settles at the far end of the bench. Cheerfully — he has a pleasant word for Ganpat about the queue. He does not sit near you until Pandurang arrives, and even then he finds a reason to check something across the room.',
+        next: 'd3_m3_low',
+      },
+      {
+        id: 'd3_m3_low',
         bg: 'office',
         speaker: 'Bomanji',
         portrait: 'bomanji',
@@ -2440,8 +2933,38 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Madhav',
         portrait: 'madhav',
+        requires: { rupeesMin: 20 },
+        next: 'd3_e1_low',
         text:
-          'Madhav is twenty now, and the Movement that survived the jails is doing quieter work: relief kitchens in the mill districts, rice at cost when rice can be found. "We need fifteen rupees to open the Girangaon kitchen this week," he says. He does not say "give." He says, "I am asking my father, not the examiner." Fifteen rupees is most of what is in the tin box.',
+          'Madhav is twenty now, and the Movement that survived the jails is doing quieter work: relief kitchens in the mill districts, rice at cost when rice can be found. "We need fifteen rupees to open the Girangaon kitchen this week," he says. He does not say "give." He says, "I am asking my father, not the examiner." The tin box has more than fifteen. He is asking for fifteen. That gap is its own kind of message.',
+        choices: [
+          {
+            id: 'd3_e1_a',
+            text: 'Give him the fifteen rupees. All of it.',
+            effects: { rupees: -15, movement: 10, conscience: 8, flag: 'relief_kitchen', note: 'Fifteen rupees out of the tin box. The kitchen opens. Two hundred people eat. Radha recalculates the month without a word of reproach, which is its own reproach.' },
+            next: 'd3_e2',
+          },
+          {
+            id: 'd3_e1_b',
+            text: 'Give him five. "The rest feeds this house."',
+            effects: { rupees: -5, movement: 5, conscience: 3, note: 'Five rupees out of the tin box. He takes it without complaint. The kitchen opens on half rations, which is still a kitchen.' },
+            next: 'd3_e2',
+          },
+          {
+            id: 'd3_e1_c',
+            text: 'Refuse. "This house comes first. That is the whole of my politics."',
+            effects: { movement: -8, conscience: -5, note: 'He nods, once, like a man filing a document. He finds the money somewhere else. You do not ask where. You are afraid he would tell you.' },
+            next: 'd3_e2',
+          },
+        ],
+      },
+      {
+        id: 'd3_e1_low',
+        bg: 'chawl',
+        speaker: 'Madhav',
+        portrait: 'madhav',
+        text:
+          'Madhav is twenty now, and the Movement that survived the jails is doing quieter work: relief kitchens in the mill districts, rice at cost when rice can be found. "We need fifteen rupees to open the Girangaon kitchen this week," he says. He does not say "give." He says, "I am asking my father, not the examiner." His voice is steady. He either does not know what is in the tin box or he is asking you to decide what matters more.',
         choices: [
           {
             id: 'd3_e1_a',
@@ -2468,8 +2991,18 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { rupeesMin: 15 },
         text:
-          'After the children are asleep, Radha counts the tin box aloud, which she only does when she wants you to hear the silence between numbers. "We will manage," she says at last. "We always manage. But Keshav — one day managing will not be enough, and on that day I want to know what kind of man I am managing with."',
+          'After the children are asleep, Radha writes the week\'s list from memory, without opening the tin box first. She gets three lines in before she crosses one out and starts again.',
+        next: 'd3_e2_low',
+      },
+      {
+        id: 'd3_e2_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'After the children are asleep, Radha counts the tin box aloud, which she only does when she wants you to hear the silence between numbers. "We will manage," she says at last. "We always manage." She closes the tin box without counting it a third time.',
         next: 'd3_e3',
       },
       {
@@ -2503,8 +3036,33 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { rupeesMin: 10 },
         text:
-          'The roof leak has moved in the night, with intent, to a position over the rice jar. Radha has deployed three vessels and a chemistry of curses. "The landlord says after the war," she reports. "The rain says now. The rice cannot vote." She moves the jar to the bed and the bed three feet to the left, and the household\'s whole geography shifts to accommodate water.',
+          'The roof leak has moved in the night, with intent, to a position over the rice jar. Radha has deployed three vessels and a chemistry of curses. "The landlord says after the war," she reports. "The rain has not received his letter." She moves the jar to the bed and the bed three feet to the left, and the household\'s whole geography shifts to accommodate water.',
+        next: 'n6_m1_low',
+        choices: [
+          {
+            id: 'n6_m1_a',
+            text: 'Spend Saturday on the roof yourself with tar and a borrowed ladder.',
+            effects: { rupees: -2, household: 2, conscience: 5, note: 'Two rupees of tar and a Saturday tarring a roof in the rain, which is a paradox and also a marriage. The leak retreats to a corner over Domnic\'s landing. You hear about it for a month.' },
+            next: 'n6_m2',
+          },
+          {
+            id: 'n6_m1_b',
+            text: '"Move the jar. The roof is the landlord\'s war."',
+            effects: { crown: 2, conscience: -3, note: 'Radha moves the jar. The water wins by inches, nightly. Some wars you decline are lost anyway.' },
+            next: 'n6_m2',
+          },
+        ],
+      },
+      {
+        id: 'n6_m1_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'The roof leak has moved in the night, with intent, to a position over the rice jar. Radha has moved the jar before speaking. Three vessels. "The landlord says after the war," she reports. "The jar cannot wait for after the war." She moves the bed three feet to the left, checks the jar\'s new position, moves it again. The household\'s whole geography rearranges itself around what cannot be replaced.',
+        next: 'n6_m2',
         choices: [
           {
             id: 'n6_m1_a',
@@ -2525,8 +3083,18 @@ export const DAYS: GameDay[] = [
         bg: 'office',
         speaker: 'Pandurang',
         portrait: 'pandurang',
+        requires: { crownMin: 60 },
         text:
           'Pandurang holds up the office ink bottle, which has developed a chalk line around its middle like floodmark. "Ink is a war material," he announces. "Stamps are to be dabbed, not pressed. Blotting paper is to be reused until it achieves transparency." He looks personally betrayed by the concept of absorption. Bomanji has already begun dabbing with the delicacy of a man feeding birds.',
+        next: 'n6_m2_low',
+      },
+      {
+        id: 'n6_m2_low',
+        bg: 'office',
+        speaker: 'Pandurang',
+        portrait: 'pandurang',
+        text:
+          'Pandurang holds up the office ink bottle, which has developed a chalk line around its middle like floodmark. "Ink is a war material," he announces. "Stamps are to be dabbed, not pressed. Blotting paper is to be reused until it achieves transparency." He reads each instruction twice — once at the room, once at you specifically. He looks personally betrayed by the concept of absorption. Bomanji has already begun dabbing with the delicacy of a man feeding birds, which Pandurang allows without comment, which is its own comment.',
         next: 'n6_m3',
       },
       {
@@ -2845,8 +3413,33 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Madhav',
         portrait: 'madhav',
+        requires: { movementMin: 60 },
         text:
-          'Madhav comes home drenched to the structure, smelling of wet jute and boiled rice — kitchen smell. "The gate at Dadar turned back two carts today," he says, towelling his hair with yesterday\'s newspaper. "Illegible, they said. The examiner there is new and enthusiastic." He says it without accusation, which is its own kind. "What does a man do, Baba, when the rain voids his paper?"',
+          'Madhav comes home drenched to the structure, smelling of wet jute and boiled rice — kitchen smell. "Two carts, Baba," he says before he is fully through the door, towelling his hair with yesterday\'s newspaper. "The gate at Dadar. Illegible, they said. Two carts — and the kitchen queue was already there by noon." He works the newspaper across his neck. "The examiner is new. Very precise. I watched him." He says it without accusation, which does not mean without something. "What does a man do, Baba, when the rain voids his paper?"',
+        next: 'n6_e1_low',
+        choices: [
+          {
+            id: 'n6_e1_a',
+            text: '"Oiled cloth. Three layers. And reissue before the damage, not after."',
+            effects: { movement: 3, conscience: 3, note: 'He memorizes it. The kitchen\'s papers go out the next week wrapped like brides. You have made the Movement waterproof, one practical sentence at a time.' },
+            next: 'n6_e2',
+          },
+          {
+            id: 'n6_e1_b',
+            text: '"A man keeps his documents dry and his questions at the ward office."',
+            effects: { crown: 3, conscience: -3, note: '"The ward office," Madhav repeats, tasting it. The queue there is three days. He knows. He was counting on you knowing too.' },
+            next: 'n6_e2',
+          },
+        ],
+      },
+      {
+        id: 'n6_e1_low',
+        bg: 'chawl',
+        speaker: 'Madhav',
+        portrait: 'madhav',
+        text:
+          'Madhav comes home drenched to the structure, smelling of wet jute and boiled rice — kitchen smell. He wrings out his shirt before saying anything. "The gate at Dadar turned back two carts today," he says, towelling his hair with yesterday\'s newspaper. "Illegible, they said." He does not describe the examiner or his manner. He looks at the floor when he asks it. "What does a man do, Baba, when the rain voids his paper?"',
+        next: 'n6_e2',
         choices: [
           {
             id: 'n6_e1_a',
@@ -2867,8 +3460,18 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Domnic',
         portrait: 'anna',
+        requires: { rupeesMin: 10 },
         text:
-          'Domnic\'s ceiling has failed completely; his family is sleeping in shifts around the dry corner. "Emil\'s gang got stood down," he says. "Too much rain to load, they said. The ships wait, the cargo waits, but the pay does not wait — the pay simply does not arrive." He wrings out a cloth. "You know what I have learned in this war, Keshav? Everything waits except hunger."',
+          'Domnic\'s ceiling has failed completely; his family is sleeping in shifts around the dry corner. "Emil\'s gang got stood down," he says. "Too much rain to load, they said. The ships wait, the cargo waits, but the pay does not wait — the pay simply does not arrive." He wrings out a cloth, folds it, sets it down. "You know what I have learned in this war, Keshav? Everything waits except hunger." He says it as a man who has thought about it carefully and arrived at the wrong end of the conclusion.',
+        next: 'n6_e2_low',
+      },
+      {
+        id: 'n6_e2_low',
+        bg: 'chawl',
+        speaker: 'Domnic',
+        portrait: 'anna',
+        text:
+          'Domnic\'s ceiling has failed completely; his family is sleeping in shifts around the dry corner. "Emil\'s gang got stood down," he says. "Too much rain to load, they said. The ships wait, the cargo waits, but the pay does not wait — the pay simply does not arrive." He wrings out a cloth. He does not ask how the Damles are managing. He can see the tin box shelf from here. "You know what I have learned in this war, Keshav? Everything waits except hunger." He says it to the cloth.',
         next: 'n6_e2b',
       },
       {
@@ -2931,8 +3534,33 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Domnic',
         portrait: 'anna',
+        requires: { householdMin: 65 },
         text:
-          'Domnic Menezes is in the doorway with his shirt half-buttoned. His Emil is on the day shift at the Victoria Dock. "I am going down there," he says, in the tone of a man who will either find his son or the man who tries to stop him. "The cordon will have lists. You work for the men who write lists. Come."',
+          'Domnic Menezes is in the doorway with his shirt half-buttoned. His Emil is on the day shift at the Victoria Dock. "I am going down there," he says. His coat is already on. "The cordon will have lists. You work for the men who write lists. Come."',
+        next: 'd4_m2_low',
+        choices: [
+          {
+            id: 'd4_m2_a',
+            text: '"I will find his name, Domnic. Whatever list it is on. I promise."',
+            effects: { conscience: 5, flag: 'domnic_promise', note: 'He looks at you a long moment. Promises are the only currency he still accepts.' },
+            next: 'd4_m3',
+          },
+          {
+            id: 'd4_m2_b',
+            text: '"The cordon will not let anyone through today. Go to the hospital lists instead."',
+            effects: { conscience: -3, note: 'Practical, correct, useless. He goes alone. You hear him on the stairs, not hurrying, which is worse.' },
+            next: 'd4_m3',
+          },
+        ],
+      },
+      {
+        id: 'd4_m2_low',
+        bg: 'chawl',
+        speaker: 'Domnic',
+        portrait: 'anna',
+        text:
+          'Domnic Menezes is in the doorway with his shirt half-buttoned, coat already on. His Emil is on the day shift at the Victoria Dock. He does not quite say come. "The cordon will have lists," he says, to the door frame. "A man at your desk, they let through faster than most."',
+        next: 'd4_m3',
         choices: [
           {
             id: 'd4_m2_a',
@@ -2950,6 +3578,16 @@ export const DAYS: GameDay[] = [
       },
       {
         id: 'd4_m3',
+        bg: 'office',
+        speaker: 'Pandurang',
+        portrait: 'pandurang',
+        requires: { suspicionMin: 45 },
+        text:
+          'The checkpost has been moved to the cordon line, and the city beyond it burns in patches like a map catching fire at the corners. Pandurang, immaculate in the smoke, hands out the emergency rules. "Only Trust passes inside. Relief volunteers by list. All else detained." He pauses, and the pause finds you before it moves on. "There will be confusion today. Confusion is when examiners fail. Be correct, Damle." He does not say it louder than the rest of the briefing. He does not need to. Bomanji\'s hands are shaking so hard his stamp rattles on the desk like teeth.',
+        next: 'd4_m3_low',
+      },
+      {
+        id: 'd4_m3_low',
         bg: 'office',
         speaker: 'Pandurang',
         portrait: 'pandurang',
@@ -3311,8 +3949,33 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { householdMin: 65 },
         text:
-          'Radha has kept dinner and said nothing about the hour. She went to the Victoria herself — there is a queue number still folded in her sari corner — and checked the hospital lists before you came home. She did not find Emil. She serves you and sits across and waits until you have eaten. "Well," she says at last. "Tell me which of the day was yours."',
+          'Radha has kept dinner and said nothing about the hour. She went to the Victoria herself — there is a queue number still folded in her sari corner — and checked the hospital lists before you came home. She did not find Emil. She serves you and refills the water without asking and sits across and waits until you have eaten. "Well," she says at last. "Tell me which of the day was yours."',
+        next: 'd4_e3_low',
+        choices: [
+          {
+            id: 'd4_e3_a',
+            text: 'Tell her everything. The handwriting. The stamp. All of it.',
+            effects: { conscience: 10, note: 'She listens without moving. Then she covers your hand with hers — the first such gesture in years. "Then the day was ours," she says. "We will carry it together."' },
+            next: 'd4_e3b',
+          },
+          {
+            id: 'd4_e3_b',
+            text: '"The usual. Stamps and more stamps."',
+            effects: { conscience: -8, suspicion: 3, note: 'She nods and clears the plates. She knows. You both know she knows. The lie sits at the table like a fifth member of the family, and it will eat with you for years.' },
+            next: 'd4_e3b',
+          },
+        ],
+      },
+      {
+        id: 'd4_e3_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'Radha has kept dinner and said nothing about the hour. She went to the Victoria herself — the queue number is still folded in her sari corner — and stood at the lists until the crowd pushed her off the step. She did not find Emil. She serves you and sits across with the mending and waits until you have set down the spoon. "Well," she says. "Tell me which of the day was yours."',
+        next: 'd4_e3b',
         choices: [
           {
             id: 'd4_e3_a',
@@ -3333,8 +3996,33 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Domnic',
         portrait: 'anna',
+        requires: { rupeesMin: 15 },
         text:
           'Domnic comes up before bed, formal as a petitioner. Emil is alive and the dressing is not free: five rupees a week at the hospital dispensary, gauze and ointment, for the burns. "I am not begging," he says first, so that it is agreed he is not begging. "Emil will be on the payroll again by monsoon. I am asking for a bridge, Keshav. Five rupees of bridge." Across the room Radha does not look up from the mending, which means she has already decided both ways and is waiting to learn which woman she is married to.',
+        next: 'd4_e3b_low',
+        choices: [
+          {
+            id: 'd4_e3b_a',
+            text: 'Give him the five rupees. Bridges are what neighbours are for.',
+            effects: { rupees: -5, household: 2, conscience: 5, note: 'Five rupees. Domnic folds it into his shirt pocket and says, "A bridge," once, like a signature on a receipt. Emil\'s burns are dressed all week.' },
+            next: 'd4_e4',
+          },
+          {
+            id: 'd4_e3b_b',
+            text: '"Tonight I have nothing to bridge with, Domnic. Ask me after the first."',
+            effects: { household: -2, conscience: -5, note: '"After the first," he repeats, filing it. He goes down the stairs unhurried. The burns will be dressed by somebody, or by nobody; the landing will know which, and so will you.' },
+            next: 'd4_e4',
+          },
+        ],
+      },
+      {
+        id: 'd4_e3b_low',
+        bg: 'chawl',
+        speaker: 'Domnic',
+        portrait: 'anna',
+        text:
+          'Domnic comes up before bed, formal as a petitioner. Emil is alive and the dressing is not free: five rupees a week at the hospital dispensary, gauze and ointment, for the burns. "I am not begging," he says first, so that it is agreed he is not begging. "Emil will be on the payroll again by monsoon — sooner, if they open the berth." He looks at his hands when he says the amount. "I am asking for a bridge, Keshav. Five rupees of bridge, only five." Domnic knows how houses count money. He has lived on this landing long enough to hear it through the walls. Across the room Radha does not look up from the mending, which means she has already decided both ways and is waiting to learn which woman she is married to.',
+        next: 'd4_e4',
         choices: [
           {
             id: 'd4_e3b_a',
@@ -3381,8 +4069,18 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { rupeesMin: 10 },
         text:
           'The Byculla gate is forty minutes on foot, so Radha has added a tier to your tiffin. "A man should not do arithmetic hungry," she says, packing it. "Especially other people\'s." She has not asked about April since April. The not-asking sits in the household like a relative nobody mentions, fed regularly, in the way.',
+        next: 'n8_m1_low',
+      },
+      {
+        id: 'n8_m1_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'The Byculla gate is forty minutes on foot, so Radha has added a tier to your tiffin. "A man should not do arithmetic hungry," she says, sealing the carrier without looking up. "Especially other people\'s." The tier is yesterday\'s rice. She has not asked about April since April, and she has not asked about the tin box since the tin box started sounding different. The not-asking is very crowded in this house.',
         next: 'n8_m2',
       },
       {
@@ -3390,8 +4088,18 @@ export const DAYS: GameDay[] = [
         bg: 'office',
         speaker: 'Pandurang',
         portrait: 'pandurang',
+        requires: { suspicionMax: 30 },
         text:
           'Pandurang accompanies the transfer in person, to make it clear the move is not a reward. "The Byculla desk is slow," he says, "which means it is where mistakes go to ripen. The ward rule is the first thing the queue will test and the last thing it will respect." He surveys the borrowed office with the air of a man inspecting a grave he does not intend to occupy. "Your travel allowance form is due monthly. Do not test that either."',
+        next: 'n8_m2_low',
+      },
+      {
+        id: 'n8_m2_low',
+        bg: 'office',
+        speaker: 'Pandurang',
+        portrait: 'pandurang',
+        text:
+          'Pandurang accompanies the transfer in person, to make it clear the move is not a reward. "The Byculla desk is slow," he says, "which means it is where mistakes go to ripen. The ward rule is the first thing the queue will test and the last thing it will respect." He surveys the borrowed office with the air of a man inspecting a grave he does not intend to occupy — then turns to look at you directly, which is unusual. "Your travel allowance form is due monthly. Do not test that either." He holds the pause two seconds longer than the sentence requires.',
         next: 'n8_m3',
       },
       {
@@ -3399,8 +4107,18 @@ export const DAYS: GameDay[] = [
         bg: 'office',
         speaker: 'Bomanji',
         portrait: 'bomanji',
+        requires: { suspicionMax: 45 },
         text:
           'Bomanji has walked over on his tiffin break, to see the new desk and to gossip in the manner of a man confessing. "The harbour hearings are calling everyone," he whispers. "Cargo agents, dock clerks. That shipping fellow, Master — his firm is still moving consignments, you know. Half the relief goods in the godowns have his chalk-mark on them." He shudders pleasantly. "Frightful man. Punctual, though."',
+        next: 'n8_m3_low',
+      },
+      {
+        id: 'n8_m3_low',
+        bg: 'office',
+        speaker: 'Bomanji',
+        portrait: 'bomanji',
+        text:
+          'Bomanji has walked over on his tiffin break, to see the new desk. He leans against the door frame rather than coming in and speaks at a volume suited to a room where nobody else is present but he has checked. "The harbour hearings are calling everyone," he says, almost airily. "Cargo agents, dock clerks." He straightens a button that does not need straightening. "That shipping fellow, Master — his firm is still moving consignments. Half the relief goods in the godowns have his chalk-mark on them." He does not shudder this time. "Frightful man," he says, without the pleasure.',
         next: undefined,
       },
     ],
@@ -3689,8 +4407,41 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { householdMin: 60 },
         text:
           'Dinner is laid, as it is laid every night. Radha has spent the afternoon at the Byculla relief post — she has taken on their accounts two days a week, quietly, without saying why — and she serves in the silence of someone who has been somewhere else all day and is not yet back.',
+        next: 'n8_e1_low',
+        choices: [
+          {
+            id: 'n8_e1_a',
+            requires: { madhavAlive: true },
+            text: 'Ask Radha what Madhav said at the kitchen today.',
+            effects: { movement: 3, conscience: 3, note: '"He said the burns ward needs oiled bandages," Radha relays. "He said it to the wall, but he said it where I could hear." He is quieter since April. Quieter is not the same as safer. You both know the rates.' },
+            next: 'n8_e1b',
+          },
+          {
+            id: 'n8_e1_b',
+            requires: { madhavAlive: false },
+            text: 'Say nothing about the empty place. Neither does she.',
+            effects: { conscience: -5, note: 'The fourth plate is there. It is always there. Radha washes it every night with the others, a small ceremony of not-conceding, and you have not found the courage to tell her to stop.' },
+            next: 'n8_e1b',
+          },
+          {
+            id: 'n8_e1_c',
+            text: 'Eat. Praise the dal. Let the evening be only an evening.',
+            effects: { household: 2, note: 'The dal is good. You say so. It is the safest sentence available in this house, and tonight you take it.' },
+            next: 'n8_e1b',
+          },
+        ],
+      },
+      {
+        id: 'n8_e1_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'Dinner is laid, as it is laid every night, though the dal is thinner than it was and she has not said so. Radha has spent the afternoon at the Byculla relief post — she has taken on their accounts two days a week, quietly, without saying why — and she serves in the silence of someone who has spent the day counting other families\' deficits and has come home to find her own still waiting.',
+        next: 'n8_e1b',
         choices: [
           {
             id: 'n8_e1_a',
@@ -3719,8 +4470,33 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { rupeesMin: 10 },
         text:
           'The milkman has left his monthly chit under the door: two rupees, and a pencilled line that says the fodder rates have doubled since the fire took the grass godowns. "It is two rupees," Radha says, setting the chit on the table beside the tin box. "It is also a small white card that says whether Leela drinks milk this month. The bazaar is teaching even the milkman to write memoranda now."',
+        next: 'n8_e1b_low',
+        choices: [
+          {
+            id: 'n8_e1b_a',
+            text: 'Settle the two rupees.',
+            effects: { rupees: -2, household: 2, note: 'Two rupees against a pencilled chit. The milk stays on the landing. In the ledger of this house, the small white card reads: settled.' },
+            next: 'n8_e2',
+          },
+          {
+            id: 'n8_e1b_b',
+            text: 'Stop the milk until the rates come down.',
+            effects: { household: -2, conscience: -3, note: 'Radha returns the chit in the morning without discussion. Leela\'s glass is water now. She drinks it without comment, aged thirteen, already fluent in the household\'s new dialect of going without.' },
+            next: 'n8_e2',
+          },
+        ],
+      },
+      {
+        id: 'n8_e1b_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          '"It is two rupees," Radha says, setting the milkman\'s chit on the table beside the tin box. She does not open the tin box. She sets the chit down flat, weight off it, as if giving a problem room to breathe. "The bazaar is teaching even the milkman to write memoranda now." She looks at the tin box. You look at the milkman\'s card. Neither of you touches either.',
+        next: 'n8_e2',
         choices: [
           {
             id: 'n8_e1b_a',
@@ -3741,8 +4517,18 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Domnic',
         portrait: 'anna',
+        requires: { householdMin: 55 },
         text:
           'Domnic\'s Emil limps now — the harbour gave him that, and a scar he shows only to the mirror. "The docks are hiring again," he says, "half wages, half shifts. He goes every morning to stand outside the gate and be counted among the unnecessary." He pauses. "He was one of the lucky ones. That is what we say now. Lucky. The word has shrunk, Keshav, like everything else."',
+        next: 'n8_e2_low',
+      },
+      {
+        id: 'n8_e2_low',
+        bg: 'chawl',
+        speaker: 'Domnic',
+        portrait: 'anna',
+        text:
+          'Domnic\'s Emil limps now — the harbour gave him that, and a scar he shows only to the mirror. "The docks are hiring again," he says, "half wages, half shifts. He goes every morning to stand outside the gate and be counted among the unnecessary." He stops there. He has looked at your table and seen the milkman\'s chit, or the lamp turned lower, or something. He drinks his tea and does not make the landing into a speech.',
         next: 'n8_e3',
       },
       {
@@ -3775,8 +4561,18 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Madhav',
         portrait: 'madhav',
+        requires: { movementMin: 60 },
         text:
-          'Madhav reads the strike bulletin at the table, openly now — the household stopped pretending in \'44. "They eat the same rice we cannot afford, Baba. They are not mutineers, they are us, in uniform." He is twenty-one, and the city\'s whole temperature is in his face. He is going to the barracks area today. Everyone knows it. No one says it.',
+          '"They eat the same rice, Baba — the same rice — and they cannot afford it either." He is reading from the bulletin but he already knows what it says; the whole landing passed it before dawn. He is twenty-one, and the city\'s whole temperature is already his, and for once the city agrees with him. He is going to the barracks area today. He says it himself, which is new.',
+        next: 'd5_m1_low',
+      },
+      {
+        id: 'd5_m1_low',
+        bg: 'chawl',
+        speaker: 'Madhav',
+        portrait: 'madhav',
+        text:
+          'Madhav reads the strike bulletin at the table, openly now — the household stopped pretending in \'44. "They eat the same rice we cannot afford, Baba. They are not mutineers, they are us, in uniform." He says "us" the way people do when they need it to be true badly enough. He is twenty-one, and the city\'s whole temperature is in his face. He is going to the barracks area today. Everyone knows it. No one says it.',
         next: 'd5_m2',
       },
       {
@@ -3784,8 +4580,32 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { householdMin: 65 },
         text:
-          'Radha waits until Madhav leaves for the kitchen shift, then speaks with the terrible precision she reserves for final positions. "I have run this house through war, ban, famine, and fire," she says. "I cannot run it through a funeral. Whatever you believe, whatever he believes — today, find a way to keep my son out of the smoke."',
+          'Radha waits until Madhav leaves for the kitchen shift, then turns from the stove. "Bring him home tonight," she says. She has already packed his tiffin. It is beside the door, tied the way she ties things that she expects to be opened.',
+        next: 'd5_m2_low',
+        choices: [
+          {
+            id: 'd5_m2_a',
+            text: '"I will bring him home. Even if I have to carry him."',
+            effects: { flag: 'radha_promise_2', conscience: 3, note: 'You make the second promise. The first one taught you what these cost, and you make it anyway.' },
+            next: 'd5_m2b',
+          },
+          {
+            id: 'd5_m2_b',
+            text: '"He is past carrying, Radha. Today I can only watch the door like everyone else."',
+            effects: { movement: 3, conscience: -3, note: 'She accepts it in silence. Her silence has become one of the city\'s great institutions.' },
+            next: 'd5_m2b',
+          },
+        ],
+      },
+      {
+        id: 'd5_m2_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'Radha waits until Madhav leaves for the kitchen shift, then turns from the stove. "Bring him home tonight," she says. She goes back to the tiffin she already packed for him.',
         choices: [
           {
             id: 'd5_m2_a',
@@ -3806,8 +4626,32 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Leela',
         portrait: 'leela',
+        requires: { rupeesMin: 10 },
         text:
           'At the door, Leela intercepts you with the school notice, held the way she has seen you hold summonses. The examination fee, three rupees, due before Friday. "If I do not sit it, the year repeats," she says. She has laid out the consequence plainly, without plea, the way her mother lists prices. Thirteen years old and she already presents her needs like a clean file: seal, date, face, and the rest is weather.',
+        next: 'd5_m2b_low',
+        choices: [
+          {
+            id: 'd5_m2b_a',
+            text: 'Pay the three rupees. She sits the examination.',
+            effects: { rupees: -3, household: 2, conscience: 3, note: 'Three rupees, receipted in pink. Leela folds the notice into her book and is gone. In a week of firing, one girl\'s year will not repeat. A small, legible mercy.' },
+            next: 'd5_m3',
+          },
+          {
+            id: 'd5_m2b_b',
+            text: '"Tell the school the examiner\'s salary is late this month."',
+            effects: { household: -3, conscience: -4, note: '"It is never late," she says, correctly — you are paid like a clock, the one virtue of the service. She goes to tell the school something truer, and you do not ask what.' },
+            next: 'd5_m3',
+          },
+        ],
+      },
+      {
+        id: 'd5_m2b_low',
+        bg: 'chawl',
+        speaker: 'Leela',
+        portrait: 'leela',
+        text:
+          'At the door, Leela intercepts you with the school notice, held the way she has seen you hold summonses. The examination fee, three rupees, due before Friday. "If I do not sit it, the year repeats," she says. She is watching your face when she says it — not the way children watch for the answer, but the way people watch when they already know what arithmetic looks like on a face.',
         choices: [
           {
             id: 'd5_m2b_a',
@@ -3825,6 +4669,16 @@ export const DAYS: GameDay[] = [
       },
       {
         id: 'd5_m3',
+        bg: 'office',
+        speaker: 'Pandurang',
+        portrait: 'pandurang',
+        requires: { suspicionMax: 44 },
+        text:
+          'The post is on a war footing. Pandurang reads the order sheet: all ordinary transit suspended; the barracks district sealed; assemblies unlawful. "Today the Empire discovers who its servants are," he says. He looks at the room. His gaze includes you in the usual way — the way a ledger includes every line equally. Since April he has been "reviewing interceptions," and the review is a thing that runs as reviews run, without particular urgency. Bomanji, at the next desk, has arranged his stamps in a perfect row, the way men polish what they cannot use.',
+        next: 'd5_m3_low',
+      },
+      {
+        id: 'd5_m3_low',
         bg: 'office',
         speaker: 'Pandurang',
         portrait: 'pandurang',
@@ -4156,12 +5010,59 @@ export const DAYS: GameDay[] = [
         bg: 'maidan',
         speaker: 'Domnic',
         portrait: 'anna',
+        requires: { flagNot: 'madhav_arrested' },
         text:
           'On the way home you pass the maidan, where the crowd that gathered for the ratings has become a crowd that gathers for the dead. Domnic is there — Emil survived the harbour only to be laid off when the docks burned, and now he stands in solidarity queues with the strikers. "Both sides eat our children, Keshav," he says. "The Empire with rules, the Movement with glory. I have stopped clapping. I only count who comes home." He has said this before. He will keep saying it until someone listens.',
+        next: 'd5_e1_low',
+      },
+      {
+        id: 'd5_e1_low',
+        bg: 'maidan',
+        speaker: 'Domnic',
+        portrait: 'anna',
+        text:
+          'On the way home you pass the maidan, where the crowd that gathered for the ratings has become a crowd that gathers for the dead. Domnic is there, in the solidarity queue with the strikers because the docks laid him off and he has nowhere else to stand. "Both sides eat our children, Keshav," he says. "The Empire with rules, the Movement with glory. I only count who comes home." He does not know about today. He says it to the crowd, to himself, to the general air. You do not tell him what you counted.',
         next: 'd5_e2',
       },
       {
         id: 'd5_e2',
+        bg: 'office',
+        speaker: 'Bomanji',
+        portrait: 'bomanji',
+        requires: { suspicionMax: 44 },
+        text:
+          'You stayed late to finish the interception log, and there is a problem: the search-line screening this afternoon — your screening — has a gap where a false endorsement went out on your initials. Pandurang reviews the logs on Friday. Bomanji, stacking his perfect stamps, has not looked up from his work. He says, to his desk, in the voice of a man noting something for the record: "The intake ledger of March \'41, Damle. I have not forgotten."',
+        next: 'd5_e2_low',
+        choices: [
+          {
+            id: 'd5_e2_a',
+            requires: { flag: 'bomanji_owes' },
+            text: 'Let Bomanji square the duty log. He knows the gaps a reviewer skips.',
+            effects: { suspicion: -15, conscience: -5, flag: 'log_squared', note: 'Bomanji rewrites three lines in a hand indistinguishable from yours, which is a skill, which is frightening, which is friendship. The review will find nothing. Men like Bomanji keep ledgers of kindness, and today a page comes due.' },
+            next: 'd5_e3',
+          },
+          {
+            id: 'd5_e2_b',
+            text: 'Square the log yourself, tonight, alone.',
+            risk: {
+              p: 0.3,
+              onFail: { suspicion: 20, conscience: -5 },
+              onSuccess: { suspicion: -5, conscience: -3 },
+              failText: 'Pandurang has already photographed the log — "routine procedure," he says, smiling for the first time in recorded memory. The alteration is visible. The review becomes an inquiry. The inquiry has your initials.',
+              successText: 'You alter two lines in the lamp\'s small circle of light, hands steady, conscience not. Friday\'s review passes over the page like weather over a field. You have become a man who alters records at night. The stool fits you the same as ever. That is the frightening part.',
+            },
+            next: 'd5_e3',
+          },
+          {
+            id: 'd5_e2_c',
+            text: 'Leave the log as it is. Let Friday come.',
+            effects: { suspicion: 15, conscience: 10, note: 'You initial the gap. Whatever it costs, it is yours and no one else\'s. Bomanji looks at you the way men look at weather they cannot farm in.' },
+            next: 'd5_e3',
+          },
+        ],
+      },
+      {
+        id: 'd5_e2_low',
         bg: 'office',
         speaker: 'Bomanji',
         portrait: 'bomanji',
@@ -4200,8 +5101,44 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Domnic',
         portrait: 'anna',
+        requires: { householdMin: 55 },
         text:
-          'A knock, late. Domnic, with a boy behind him — a rating, no older than Madhav, uniform torn, a crease wound along his arm gone bad. He jumped the barracks wall after the firing; the patrols are checking lodgings. "Nobody on this landing has seen him," Domnic says, which is not a question, and also is. The boy looks at your face and you watch him arrive at the correct conclusion: this is the house of an examiner.',
+          'A knock, late. Domnic, with a boy behind him — a rating, no older than Madhav, uniform torn, a crease wound along his arm gone bad. He jumped the barracks wall after the firing; the patrols are checking lodgings. "Nobody on this landing has seen him," Domnic says. A statement. The kind he makes when he has already thought it through and is waiting to see if you have too. The boy looks at your face and you watch him arrive at the correct conclusion: this is the house of an examiner.',
+        next: 'd5_e3_low',
+        choices: [
+          {
+            id: 'd5_e3_a',
+            text: 'Take him in. The back room. Until the patrols pass.',
+            risk: {
+              p: 0.25,
+              onFail: { suspicion: 25, flag: 'house_marked', conscience: 5 },
+              onSuccess: { movement: 15, conscience: 15, flag: 'sheltered_rating' },
+              failText: 'A patrol checks the chawl on the second night. The boy goes out the window and over the roofs and away — but the patrol remembers which door opened slowly. Your house is marked now, in the quiet way houses get marked: a line in a patrol book.',
+              successText: 'Three nights. Radha feeds him without comment; Leela brings him water and asks him, gravely, whether sailors are brave, and he says, "Only the frightened ones, miss." On the fourth night he slips south with the harbour crews. You never learn his name. It is better that way, and worse.',
+            },
+            next: 'd5_e4',
+          },
+          {
+            id: 'd5_e3_b',
+            text: 'Take him as far as the hospital gate. No further.',
+            effects: { movement: 5, conscience: 5, suspicion: 5, note: 'You walk him through three lanes with your examiner\'s face as his passport. At the hospital gate he salutes you — a mutineer, saluting a Crown examiner. Neither of you comments on it. There is nothing to say that would not make it smaller.' },
+            next: 'd5_e4',
+          },
+          {
+            id: 'd5_e3_c',
+            text: 'Turn him away. This house has enough targets on its door.',
+            effects: { conscience: -10, movement: -5, note: 'Domnic says nothing. The boy says, "It is all right, sir," which is Madhav\'s sentence, in another boy\'s mouth, on your own landing. You close the door. The door keeps closing, in your memory, for years.' },
+            next: 'd5_e4',
+          },
+        ],
+      },
+      {
+        id: 'd5_e3_low',
+        bg: 'chawl',
+        speaker: 'Domnic',
+        portrait: 'anna',
+        text:
+          'A knock, late. Domnic, with a boy behind him — a rating, no older than Madhav, uniform torn, a crease wound along his arm gone bad. He jumped the barracks wall after the firing; the patrols are checking lodgings. "Nobody on this landing has seen him," Domnic says, which is not a question, and also is. He is asking something of a house that is already short. The boy looks at your face and you watch him arrive at the correct conclusion: this is the house of an examiner.',
         choices: [
           {
             id: 'd5_e3_a',
@@ -4259,8 +5196,18 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Madhav',
         portrait: 'madhav',
+        requires: { suspicionMax: 44 },
         text:
           'Madhav is organizing for the ratings\' families fund — bail money, train fare home for the acquitted, rice for the wives of the convicted. He does it at the table now, in daylight, which is either courage or a reading of the Empire\'s exhaustion. "The government prosecutes them in the morning and demobilizes their ships\' companies in the afternoon," he says. "It is trying, Baba. You can feel it trying to hold everything. It has the grip of a tired man."',
+        next: 'n10_m1_low',
+      },
+      {
+        id: 'n10_m1_low',
+        bg: 'chawl',
+        speaker: 'Madhav',
+        portrait: 'madhav',
+        text:
+          'Madhav is organizing for the ratings\' families fund — bail money, train fare, rice. He does it at the table, in daylight, which is a different thing this week than it was last month. He stops when the stairwell door opens. "The government prosecutes them in the morning," he says, and then does not finish. Starts again: "Demobilizes the ships\' companies in the afternoon. The same morning and afternoon, Baba. Same morning." He is still watching the door. "It has the grip of a tired man. A tired man can still — " He does not finish that one either.',
         next: 'n10_m2',
       },
       {
@@ -4268,8 +5215,18 @@ export const DAYS: GameDay[] = [
         bg: 'office',
         speaker: 'Pandurang',
         portrait: 'pandurang',
+        requires: { crownMin: 50 },
         text:
           'Pandurang announces the fee rise with the relish of a man reading somebody else\'s sentence. "Four annas. The queue will be angry. Anger is not grounds for waiver." He then distributes a memo on ink economy — the wartime ration has somehow survived the war — and a second memo clarifying that the first memo was to be countersigned. Bomanji reads both twice and begins, privately, to enjoy himself.',
+        next: 'n10_m2_low',
+      },
+      {
+        id: 'n10_m2_low',
+        bg: 'office',
+        speaker: 'Pandurang',
+        portrait: 'pandurang',
+        text:
+          'Pandurang announces the fee rise without relish, which is worse. "Four annas. The queue will be angry. Anger is not grounds for waiver." He then distributes a memo on ink economy and a second memo clarifying that the first memo was to be countersigned. He sets yours on your desk and straightens it once. Bomanji watches this from behind his own memo and does not, this morning, begin to enjoy himself.',
         next: 'n10_m3',
       },
       {
@@ -4277,8 +5234,18 @@ export const DAYS: GameDay[] = [
         bg: 'office',
         speaker: 'Bomanji',
         portrait: 'bomanji',
+        requires: { rupeesMin: 15 },
         text:
           '"Pension maths," Bomanji confides, showing you a column of figures kept in a diary labelled RASHI RECIPES. "If the service continues me at current grade, I retire on enough for rice and a roof. If it promotes me, rice, a roof, and a radio." He closes the diary. "Twenty years I have stamped correctly, Damle, and my whole future fits in a column next to a recipe for pumpkin. Do you ever wonder what it all sums to?"',
+        next: 'n10_m3_low',
+      },
+      {
+        id: 'n10_m3_low',
+        bg: 'office',
+        speaker: 'Bomanji',
+        portrait: 'bomanji',
+        text:
+          '"Pension maths," Bomanji confides, showing you a column of figures kept in a diary labelled RASHI RECIPES. "If the service continues me at current grade, I retire on enough for rice and a roof. If it promotes me, rice, a roof, and a radio." He closes the diary. "Twenty years I have stamped correctly, Damle, and my whole future fits in a column next to a recipe for pumpkin. Do you ever wonder what it all sums to?" You have been running your own column since the fee went up and do not answer.',
         next: undefined,
       },
     ],
@@ -4581,8 +5548,33 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Leela',
         portrait: 'leela',
+        requires: { movementMin: 65 },
         text:
-          'Leela, thirteen, has been following the trials in the newspaper with the attention she once gave to your stamp pad. "Baba. The ratings asked for better food, and they are being tried for it. At school they teach us the Empire is just. One of these things is a lesson and one is a lie. I cannot decide which is which."',
+          'Leela, thirteen, has been following the trials in the newspaper with the attention she once gave to your stamp pad. She sets the paper on the table between you. "Baba. The ratings asked for better food, and they are being tried for it. At school they teach us the Empire is just. One of these things is a lesson and one is a lie. I cannot decide which is which." She asks it the way she asks sums — as if the answer exists and you are merely being slow about producing it.',
+        next: 'n10_e1_low',
+        choices: [
+          {
+            id: 'n10_e1_a',
+            text: '"Both are lessons, Leela. That is what makes the second one a lie."',
+            effects: { movement: 3, conscience: 3, note: 'She writes the sentence down — actually writes it — in the margin of her schoolbook, in pencil, over a rubbed-out sum.' },
+            next: 'n10_e1b',
+          },
+          {
+            id: 'n10_e1_b',
+            text: '"Do your sums. The courts are not your syllabus."',
+            effects: { crown: 3, conscience: -3, note: 'She returns to her sums. She has stopped expecting the truth from you on weekday evenings; she saves the real questions for Sundays now, and budgets for the disappointment.' },
+            next: 'n10_e1b',
+          },
+        ],
+      },
+      {
+        id: 'n10_e1_low',
+        bg: 'chawl',
+        speaker: 'Leela',
+        portrait: 'leela',
+        text:
+          'Leela, thirteen, finds you at the table before supper and does not sit. She has the newspaper folded to the trial reports. "Baba. The ratings asked for better food, and they are being tried for it. At school they teach us the Empire is just. One of these things is a lesson and one is a lie. I cannot decide which is which." She stands there. She does not look at her sums.',
+        next: 'n10_e1b',
         choices: [
           {
             id: 'n10_e1_a',
@@ -4603,8 +5595,33 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { rupeesMin: 10 },
+        text:
+          'The dhobi has stopped coming. Two rupees of arrears, carried since the trials began. "He washes the cantonment linen now," Radha says, straightening the shelf. "The Empire pays its washermen. Ours is the only door on the landing with no bundle on it." She has already counted the arrears; she is telling you what they are. Your office tunic, unironed, has begun to look like a rumour about you.',
+        next: 'n10_e1b_low',
+        choices: [
+          {
+            id: 'n10_e1b_a',
+            text: 'Pay the two rupees. Bring the dhobi back.',
+            effects: { rupees: -2, household: 2, conscience: 2, note: 'Two rupees. The bundle returns to the door on Thursday, and the tunic is pressed into respectability again. An examiner should not look like an accusation.' },
+            next: 'n10_e2',
+          },
+          {
+            id: 'n10_e1b_b',
+            text: '"We wash at the tap like everyone else on the landing."',
+            effects: { household: -3, conscience: -3, note: 'Radha washes the office tunic at the landing tap, in full view, with the flat of her hand on the stone. Domnic watches from his doorway. It is a kind of notice served.' },
+            next: 'n10_e2',
+          },
+        ],
+      },
+      {
+        id: 'n10_e1b_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
         text:
           'The dhobi has stopped coming. Two rupees of arrears, carried since the trials began and the queue started paying four annas for everything including patience. "He washes the cantonment linen now," Radha says. "The Empire pays its washermen. Ours is the only door on the landing with no bundle on it." She says it without accusation, which is how you know it is one. Your office tunic, unironed, has begun to look like a rumour about you.',
+        next: 'n10_e2',
         choices: [
           {
             id: 'n10_e1b_a',
@@ -4625,8 +5642,18 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { rupeesMin: 15 },
         text:
-          'Radha counts the tin box and finds it adequate, which from Radha is a declaration of abundance. "The fee rise will mean longer queues and angrier mornings," she says. "And angrier mornings mean more of those small folded notes sliding across your desk." She looks at you steadily. "I do not ask where the extra rice money comes from anymore, Keshav. I have decided not to ask. I want you to notice that I have decided."',
+          'Radha counts the tin box and finds it adequate. "The fee rise will mean longer queues and angrier mornings," she says. "And angrier mornings mean more of those small folded notes sliding across your desk." She looks at you steadily. "I do not ask where the extra rice money comes from anymore, Keshav. I have decided not to ask."',
+        next: 'n10_e2_low',
+      },
+      {
+        id: 'n10_e2_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'Radha counts the tin box. She counts it twice — the second time without the box open, the way you know a sum before you have to show it. "The fee rise will mean longer queues," she says, closing the lid. "And angrier mornings." She does not say the rest of the sentence — the part about small folded notes. She moves a jar on the shelf instead. The jar was already in its place.',
         next: 'n10_e3',
       },
       {
@@ -4659,8 +5686,18 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { householdMin: 55 },
         text:
-          'The Sheikhs on the second floor are leaving — twenty years across the landing, gone to relatives in the north with a tin trunk and no certainty of return. Radha has made them sheera for the journey. "Their daughter was born the same month as Leela," she says. "Now the map says they are from somewhere else. A map, Keshav. I have washed that child\'s face."',
+          'The Sheikhs on the second floor are leaving — twenty years across the landing, gone to relatives in the north with a tin trunk and no certainty of return. Radha has made them sheera for the journey; the good jar, extra cardamom. "Their Farida was born the same month as Leela," she says. "I have washed that child\'s face. Fed her. Braided her hair when her mother was ill." She goes back to the pot.',
+        next: 'n11_m1_low',
+      },
+      {
+        id: 'n11_m1_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'The Sheikhs on the second floor are leaving — twenty years across the landing, gone to relatives in the north with a tin trunk and no certainty of return. Radha has made them sheera for the journey. "Their Farida was born the same month as Leela," she says. "I have washed that child\'s face." She goes back to the pot.',
         next: 'n11_m2',
       },
       {
@@ -4668,8 +5705,18 @@ export const DAYS: GameDay[] = [
         bg: 'office',
         speaker: 'Pandurang',
         portrait: 'pandurang',
+        requires: { crownMin: 55 },
         text:
-          'Pandurang has begun, discreetly, to pack. A photograph has come down from above his desk, leaving a pale rectangle like a stamp on the wall. "Transfers are coming," he says, to the room, to himself. "The service will be — reorganized." It is the first time you have ever heard him use a word he could not define. Bomanji, beside you, has started keeping a private copy of every new rule, in the recipe diary.',
+          'Pandurang has begun, discreetly, to pack. A photograph has come down from above his desk, leaving a pale rectangle like a stamp on the wall. "Transfers are coming," he says. "The service will be — reorganized." He pauses at your desk on his way out with a ledger — a thing without precedent — and says, without looking at you: "The record has been adequate, Damle. For what that is worth now." Bomanji, beside you, has started keeping a private copy of every new rule, in the recipe diary.',
+        next: 'n11_m2_low',
+      },
+      {
+        id: 'n11_m2_low',
+        bg: 'office',
+        speaker: 'Pandurang',
+        portrait: 'pandurang',
+        text:
+          'Pandurang has begun, discreetly, to pack. A photograph has come down from above his desk, leaving a pale rectangle like a stamp on the wall. "Transfers are coming," he says, to the room, to himself. "The service will be — reorganized." It is the first time you have ever heard him use a word he could not define. He looks at you for three seconds longer than the sentence requires. Bomanji, beside you, has started keeping a private copy of every new rule, in the recipe diary.',
         next: 'n11_m3',
       },
       {
@@ -4677,8 +5724,18 @@ export const DAYS: GameDay[] = [
         bg: 'office',
         speaker: 'Madhav',
         portrait: 'madhav',
+        requires: { movementMin: 60 },
         text:
-          'Madhav walks you to the post, something he has not done since he was twelve. "When it comes, Baba — when the flag changes — what happens to the queue?" You tell him the queue remains; only the seals are re-cut. He laughs. "Then we will have to make better seals," he says, "and better rules behind them. That is the whole of my politics, by the way. In case you ever wondered what your son believes."',
+          'Madhav walks you to the post, something he has not done since he was twelve. "When it comes, Baba — when the flag changes — what happens to the queue?" You tell him the queue remains; only the seals are re-cut. He laughs, not with relief but with something harder. "Then we will make better seals," he says, "and better rules behind them — and we will know what those rules cost because we paid for every last one. That is the difference. That is the whole difference." At the gate he raises a hand and goes.',
+        next: 'n11_m3_low',
+      },
+      {
+        id: 'n11_m3_low',
+        bg: 'office',
+        speaker: 'Madhav',
+        portrait: 'madhav',
+        text:
+          'Madhav walks you to the post, something he has not done since he was twelve. "When it comes, Baba — when the flag changes — what happens to the queue?" You tell him the queue remains; only the seals are re-cut. He is quiet a moment. "Then we will have to make better seals," he says, "and better rules behind them." At the gate he raises a hand and goes.',
         next: undefined,
       },
     ],
@@ -4976,6 +6033,30 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Madhav',
         portrait: 'madhav',
+        requires: { movementMin: 60 },
+        text:
+          'Madhav is reading the Delhi reports aloud to anyone who will hold still. "An interim government. Our people, at desks, stamping things — Baba, at desks. Stamping things." He looks up, and there is no argument in his face and no question either, only the fact that has not finished staggering him. "Will it be different? When the hands on the stamps are ours?"',
+        next: 'n11_e1_low',
+        choices: [
+          {
+            id: 'n11_e1_a',
+            text: '"The stamp does not change, Madhav. Only the hand. Make the hand better."',
+            effects: { movement: 5, conscience: 3, note: 'He considers this with unusual seriousness. "Then the hand must remember being on the other side of the grille," he says. "Mine will. I intend to make a profession of remembering."' },
+            next: 'n11_e2',
+          },
+          {
+            id: 'n11_e1_b',
+            text: '"It will be different because it must be. Leave it at that."',
+            effects: { crown: 2, note: 'He lets it rest. Hope, at his age, does not require your signature — which is perhaps the first thing the boy has ever got without one.' },
+            next: 'n11_e2',
+          },
+        ],
+      },
+      {
+        id: 'n11_e1_low',
+        bg: 'chawl',
+        speaker: 'Madhav',
+        portrait: 'madhav',
         text:
           'Madhav is reading the Delhi reports aloud to anyone who will hold still. "An interim government. Our people, at desks, stamping things." He looks up, and for once there is no argument in his face, only a question. "Will it be different, Baba? When the hands on the stamps are ours?"',
         choices: [
@@ -4998,12 +6079,46 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Domnic',
         portrait: 'anna',
+        requires: { suspicionMax: 29 },
         text:
-          'Domnic helps the Sheikhs carry their trunk down three flights, refusing every offer of help except Leela\'s. At the door he stands with the Sheikh for a long time, saying nothing, one hand on the old man\'s shoulder. Coming back up, he stops at your landing. "Twenty years," he says. "They borrowed my sugar. I borrowed their ladder. Now a line on a map in London has decided we were never neighbours, only temporarily adjacent." He goes in. The water tap, uncharacteristically, is silent.',
+          'Domnic helps the Sheikhs carry their trunk down three flights, refusing every offer of help except Leela\'s. At the door he stands with the Sheikh for a long time, saying nothing, one hand on the old man\'s shoulder. Coming back up, he stops at your landing. "Twenty years," he says. "They borrowed my sugar. I borrowed their ladder. Now a line on a map in London has decided we were never neighbours." He goes in. The water tap, uncharacteristically, is silent.',
+        next: 'n11_e2_low',
+      },
+      {
+        id: 'n11_e2_low',
+        bg: 'chawl',
+        speaker: 'Domnic',
+        portrait: 'anna',
+        text:
+          'Domnic helps the Sheikhs carry their trunk down three flights, refusing every offer of help except Leela\'s. At the door he stands with the Sheikh for a long time, saying nothing, one hand on the old man\'s shoulder. Coming back up, he stops at your landing and looks both ends of it before he speaks. "Twenty years," he says. "Their sugar and my ladder. A line on a map." He does not finish it. He goes in. The water tap, uncharacteristically, is silent.',
         next: 'n11_e2b',
       },
       {
         id: 'n11_e2b',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        requires: { rupeesMin: 10 },
+        text:
+          'The Sheikhs\' train is Friday. Radha has made the sheera; what she has not made is the parting gift, and the chawl is collecting — a rupee here, two there, the landing\'s whole savings of affection converted to cash for the journey. "Four rupees is our share if we are who we say we are," Radha says. "One rupee is also our share, if the month does not allow it." She sets the tin box on the table. "The month allows it."',
+        next: 'n11_e2b_low',
+        choices: [
+          {
+            id: 'n11_e2b_a',
+            text: 'Give the four rupees. Twenty years is not tired arithmetic.',
+            effects: { rupees: -4, household: 2, conscience: 5, note: 'Four rupees into the chawl\'s cloth bundle. The Sheikhs leave on Friday with the landing\'s whole heart converted to small notes. It will not save them. It was never meant to. It was meant to say who you were.' },
+            next: 'n11_e3',
+          },
+          {
+            id: 'n11_e2b_b',
+            text: 'Give one rupee. The year has been expensive enough.',
+            effects: { rupees: -1, household: -2, conscience: -3, note: 'One rupee. Radha carries it down herself and comes back without reporting how it was received. You do not ask. Some receipts are not read aloud.' },
+            next: 'n11_e3',
+          },
+        ],
+      },
+      {
+        id: 'n11_e2b_low',
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
@@ -5054,8 +6169,33 @@ export const DAYS: GameDay[] = [
         bg: 'dawn',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { householdMin: 40 },
         text:
-          'Radha is awake before the fireworks, ironing. "Twenty-two years of seals, and they give you a tin medal and a handshake," she says. "I have been married to the Empire\'s left hand." She sets the iron down. "I did not hate it as much as Madhav. I did not love it as much as you think you did. I only asked it to feed us, and it answered the way it answered everyone: sometimes."',
+          'Radha is awake before the fireworks, ironing. She has been at it since before you heard the crowd. "Twenty-two years," she says, folding the collar down flat. "A tin medal and a handshake." She holds the office tunic up against the window, where the first firework colours it briefly orange. "I have been married to the Empire\'s left hand," she says. "It is a fine hand. I have always wanted to know what it stamped with the right."',
+        next: 'd6_m1_low',
+        choices: [
+          {
+            id: 'd6_m1_a',
+            text: '"It fed us. And I fed it. Those are the same sentence, Radha."',
+            effects: { conscience: 5, note: 'She looks at you a long time. "I know," she says. "I have always known. It is the only thing I never had to forgive you for, because I ate too."' },
+            next: 'd6_m2',
+          },
+          {
+            id: 'd6_m1_b',
+            text: '"Today it ends. Let the past keep its own ledger."',
+            effects: { conscience: -3, note: '"The past keeps its ledger in the present, Keshav. You of all people." She says it gently, which is the worst way Radha says anything.' },
+            next: 'd6_m2',
+          },
+        ],
+      },
+      {
+        id: 'd6_m1_low',
+        bg: 'dawn',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'Radha is awake before the fireworks, ironing. She does not look up when you come in. "Twenty-two years of seals," she says, "and they give you a tin medal and sixteen rupees." She smooths the collar with the flat of her hand. The cuffs are fraying. "Sixteen rupees." She holds up the shirt. "I have been married to the Empire\'s left hand," she says. "It spent us well enough. I have been counting."',
+        next: 'd6_m2',
         choices: [
           {
             id: 'd6_m1_a',
@@ -5076,8 +6216,41 @@ export const DAYS: GameDay[] = [
         bg: 'office',
         speaker: 'Pandurang',
         portrait: 'pandurang',
+        requires: { suspicionMax: 45 },
         text:
-          'Pandurang is packing twenty-two years into one tin trunk. He is leaving for "home," a hill town he has not seen since his twenties, and his famous coldness has not melted so much as curdled. "One last task, Damle," he says. "The service records of this office — detentions, interceptions, informers\' files. The incoming government would... misunderstand them. Sign the certificate that they were destroyed by floodwater in \'44. There is a gratuity in it. Call it a pension the Crown forgot to pay."',
+          'Pandurang is packing twenty-two years into one tin trunk. He is leaving for "home," a hill town he has not seen since his twenties, and his famous coldness has not melted so much as been carefully folded away with the rest. "One last task, Damle," he says. "The service records — detentions, interceptions, informers\' files. The incoming government would misunderstand them. Sign the certificate that they were destroyed by floodwater in \'44. There is a gratuity in it — fifteen rupees. Call it a pension the Crown forgot to pay." He says it like a filing instruction, which is what it is. The only question is what kind of clerk you are on your last day.',
+        next: 'd6_m2_low',
+        choices: [
+          {
+            id: 'd6_m2_a',
+            text: 'Sign the false certificate. Take the gratuity.',
+            flagrant: true,
+            effects: { rupees: 15, conscience: -15, flag: 'false_report', crown: 5, note: 'FLAGRANT. Fifteen rupees of gratuity for a false report, signed in your best clerical hand. The files burn cleanly — every detention, every name. Somewhere in the smoke go Bhosle, the boys of the search line, and your own initials, which is, you understand, rather the point.' },
+            next: 'd6_m3',
+          },
+          {
+            id: 'd6_m2_b',
+            text: 'Refuse. "Let the files answer for us, Pandurang. Both ways."',
+            effects: { conscience: 10, suspicion: 5, note: 'He shrugs and burns what he can reach without your signature. "You always mistook the ledger for the man," he says. "Goodbye, Damle. You were almost adequate."' },
+            next: 'd6_m3',
+          },
+          {
+            id: 'd6_m2_c',
+            text: 'Sign — but keep the informers\' pages out of the burn pile first.',
+            flagrant: true,
+            effects: { rupees: 15, conscience: -8, movement: 10, flag: 'false_report', suspicion: 5, note: 'FLAGRANT. You sign the lie and pocket the fifteen-rupee gratuity, but three folders of names go home under your shirt. The new government will find them on a desk that is no longer yours. Half corruption, half rescue — your signature vice, to the very end.' },
+            next: 'd6_m3',
+          },
+        ],
+      },
+      {
+        id: 'd6_m2_low',
+        bg: 'office',
+        speaker: 'Pandurang',
+        portrait: 'pandurang',
+        text:
+          'Pandurang is packing twenty-two years into one tin trunk. He is leaving for "home," a hill town he has not seen since his twenties. His famous coldness has not melted at all. "Damle." He does not look up from the trunk. "The service records. Detentions, interceptions, informers\' files. Sign the certificate — floodwater, \'44." He latches the lid. "Fifteen rupees. Or the log goes to the new desk as it stands, with your initials where they are, and the incoming government will know exactly what it is reading." He closes the trunk. "You have always been a careful reader of instructions," he says. "Be one now."',
+        next: 'd6_m3',
         choices: [
           {
             id: 'd6_m2_a',
@@ -5106,8 +6279,33 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Leela',
         portrait: 'leela',
+        requires: { conscienceMin: 40 },
         text:
-          'Leela, fourteen, has made a flag out of a petition paper and orange and green dye, and it is crooked and it is perfect. "Baba," she says, "is it ours now? The country. The checkpost. The stamp." She is asking the question her whole childhood has been an examination of.',
+          'Leela, fourteen, has made a flag out of a petition paper and orange and green dye, and it is crooked and it is perfect. She holds it toward you first, before anyone else. "Baba," she says, "is it ours now? The country. The checkpost. The stamp." She is asking the question her whole childhood has been an examination of.',
+        next: 'd6_m3_low',
+        choices: [
+          {
+            id: 'd6_m3_a',
+            text: '"It is ours, Leela. Which means the stamps are ours too. Remember what they cost."',
+            effects: { conscience: 5, movement: 3, note: 'She nods, grave as a magistrate. Of all your children, she will forget nothing.' },
+            next: 'd6_m4',
+          },
+          {
+            id: 'd6_m3_b',
+            text: '"It was always ours. It only had other people\'s seals on it."',
+            effects: { movement: 5, note: 'She repeats the sentence to herself, memorizing it. Somewhere Madhav would have smiled.' },
+            next: 'd6_m4',
+          },
+        ],
+      },
+      {
+        id: 'd6_m3_low',
+        bg: 'chawl',
+        speaker: 'Leela',
+        portrait: 'leela',
+        text:
+          'Leela, fourteen, has made a flag out of a petition paper and orange and green dye. She carries it carefully, like something that might be taken away. "Baba," she says. Then a pause. "Is it ours now? The country." She watches your face. "The checkpost. The stamp." She has learned to ask her questions in pieces, and wait between them. She is asking the question her whole childhood has been an examination of.',
+        next: 'd6_m4',
         choices: [
           {
             id: 'd6_m3_a',
@@ -5529,8 +6727,18 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
+        requires: { householdMin: 40 },
         text:
-          'Radha is waiting up, though the city is loud enough to excuse any absence. On the table: the tin box, the rulebook you were supposed to return, and tea, already poured, exactly the colour she knows you take it. "Whatever you stamped today," she says, "it is done. Whatever you did not stamp, that is done too." She sits. "Now tell me what is left, and we will decide what to do with it. That is what this house has always done."',
+          'Radha is waiting up, though the city is loud enough to excuse any absence. On the table: the tin box, the rulebook you were supposed to return, and tea, already poured, exactly the colour she knows you take it. "Whatever you stamped today," she says, "it is done. Whatever you did not stamp, that is done too." She sits across from you — not beside you; she has always talked to you face-to-face. "Now tell me what is left, and we will decide what to do with it. That is what this house has always done." She has already made room at the table. She has always made room.',
+        next: 'd6_e3_low',
+      },
+      {
+        id: 'd6_e3_low',
+        bg: 'chawl',
+        speaker: 'Radha',
+        portrait: 'radha',
+        text:
+          'Radha is waiting up. On the table: the tin box, the rulebook you were supposed to return, and tea — already poured, the right colour, but she has not pushed it toward you. "Whatever you stamped today," she says, "it is done." She looks at the tin box. "Whatever you did not stamp, that is done too." She sits. "Now tell me what is left." The box sits between you. "We will decide what to do with it. We have always had to." She waits. She has always waited.',
         next: 'd6_e4',
       },
       {
