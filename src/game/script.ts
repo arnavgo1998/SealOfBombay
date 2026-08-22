@@ -3769,6 +3769,7 @@ export const DAYS: GameDay[] = [
       {
         id: 'd4_c4',
         entrantName: '"Milind Dalvi"',
+        entrantPortrait: 'madhav_hooded',
         portraitBg: 'harbour',
         documents: [
           {
