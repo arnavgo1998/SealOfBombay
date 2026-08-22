@@ -930,9 +930,9 @@ export const DAYS: GameDay[] = [
         bg: 'office',
         speaker: 'Bomanji',
         portrait: 'bomanji',
-        requires: { suspicionMax: 10 },
+        requires: { flag: 'bomanji_owes' },
         text:
-          'Bomanji has survived his ledger fright and is expansive with relief. "Rules of the desk, Damle," he says, counting on his fingers. "Tea before the third file. Never argue before lunch. And when Pandurang counts the fee receipts on Friday, be somewhere else in the room." Pandurang passes behind him without a sound and Bomanji becomes very interested in his blotter. He does not look up again until Pandurang's door closes.',
+          'Bomanji has survived his ledger fright and is expansive with relief. "Rules of the desk, Damle," he says, counting on his fingers. "Tea before the third file. Never argue before lunch. And when Pandurang counts the fee receipts on Friday, be somewhere else in the room." He pauses, then adds a fourth finger. "That one I keep for people who have done me a turn." Pandurang passes behind him without a sound and Bomanji becomes very interested in his blotter. He does not look up again until Pandurang\'s door closes.',
         next: 'n2_m3_low',
       },
       {
@@ -941,7 +941,7 @@ export const DAYS: GameDay[] = [
         speaker: 'Bomanji',
         portrait: 'bomanji',
         text:
-          'Bomanji closes his ledger and leans across. "Rules of the desk, Damle," he says, counting on his fingers. "Tea before the third file. Never argue before lunch. And when Pandurang counts the fee receipts on Friday, be somewhere else in the room." Three fingers. He does not offer a fourth. "Those are the ones I give everyone," he adds, and goes back to his ledger. Pandurang passes behind him without a sound and Bomanji becomes very interested in his blotter — he appears to have been studying it for some time already.',
+          'Bomanji arrived early. His ledger is closed and the index is in order. When you pass his desk he nods once. "Morning." He does not look up from his page. The office starts.',
         next: undefined,
       },
     ],
