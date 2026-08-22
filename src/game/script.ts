@@ -2550,7 +2550,7 @@ export const DAYS: GameDay[] = [
         requires: { householdMin: 65 },
         next: 'd3_m2_low',
         text:
-          'Leela, eleven now, has been reading the newspaper upside down while you read it. She finishes her breakfast before she asks. "Baba," she says, "if the ships can carry soldiers, why can they not carry rice?" She asks it the way she asks about sums — expecting that there is an answer, expecting you to have it.',
+          'Leela, ten now, has been reading the newspaper upside down while you read it. She finishes her breakfast before she asks. "Baba," she says, "if the ships can carry soldiers, why can they not carry rice?" She asks it the way she asks about sums — expecting that there is an answer, expecting you to have it.',
         choices: [
           {
             id: 'd3_m2_a',
@@ -4628,7 +4628,7 @@ export const DAYS: GameDay[] = [
         portrait: 'leela',
         requires: { rupeesMin: 10 },
         text:
-          'At the door, Leela intercepts you with the school notice, held the way she has seen you hold summonses. The examination fee, three rupees, due before Friday. "If I do not sit it, the year repeats," she says. She has laid out the consequence plainly, without plea, the way her mother lists prices. Thirteen years old and she already presents her needs like a clean file: seal, date, face, and the rest is weather.',
+          'At the door, Leela intercepts you with the school notice, held the way she has seen you hold summonses. The examination fee, three rupees, due before Friday. "If I do not sit it, the year repeats," she says. She has laid out the consequence plainly, without plea, the way her mother lists prices. Twelve years old and she already presents her needs like a clean file: seal, date, face, and the rest is weather.',
         next: 'd5_m2b_low',
         choices: [
           {
@@ -5550,7 +5550,7 @@ export const DAYS: GameDay[] = [
         portrait: 'leela',
         requires: { movementMin: 65 },
         text:
-          'Leela, thirteen, has been following the trials in the newspaper with the attention she once gave to your stamp pad. She sets the paper on the table between you. "Baba. The ratings asked for better food, and they are being tried for it. At school they teach us the Empire is just. One of these things is a lesson and one is a lie. I cannot decide which is which." She asks it the way she asks sums — as if the answer exists and you are merely being slow about producing it.',
+          'Leela, thirteen, has been following the trials in the newspaper with the attention she once gave to your stamp pad. She sets the paper on the table between you. "Baba. The ratings asked for better food, and they are being tried for it." She waits. "At school they say the Empire is just. Which one is the lesson?" She already knows. She is waiting to see if you do.',
         next: 'n10_e1_low',
         choices: [
           {
@@ -6281,7 +6281,7 @@ export const DAYS: GameDay[] = [
         portrait: 'leela',
         requires: { conscienceMin: 40 },
         text:
-          'Leela, fourteen, has made a flag out of a petition paper and orange and green dye, and it is crooked and it is perfect. She holds it toward you first, before anyone else. "Baba," she says, "is it ours now? The country. The checkpost. The stamp." She is asking the question her whole childhood has been an examination of.',
+          'Leela, fourteen, has made a flag out of a petition paper and orange and green dye, and it is crooked and it is perfect. She holds it toward you first, before anyone else — the way she once held out her school sums for the stamp. "Baba," she says, "is it ours now? The country. The checkpost. The stamp." She already knows. She is waiting to see what you say.',
         next: 'd6_m3_low',
         choices: [
           {
