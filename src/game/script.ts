@@ -264,8 +264,6 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
-        requires: { rupeesMin: 5 },
-        next: 'd1_m1_low',
         text:
           'Radha measures the morning rice into the pot and levels it with a finger, the way she levels everything. "A government stool," she says. "It pays a rupee more than the railway. It also makes enemies one at a time, and friends never." She does not look up. "Come home at six."',
         choices: [
@@ -289,11 +287,11 @@ export const DAYS: GameDay[] = [
         speaker: 'Radha',
         portrait: 'radha',
         text:
-          'Radha measures the morning rice into the pot — one level finger\'s worth, no more — and says it without turning around: "A rupee more than the railway. That keeps the landing." She sets the lid on. "Come home at six."',
+          'Radha measures the morning rice into the pot — one level finger\'s worth, no more — and says it without turning around: "A rupee more than the railway. Leela eats." She sets the lid on. "Come home at six."',
         choices: [
           {
             id: 'd1_m1_a',
-            text: '"I stamp paper, Radha. Paper cannot hate a man."',
+            text: '"She has always eaten, Radha. This changes nothing."',
             effects: { conscience: -5, note: 'You have already begun lying at your own table.' },
             next: 'd1_m2',
           },
@@ -863,33 +861,8 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Radha',
         portrait: 'radha',
-        requires: { rupeesMin: 5 },
-        next: 'n2_m1_low',
         text:
           'The first full month\'s wage lies on the table in an envelope Radha has not opened. On the windowsill: a letter from her sister in Nagpur, re-folded twice. She has not mentioned it. "Rent, rice, the dhobi, Leela\'s school annas," she recites, without looking up. "Whatever is left goes in the tin box, and the tin box is not a bank, Keshav. It is a superstition with a lid."',
-        choices: [
-          {
-            id: 'n2_m1_a',
-            text: 'Hand her the envelope unopened.',
-            effects: { conscience: 5, household: 3, note: 'She counts it twice, nods once. The tin box swallows its first honest month.' },
-            next: 'n2_m2',
-          },
-          {
-            id: 'n2_m1_b',
-            text: 'Keep two rupees back. Pocket them.',
-            effects: { rupees: 2, household: -2, conscience: -5, note: 'Two rupees into your own pocket. There are no office expenses. She knows there are no office expenses. The two rupees weigh more than the envelope.' },
-            next: 'n2_m2',
-          },
-        ],
-      },
-      {
-        id: 'n2_m1_low',
-        bg: 'chawl',
-        speaker: 'Radha',
-        portrait: 'radha',
-        text:
-          'The first full month\'s wage lies on the table in an envelope Radha has already opened. The bills are sorted face-up, smallest denomination to largest. On the windowsill: a letter from her sister in Nagpur, re-folded twice and placed face-down. "Rent, rice, the dhobi, Leela\'s school annas," she recites, finger moving down the row. "Whatever is left goes in the tin box." She taps the last bill. "The arithmetic works. I checked it twice to be certain."',
-        next: 'n2_m2',
         choices: [
           {
             id: 'n2_m1_a',
@@ -3526,7 +3499,7 @@ export const DAYS: GameDay[] = [
         bg: 'chawl',
         speaker: 'Narrator',
         text:
-          'The blast arrives before the sound: the floor lifts, the rice jar jumps, and then the sound comes through the chawl like a wall falling. Leela is under the table before anyone moves — she has learned this from the war news, from the drills, from being thirteen in 1944. Out the window, over the harbour, a column of smoke is rising in the shape of a tree that has decided to kill the sky.',
+          'The blast arrives before the sound: the floor lifts, the rice jar jumps, and then the sound comes through the chawl like a wall falling. Leela is under the table before anyone moves — she has learned this from the war news, from the drills, from being eleven in 1944. Out the window, over the harbour, a column of smoke is rising in the shape of a tree that has decided to kill the sky.',
         next: 'd4_m2',
       },
       {
